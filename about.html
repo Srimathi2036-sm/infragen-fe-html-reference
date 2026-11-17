@@ -274,6 +274,99 @@
       animation: slowPan 20s linear infinite alternate;
       background-size: 120% 120%;
     }
+  
+    /* =============================================
+       DISTINGUISHED CLIENTELE — FAN-OUT FROM CENTER ANIMATION
+       ============================================= */
+    @keyframes fanOutLeft {
+      0% {
+        opacity: 0;
+        transform: translate3d(calc(100% + 2rem), 30px, 0) scale(0.85);
+      }
+      65% {
+        opacity: 1;
+        transform: translate3d(-8px, -4px, 0) scale(1.02);
+      }
+      100% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0) scale(1);
+      }
+    }
+
+    @keyframes fanOutCenter {
+      0% {
+        opacity: 0;
+        transform: translate3d(0, 45px, 0) scale(0.8);
+      }
+      65% {
+        opacity: 1;
+        transform: translate3d(0, -6px, 0) scale(1.03);
+      }
+      100% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0) scale(1);
+      }
+    }
+
+    @keyframes fanOutRight {
+      0% {
+        opacity: 0;
+        transform: translate3d(calc(-100% - 2rem), 30px, 0) scale(0.85);
+      }
+      65% {
+        opacity: 1;
+        transform: translate3d(8px, -4px, 0) scale(1.02);
+      }
+      100% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0) scale(1);
+      }
+    }
+
+    /* On Desktop (3-column grid >= 1024px) */
+    @media (min-width: 1024px) {
+      .clientele-card {
+        opacity: 0;
+        will-change: transform, opacity;
+      }
+      .clientele-section.active .clientele-card-left {
+        animation: fanOutLeft 1.1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+      .clientele-section.active .clientele-card-center {
+        animation: fanOutCenter 1.0s cubic-bezier(0.16, 1, 0.3, 1) 0.08s forwards;
+      }
+      .clientele-section.active .clientele-card-right {
+        animation: fanOutRight 1.1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+      .clientele-section.active .clientele-card:hover {
+        transform: translate3d(0, -10px, 0) scale(1.02) !important;
+      }
+    }
+
+    /* On Tablet & Mobile (< 1024px) */
+    @media (max-width: 1023px) {
+      .clientele-card {
+        opacity: 0;
+        transform: translateY(35px) scale(0.96);
+        transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+        will-change: transform, opacity;
+      }
+      .clientele-section.active .clientele-card-left {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+      .clientele-section.active .clientele-card-center {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        transition-delay: 0.15s;
+      }
+      .clientele-section.active .clientele-card-right {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        transition-delay: 0.3s;
+      }
+    }
+
   </style>
 </head>
 <body class="bg-[#FDFBF7] text-[#1E293B] antialiased overflow-x-hidden">
@@ -427,12 +520,7 @@
         <div class="lg:col-span-5 relative z-20 reveal reveal-slide-up">
           <div class="relative rounded-[28px] overflow-hidden shadow-2xl border-2 border-white/80 bg-black group w-full max-w-[460px] mx-auto">
             
-            <!-- Top-Left Pill Badge: MANAGING DIRECTOR -->
-            <div class="absolute top-4 left-4 z-20">
-              <span class="inline-block bg-[#381e23]/90 backdrop-blur-md text-[#c5a880] text-[11px] font-extrabold px-4 py-1.5 rounded-full uppercase tracking-wider border border-[#c5a880]/30 font-['Outfit',sans-serif]">
-                MANAGING DIRECTOR
-              </span>
-            </div>
+
 
             <!-- MD Photo (Extended height: 645px on desktop to align straight with right content baseline) -->
             <div class="w-full h-[480px] sm:h-[520px] lg:h-[560px] relative overflow-hidden bg-black">
@@ -516,88 +604,172 @@
 
       </div>
 
-            <!-- MOVABLE TICKER FORMAT: Property Owners, Buyers, Investors, Corporate Clients, NRIs (Icons removed, decreased curve, tight padding) -->
-      <div class="mt-8 sm:mt-10 reveal reveal-slide-up">
-        <!-- Continuous Movable Marquee Track -->
-        <div class="marquee-container py-1 overflow-hidden relative group/marquee">
-          <!-- Ambient gradient fading on left & right ends -->
-          <div class="absolute left-0 top-0 bottom-0 w-12 sm:w-20 bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none"></div>
-          <div class="absolute right-0 top-0 bottom-0 w-12 sm:w-20 bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none"></div>
-
-          <div class="marquee-track-ltr flex items-center gap-3 sm:gap-4">
-            <!-- Set 1 -->
-            <div class="inline-flex items-center bg-[#FAF8F5] hover:bg-white border border-[#E8DFD1] hover:border-[#c5a880] px-3.5 py-1.5 rounded-[10px] shadow-sm text-stone-800 text-sm font-semibold transition-all shrink-0 cursor-default">
-              <span class="font-['Outfit',sans-serif]">Property Owners</span>
-            </div>
-            <div class="inline-flex items-center bg-[#FAF8F5] hover:bg-white border border-[#E8DFD1] hover:border-[#c5a880] px-3.5 py-1.5 rounded-[10px] shadow-sm text-stone-800 text-sm font-semibold transition-all shrink-0 cursor-default">
-              <span class="font-['Outfit',sans-serif]">Buyers</span>
-            </div>
-            <div class="inline-flex items-center bg-[#FAF8F5] hover:bg-white border border-[#E8DFD1] hover:border-[#c5a880] px-3.5 py-1.5 rounded-[10px] shadow-sm text-stone-800 text-sm font-semibold transition-all shrink-0 cursor-default">
-              <span class="font-['Outfit',sans-serif]">Investors</span>
-            </div>
-            <div class="inline-flex items-center bg-[#FAF8F5] hover:bg-white border border-[#E8DFD1] hover:border-[#c5a880] px-3.5 py-1.5 rounded-[10px] shadow-sm text-stone-800 text-sm font-semibold transition-all shrink-0 cursor-default">
-              <span class="font-['Outfit',sans-serif]">Corporate Clients</span>
-            </div>
-            <div class="inline-flex items-center bg-[#FAF8F5] hover:bg-white border border-[#E8DFD1] hover:border-[#c5a880] px-3.5 py-1.5 rounded-[10px] shadow-sm text-stone-800 text-sm font-semibold transition-all shrink-0 cursor-default">
-              <span class="font-['Outfit',sans-serif]">NRIs</span>
-            </div>
-
-            <!-- Set 2 (Seamless loop) -->
-            <div class="inline-flex items-center bg-[#FAF8F5] hover:bg-white border border-[#E8DFD1] hover:border-[#c5a880] px-3.5 py-1.5 rounded-[10px] shadow-sm text-stone-800 text-sm font-semibold transition-all shrink-0 cursor-default">
-              <span class="font-['Outfit',sans-serif]">Property Owners</span>
-            </div>
-            <div class="inline-flex items-center bg-[#FAF8F5] hover:bg-white border border-[#E8DFD1] hover:border-[#c5a880] px-3.5 py-1.5 rounded-[10px] shadow-sm text-stone-800 text-sm font-semibold transition-all shrink-0 cursor-default">
-              <span class="font-['Outfit',sans-serif]">Buyers</span>
-            </div>
-            <div class="inline-flex items-center bg-[#FAF8F5] hover:bg-white border border-[#E8DFD1] hover:border-[#c5a880] px-3.5 py-1.5 rounded-[10px] shadow-sm text-stone-800 text-sm font-semibold transition-all shrink-0 cursor-default">
-              <span class="font-['Outfit',sans-serif]">Investors</span>
-            </div>
-            <div class="inline-flex items-center bg-[#FAF8F5] hover:bg-white border border-[#E8DFD1] hover:border-[#c5a880] px-3.5 py-1.5 rounded-[10px] shadow-sm text-stone-800 text-sm font-semibold transition-all shrink-0 cursor-default">
-              <span class="font-['Outfit',sans-serif]">Corporate Clients</span>
-            </div>
-            <div class="inline-flex items-center bg-[#FAF8F5] hover:bg-white border border-[#E8DFD1] hover:border-[#c5a880] px-3.5 py-1.5 rounded-[10px] shadow-sm text-stone-800 text-sm font-semibold transition-all shrink-0 cursor-default">
-              <span class="font-['Outfit',sans-serif]">NRIs</span>
-            </div>
-
-            <!-- Set 3 (Large screens) -->
-            <div class="inline-flex items-center bg-[#FAF8F5] hover:bg-white border border-[#E8DFD1] hover:border-[#c5a880] px-3.5 py-1.5 rounded-[10px] shadow-sm text-stone-800 text-sm font-semibold transition-all shrink-0 cursor-default">
-              <span class="font-['Outfit',sans-serif]">Property Owners</span>
-            </div>
-            <div class="inline-flex items-center bg-[#FAF8F5] hover:bg-white border border-[#E8DFD1] hover:border-[#c5a880] px-3.5 py-1.5 rounded-[10px] shadow-sm text-stone-800 text-sm font-semibold transition-all shrink-0 cursor-default">
-              <span class="font-['Outfit',sans-serif]">Buyers</span>
-            </div>
-            <div class="inline-flex items-center bg-[#FAF8F5] hover:bg-white border border-[#E8DFD1] hover:border-[#c5a880] px-3.5 py-1.5 rounded-[10px] shadow-sm text-stone-800 text-sm font-semibold transition-all shrink-0 cursor-default">
-              <span class="font-['Outfit',sans-serif]">Investors</span>
-            </div>
-            <div class="inline-flex items-center bg-[#FAF8F5] hover:bg-white border border-[#E8DFD1] hover:border-[#c5a880] px-3.5 py-1.5 rounded-[10px] shadow-sm text-stone-800 text-sm font-semibold transition-all shrink-0 cursor-default">
-              <span class="font-['Outfit',sans-serif]">Corporate Clients</span>
-            </div>
-            <div class="inline-flex items-center bg-[#FAF8F5] hover:bg-white border border-[#E8DFD1] hover:border-[#c5a880] px-3.5 py-1.5 rounded-[10px] shadow-sm text-stone-800 text-sm font-semibold transition-all shrink-0 cursor-default">
-              <span class="font-['Outfit',sans-serif]">NRIs</span>
-            </div>
-
-            <!-- Set 4 (Extra width) -->
-            <div class="inline-flex items-center bg-[#FAF8F5] hover:bg-white border border-[#E8DFD1] hover:border-[#c5a880] px-3.5 py-1.5 rounded-[10px] shadow-sm text-stone-800 text-sm font-semibold transition-all shrink-0 cursor-default">
-              <span class="font-['Outfit',sans-serif]">Property Owners</span>
-            </div>
-            <div class="inline-flex items-center bg-[#FAF8F5] hover:bg-white border border-[#E8DFD1] hover:border-[#c5a880] px-3.5 py-1.5 rounded-[10px] shadow-sm text-stone-800 text-sm font-semibold transition-all shrink-0 cursor-default">
-              <span class="font-['Outfit',sans-serif]">Buyers</span>
-            </div>
-            <div class="inline-flex items-center bg-[#FAF8F5] hover:bg-white border border-[#E8DFD1] hover:border-[#c5a880] px-3.5 py-1.5 rounded-[10px] shadow-sm text-stone-800 text-sm font-semibold transition-all shrink-0 cursor-default">
-              <span class="font-['Outfit',sans-serif]">Investors</span>
-            </div>
-            <div class="inline-flex items-center bg-[#FAF8F5] hover:bg-white border border-[#E8DFD1] hover:border-[#c5a880] px-3.5 py-1.5 rounded-[10px] shadow-sm text-stone-800 text-sm font-semibold transition-all shrink-0 cursor-default">
-              <span class="font-['Outfit',sans-serif]">Corporate Clients</span>
-            </div>
-            <div class="inline-flex items-center bg-[#FAF8F5] hover:bg-white border border-[#E8DFD1] hover:border-[#c5a880] px-3.5 py-1.5 rounded-[10px] shadow-sm text-stone-800 text-sm font-semibold transition-all shrink-0 cursor-default">
-              <span class="font-['Outfit',sans-serif]">NRIs</span>
-            </div>
-          </div>
-        </div>
-      </div>
+            
 
     </div>
   </div>
+
+  <!-- ==========================================
+       DISTINGUISHED CLIENTELE SECTION
+       ========================================== -->
+  <section id="who-we-serve" class="clientele-section py-20 sm:py-28 px-6 sm:px-10 lg:px-16 bg-[#FDFBF7] relative overflow-hidden border-t border-stone-200/60">
+    
+    <!-- Subtle Background Lighting -->
+    <div class="absolute top-1/3 left-10 w-96 h-96 bg-[#c5a880]/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-1/3 right-10 w-96 h-96 bg-[#612124]/5 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-[1400px] mx-auto relative z-10">
+
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-14 sm:mb-18 reveal reveal-slide-up">
+        <span class="text-[#c5a880] font-['Inter',sans-serif] text-xs sm:text-sm font-extrabold tracking-[0.3em] uppercase block mb-3">
+          WHO WE PROUDLY SERVE
+        </span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-['Outfit',sans-serif] text-[#1E293B] tracking-tight leading-tight">
+          Tailored Real Estate Solutions for <span class="text-[#612124]">Distinct Client Profiles</span>
+        </h2>
+        <div class="w-16 h-1 bg-[#c5a880] rounded-full mx-auto my-4 shadow-sm"></div>
+        <p class="text-stone-600 font-['Inter',sans-serif] text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
+          Delivering confidential advisory, verified clear-title transactions, and premium turnkey execution across Coimbatore and global NRI corridors.
+        </p>
+      </div>
+
+      <!-- 3 Category Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
+
+        <!-- Card 1: PROFESSIONALS -->
+        <div class="clientele-card clientele-card-left bg-white rounded-3xl p-8 sm:p-9 border border-[#EFE9DF] shadow-md hover:shadow-2xl hover:border-[#c5a880]/60 transition-all duration-500 relative overflow-hidden flex flex-col group">
+          <div class="absolute -top-12 -right-12 w-32 h-32 bg-[#c5a880]/15 rounded-full blur-2xl pointer-events-none group-hover:scale-125 transition-transform duration-700"></div>
+          
+          <div>
+            <!-- Card Top Icon Badge -->
+            <div class="w-14 h-14 rounded-2xl bg-[#341B20] text-[#c5a880] flex items-center justify-center text-xl mb-6 shadow-md group-hover:scale-110 group-hover:bg-[#612124] transition-all duration-300">
+              <i class="fa-solid fa-user-tie"></i>
+            </div>
+
+            <!-- Title -->
+            <h3 class="text-xl sm:text-2xl font-extrabold font-['Outfit',sans-serif] text-[#1E293B] group-hover:text-[#612124] transition-colors mb-5 pb-3 border-b border-stone-100 uppercase tracking-wide">
+              PROFESSIONALS
+            </h3>
+
+            <!-- List items -->
+            <ul class="space-y-3.5 font-['Inter',sans-serif]">
+              <li class="flex items-start gap-3 text-stone-700 text-sm sm:text-base leading-snug">
+                <i class="fa-solid fa-circle-check text-[#c5a880] text-sm shrink-0 mt-0.5"></i>
+                <span>Doctors &amp; Healthcare Professionals</span>
+              </li>
+              <li class="flex items-start gap-3 text-stone-700 text-sm sm:text-base leading-snug">
+                <i class="fa-solid fa-circle-check text-[#c5a880] text-sm shrink-0 mt-0.5"></i>
+                <span>Judges &amp; Members of the Judiciary</span>
+              </li>
+              <li class="flex items-start gap-3 text-stone-700 text-sm sm:text-base leading-snug">
+                <i class="fa-solid fa-circle-check text-[#c5a880] text-sm shrink-0 mt-0.5"></i>
+                <span>Advocates &amp; Legal Professionals</span>
+              </li>
+              <li class="flex items-start gap-3 text-stone-700 text-sm sm:text-base leading-snug">
+                <i class="fa-solid fa-circle-check text-[#c5a880] text-sm shrink-0 mt-0.5"></i>
+                <span>Chartered Accountants</span>
+              </li>
+              <li class="flex items-start gap-3 text-stone-700 text-sm sm:text-base leading-snug">
+                <i class="fa-solid fa-circle-check text-[#c5a880] text-sm shrink-0 mt-0.5"></i>
+                <span>Architects &amp; Consultants</span>
+              </li>
+            </ul>
+          </div>
+
+
+        </div>
+
+        <!-- Card 2: INVESTORS & BUSINESS LEADERS -->
+        <div class="clientele-card clientele-card-center bg-white rounded-3xl p-8 sm:p-9 border border-[#EFE9DF] shadow-md hover:shadow-2xl hover:border-[#c5a880]/60 transition-all duration-500 relative overflow-hidden flex flex-col group">
+          <div class="absolute -top-12 -right-12 w-32 h-32 bg-[#c5a880]/15 rounded-full blur-2xl pointer-events-none group-hover:scale-125 transition-transform duration-700"></div>
+          
+          <div>
+            <!-- Card Top Icon Badge -->
+            <div class="w-14 h-14 rounded-2xl bg-[#341B20] text-[#c5a880] flex items-center justify-center text-xl mb-6 shadow-md group-hover:scale-110 group-hover:bg-[#612124] transition-all duration-300">
+              <i class="fa-solid fa-chart-line"></i>
+            </div>
+
+            <!-- Title -->
+            <h3 class="text-xl sm:text-2xl font-extrabold font-['Outfit',sans-serif] text-[#1E293B] group-hover:text-[#612124] transition-colors mb-5 pb-3 border-b border-stone-100 uppercase tracking-wide">
+              INVESTORS &amp; BUSINESS LEADERS
+            </h3>
+
+            <!-- List items -->
+            <ul class="space-y-3.5 font-['Inter',sans-serif]">
+              <li class="flex items-start gap-3 text-stone-700 text-sm sm:text-base leading-snug">
+                <i class="fa-solid fa-circle-check text-[#c5a880] text-sm shrink-0 mt-0.5"></i>
+                <span>High-Net-Worth Individuals</span>
+              </li>
+              <li class="flex items-start gap-3 text-stone-700 text-sm sm:text-base leading-snug">
+                <i class="fa-solid fa-circle-check text-[#c5a880] text-sm shrink-0 mt-0.5"></i>
+                <span>Individual &amp; Institutional Investors</span>
+              </li>
+              <li class="flex items-start gap-3 text-stone-700 text-sm sm:text-base leading-snug">
+                <i class="fa-solid fa-circle-check text-[#c5a880] text-sm shrink-0 mt-0.5"></i>
+                <span>Industrialists &amp; Entrepreneurs</span>
+              </li>
+              <li class="flex items-start gap-3 text-stone-700 text-sm sm:text-base leading-snug">
+                <i class="fa-solid fa-circle-check text-[#c5a880] text-sm shrink-0 mt-0.5"></i>
+                <span>Business Owners</span>
+              </li>
+              <li class="flex items-start gap-3 text-stone-700 text-sm sm:text-base leading-snug">
+                <i class="fa-solid fa-circle-check text-[#c5a880] text-sm shrink-0 mt-0.5"></i>
+                <span>Corporate &amp; MNC Executives</span>
+              </li>
+            </ul>
+          </div>
+
+
+        </div>
+
+        <!-- Card 3: GLOBAL & INSTITUTIONAL CLIENTS -->
+        <div class="clientele-card clientele-card-right bg-white rounded-3xl p-8 sm:p-9 border border-[#EFE9DF] shadow-md hover:shadow-2xl hover:border-[#c5a880]/60 transition-all duration-500 relative overflow-hidden flex flex-col group">
+          <div class="absolute -top-12 -right-12 w-32 h-32 bg-[#c5a880]/15 rounded-full blur-2xl pointer-events-none group-hover:scale-125 transition-transform duration-700"></div>
+          
+          <div>
+            <!-- Card Top Icon Badge -->
+            <div class="w-14 h-14 rounded-2xl bg-[#341B20] text-[#c5a880] flex items-center justify-center text-xl mb-6 shadow-md group-hover:scale-110 group-hover:bg-[#612124] transition-all duration-300">
+              <i class="fa-solid fa-globe"></i>
+            </div>
+
+            <!-- Title -->
+            <h3 class="text-xl sm:text-2xl font-extrabold font-['Outfit',sans-serif] text-[#1E293B] group-hover:text-[#612124] transition-colors mb-5 pb-3 border-b border-stone-100 uppercase tracking-wide">
+              GLOBAL &amp; INSTITUTIONAL CLIENTS
+            </h3>
+
+            <!-- List items -->
+            <ul class="space-y-3.5 font-['Inter',sans-serif]">
+              <li class="flex items-start gap-3 text-stone-700 text-sm sm:text-base leading-snug">
+                <i class="fa-solid fa-circle-check text-[#c5a880] text-sm shrink-0 mt-0.5"></i>
+                <span>NRIs &amp; Overseas Property Owners</span>
+              </li>
+              <li class="flex items-start gap-3 text-stone-700 text-sm sm:text-base leading-snug">
+                <i class="fa-solid fa-circle-check text-[#c5a880] text-sm shrink-0 mt-0.5"></i>
+                <span>International Investors</span>
+              </li>
+              <li class="flex items-start gap-3 text-stone-700 text-sm sm:text-base leading-snug">
+                <i class="fa-solid fa-circle-check text-[#c5a880] text-sm shrink-0 mt-0.5"></i>
+                <span>Corporate Organisations</span>
+              </li>
+              <li class="flex items-start gap-3 text-stone-700 text-sm sm:text-base leading-snug">
+                <i class="fa-solid fa-circle-check text-[#c5a880] text-sm shrink-0 mt-0.5"></i>
+                <span>Commercial &amp; Institutional Buyers</span>
+              </li>
+              <li class="flex items-start gap-3 text-stone-700 text-sm sm:text-base leading-snug">
+                <i class="fa-solid fa-circle-check text-[#c5a880] text-sm shrink-0 mt-0.5"></i>
+                <span>Developers &amp; Business Groups</span>
+              </li>
+            </ul>
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
 
   <!-- ==========================================
        OUR STORY SECTION — Editorial Two-Column Layout
@@ -1103,69 +1275,79 @@
   <!-- ==========================================
        FOOTER (Matches Reference Design: 5 Columns + Satellite Map + Socials)
        ========================================== -->
-  <footer class="bg-[#0C0C0D] pt-16 pb-8 px-6 sm:px-10 lg:px-16 flex flex-col items-center justify-start relative overflow-hidden text-left border-t border-white/10">
-    <div class="pb-12 w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-10 max-w-[1440px] px-2 sm:px-6 lg:px-8 relative z-10 mx-auto">
+    <!-- ==========================================
+       FOOTER SECTION (Background #2E1418, 4 Columns + Centered Expanded Map)
+       ========================================== -->
+    <!-- ==========================================
+       FOOTER SECTION (Background #2E1418, 5 Columns with Map right to Contact Us)
+       ========================================== -->
+  <footer class="bg-[#2E1418] pt-16 pb-8 px-6 sm:px-10 lg:px-16 flex flex-col items-center justify-start relative overflow-hidden text-left border-t border-white/10">
+    <div class="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-10 max-w-[1440px] px-2 sm:px-6 lg:px-8 relative z-10 mx-auto">
       
-      <!-- Col 1: Brand Logo, Tagline & Pill Button -->
+      <!-- Col 1: Brand Logo & Tagline -->
       <div class="flex flex-col gap-4 items-start justify-start">
         <a href="index.html" class="inline-block hover:scale-105 transition-transform duration-300">
           <img class="w-[145px] sm:w-[160px] h-auto object-contain footer-logo-img" src="vizhi-infragen-realtors-logo-white.png" alt="Vizhi Infragen Realtors Logo" />
         </a>
-        <p class="text-stone-400 font-['Inter',_sans-serif] text-xs sm:text-sm leading-relaxed max-w-[270px]">
+        <p class="text-stone-300 font-['Inter',_sans-serif] text-xs sm:text-sm leading-relaxed max-w-[270px]">
           Building the future with geometric precision and organic harmony. Elevating real estate standards.
         </p>
-        <a href="contact.html" class="bg-[#C5A880] hover:bg-[#b59870] hover:scale-[1.02] active:scale-[0.98] rounded-full py-2.5 px-5 flex flex-row gap-2.5 items-center transition-all duration-300 group shadow-lg mt-2">
-          <span class="text-[#231518] font-['Inter',_sans-serif] text-xs font-bold">Start Property Journey</span>
-          <i class="fa-solid fa-arrow-right text-[#231518] text-xs group-hover:translate-x-1 transition-transform"></i>
-        </a>
       </div>
 
       <!-- Col 2: Company -->
       <div class="flex flex-col gap-2.5 items-start justify-start">
         <h4 class="text-white font-['Outfit',_sans-serif] text-base font-bold mb-1">Company</h4>
-        <a href="about.html" class="text-stone-400 hover:text-white transition-colors font-['Inter',_sans-serif] text-xs sm:text-sm leading-6">About Us</a>
-        <a href="services.html" class="text-stone-400 hover:text-white transition-colors font-['Inter',_sans-serif] text-xs sm:text-sm leading-6">Our Services</a>
-        <a href="land-sales-details.html" class="text-stone-400 hover:text-white transition-colors font-['Inter',_sans-serif] text-xs sm:text-sm leading-6">Land Sales &amp; Plots</a>
-        <a href="index.html#properties" class="text-stone-400 hover:text-white transition-colors font-['Inter',_sans-serif] text-xs sm:text-sm leading-6">Villas &amp; Buildings</a>
-        <a href="index.html#our-projects" class="text-stone-400 hover:text-white transition-colors font-['Inter',_sans-serif] text-xs sm:text-sm leading-6">Projects</a>
-        <a href="contact.html" class="text-stone-400 hover:text-white transition-colors font-['Inter',_sans-serif] text-xs sm:text-sm leading-6">Contact</a>
+        <a href="about.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-sm leading-6">About us</a>
+        <a href="services.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-sm leading-6">Residential Property</a>
+        <a href="services.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-sm leading-6">Commercial property</a>
+        <a href="services.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-sm leading-6">Services</a>
+        <a href="contact.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-sm leading-6">Contact</a>
       </div>
 
-      <!-- Col 3: Services (Exact 12 from Reference Design) -->
+      <!-- Col 3: Services (Exact 8 Options) -->
       <div class="flex flex-col gap-2 items-start justify-start">
         <h4 class="text-white font-['Outfit',_sans-serif] text-base font-bold mb-1">Services</h4>
-        <a href="services.html" class="text-stone-400 hover:text-white transition-colors font-['Inter',_sans-serif] text-xs leading-5">Land Sales &amp; Acquisition</a>
-        <a href="services.html" class="text-stone-400 hover:text-white transition-colors font-['Inter',_sans-serif] text-xs leading-5">Residential Property</a>
-        <a href="services.html" class="text-stone-400 hover:text-white transition-colors font-['Inter',_sans-serif] text-xs leading-5">Commercial Property</a>
-        <a href="services.html" class="text-stone-400 hover:text-white transition-colors font-['Inter',_sans-serif] text-xs leading-5">Property Rental Services</a>
-        <a href="services.html" class="text-stone-400 hover:text-white transition-colors font-['Inter',_sans-serif] text-xs leading-5">NRI Property Management</a>
-        <a href="services.html" class="text-stone-400 hover:text-white transition-colors font-['Inter',_sans-serif] text-xs leading-5">Land Approval Assistance</a>
-        <a href="services.html" class="text-stone-400 hover:text-white transition-colors font-['Inter',_sans-serif] text-xs leading-5">Land Conversion Assistance</a>
-        <a href="services.html" class="text-stone-400 hover:text-white transition-colors font-['Inter',_sans-serif] text-xs leading-5">Building Valuation Coordination</a>
-        <a href="services.html" class="text-stone-400 hover:text-white transition-colors font-['Inter',_sans-serif] text-xs leading-5">Building Construction</a>
-        <a href="services.html" class="text-stone-400 hover:text-white transition-colors font-['Inter',_sans-serif] text-xs leading-5">Structural Works</a>
-        <a href="services.html" class="text-stone-400 hover:text-white transition-colors font-['Inter',_sans-serif] text-xs leading-5">Warehouse Solutions</a>
-        <a href="services.html" class="text-stone-400 hover:text-white transition-colors font-['Inter',_sans-serif] text-xs leading-5">Real Estate Investment Assistance</a>
+        <a href="services.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs leading-5">Land Analysis</a>
+        <a href="services.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs leading-5">Legal verification and clear title property selection</a>
+        <a href="services.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs leading-5">Land purchase</a>
+        <a href="services.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs leading-5">Land conversion</a>
+        <a href="services.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs leading-5">Architectural &amp; Structural design</a>
+        <a href="services.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs leading-5">Building Approvals</a>
+        <a href="services.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs leading-5">Building Construction &amp; quality inspection</a>
+        <a href="services.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs leading-5">Turnkey Handover</a>
       </div>
 
       <!-- Col 4: Contact Us -->
       <div class="flex flex-col gap-2.5 items-start justify-start">
         <h4 class="text-white font-['Outfit',_sans-serif] text-base font-bold mb-1">Contact Us</h4>
-        <a href="mailto:admin@vizhiinfragenrealtors.com" class="text-stone-400 hover:text-white transition-colors font-['Inter',_sans-serif] text-xs sm:text-sm leading-6 break-all">
+        <a href="mailto:admin@vizhiinfragenrealtors.com" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-sm leading-6 break-all">
           admin@vizhiinfragenrealtors.com
         </a>
-        <a href="tel:+919688889420" class="text-stone-400 hover:text-white transition-colors font-['Inter',_sans-serif] text-xs sm:text-sm leading-6">
+        <a href="tel:+919688889420" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-sm leading-6">
           +91 96888 89420 / 97871 66889
         </a>
-        <div class="text-stone-400 font-['Inter',_sans-serif] text-xs sm:text-sm leading-relaxed max-w-[260px] pt-1">
+        <div class="text-stone-300 font-['Inter',_sans-serif] text-xs sm:text-sm leading-relaxed max-w-[260px] pt-1">
           Shop No. 24, Suganthi Nagar, Bus Stand Complex, Sulur Old Bus Stand, Sulur, Coimbatore &ndash; 641402
+        </div>
+
+        <!-- 3 Social Media Icons Under Details of Contact Us Section -->
+        <div class="flex items-center space-x-5 pt-3">
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="text-[#E4405F] hover:scale-125 transition-transform duration-300" aria-label="Instagram">
+            <i class="fa-brands fa-instagram text-xl"></i>
+          </a>
+          <a href="https://wa.me/919688889420?text=Hii!%20I'm%20interested%20Can%20i%20know%20about%20more%20details" target="_blank" rel="noopener noreferrer" class="text-[#25D366] hover:scale-125 transition-transform duration-300" aria-label="WhatsApp">
+            <i class="fa-brands fa-whatsapp text-xl"></i>
+          </a>
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="text-[#1877F2] hover:scale-125 transition-transform duration-300" aria-label="Facebook">
+            <i class="fa-brands fa-facebook-f text-lg"></i>
+          </a>
         </div>
       </div>
 
-      <!-- Col 5: Find Us (Satellite Google Map Card like Image) -->
+      <!-- Col 5: Find Us (Satellite Google Map Card Right to Contact Us) -->
       <div class="flex flex-col gap-2.5 items-start justify-start w-full">
         <h4 class="text-white font-['Outfit',_sans-serif] text-base font-bold mb-1">Find Us</h4>
-        <div class="rounded-2xl border border-white/20 w-full max-w-[240px] h-[140px] relative overflow-hidden shadow-xl group">
+        <div class="rounded-2xl border border-white/20 w-full max-w-[260px] h-[155px] relative overflow-hidden shadow-xl group">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.483981881518!2d77.1235!3d11.0258!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba85703730aa18b%3A0xc3457df7aa121d5a!2sOld%20Bus%20Stand%20Complex%2C%20Suganthi%20Nagar%20Rd%2C%20Sulur%2C%20Tamil%20Nadu%20641402!5e1!3m2!1sen!2sin!4v1721800000000"
             class="absolute inset-0 w-full h-full border-0 opacity-85 group-hover:opacity-100 transition-opacity duration-300"
@@ -1186,21 +1368,10 @@
 
     </div>
 
-    <!-- Bottom Copyright & Social Bar -->
-    <div class="border-t border-white/10 pt-6 pb-2 px-2 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between w-full max-w-[1440px] gap-4 relative z-10 mx-auto">
-      <div class="text-stone-400 text-center sm:text-left font-['Inter',_sans-serif] text-xs font-normal">
+    <!-- Bottom Copyright Bar -->
+    <div class="border-t border-white/10 pt-6 pb-2 px-2 sm:px-6 lg:px-8 flex items-center justify-center w-full max-w-[1440px] relative z-10 mx-auto mt-10">
+      <div class="text-stone-400 text-center font-['Inter',_sans-serif] text-xs font-normal">
         &copy; 2026 Vizhi Infragen Realtors LLP. All rights reserved.
-      </div>
-      <div class="flex items-center space-x-6 sm:space-x-7">
-        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="text-[#E4405F] hover:scale-125 transition-transform duration-300" aria-label="Instagram">
-          <i class="fa-brands fa-instagram text-xl"></i>
-        </a>
-        <a href="https://wa.me/919688889420?text=Hii!%20I'm%20interested%20Can%20i%20know%20about%20more%20details" target="_blank" rel="noopener noreferrer" class="text-[#25D366] hover:scale-125 transition-transform duration-300" aria-label="WhatsApp">
-          <i class="fa-brands fa-whatsapp text-xl"></i>
-        </a>
-        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="text-[#1877F2] hover:scale-125 transition-transform duration-300" aria-label="Facebook">
-          <i class="fa-brands fa-facebook-f text-lg"></i>
-        </a>
       </div>
     </div>
   </footer>
@@ -1272,6 +1443,17 @@
       }, { threshold: 0.15 });
       trustObs.observe(trustParent);
     }
-  </script>
+  
+    var clienteleSec = document.getElementById('who-we-serve');
+    if (clienteleSec) {
+      var clientObs = new IntersectionObserver(function(entries) {
+        if (entries[0].isIntersecting) {
+          clienteleSec.classList.add('active');
+          clientObs.disconnect();
+        }
+      }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+      clientObs.observe(clienteleSec);
+    }
+</script>
 </body>
 </html>
