@@ -178,10 +178,9 @@
             <span>Properties</span>
             <i class="fa-solid fa-chevron-down text-[10px] opacity-75 group-hover:rotate-180 transition-transform"></i>
           </a>
-          <div class="absolute top-full left-0 mt-2 w-48 bg-[#2D1217] border border-white/15 rounded-2xl shadow-2xl py-2 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all z-[110]">
-            <a href="index.html#our-projects" class="block px-4 py-2 text-xs text-white hover:text-[#c5a880] hover:bg-white/5 transition-colors font-['Inter',sans-serif]">Our Projects</a>
-            <a href="index.html#properties" class="block px-4 py-2 text-xs text-white hover:text-[#c5a880] hover:bg-white/5 transition-colors font-['Inter',sans-serif]">Explore Properties</a>
-            <a href="land-sales-details.html" class="block px-4 py-2 text-xs text-white hover:text-[#c5a880] hover:bg-white/5 transition-colors font-['Inter',sans-serif]">Land Sales &amp; Plots</a>
+          <div class="absolute top-full left-0 mt-2 w-40 bg-[#2D1217] border border-white/15 rounded-2xl shadow-2xl py-2 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all z-[110]">
+            <a href="land-sales-details.html" class="block px-4 py-2 text-xs text-white hover:text-[#c5a880] hover:bg-white/5 transition-colors font-['Inter',sans-serif]">Land</a>
+            <a href="index.html#properties" class="block px-4 py-2 text-xs text-white hover:text-[#c5a880] hover:bg-white/5 transition-colors font-['Inter',sans-serif]">Building</a>
           </div>
         </div>
         <a href="services.html" class="text-white hover:text-[#c5a880] font-medium text-xs sm:text-[14px] px-3.5 sm:px-4 h-[36px] sm:h-[40px] flex items-center justify-center transition-colors font-['Inter',sans-serif]">Services</a>
@@ -270,7 +269,7 @@
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center my-auto">
               
               <!-- Left Hero Text Column -->
-              <div class="lg:col-span-8 space-y-6 text-left">
+              <div class="lg:col-span-9 xl:col-span-9 space-y-6 text-left">
                 
                 <!-- Pure Text Sub-title above H1 -->
                 <span class="text-[#c5a880] font-['Inter',sans-serif] text-xs sm:text-sm font-bold tracking-[0.25em] uppercase block">
@@ -278,12 +277,13 @@
                 </span>
 
                 <!-- Main H1 Header -->
-                <h1 class="text-3xl sm:text-5xl lg:text-[54px] font-extrabold text-white leading-[1.12] font-['Outfit',sans-serif] tracking-tight max-w-2xl text-drop-shadow">
-                  Trusted Real Estate &amp; NRI Property<br />Management Company
+                <h1 class="text-[24px] xs:text-[28px] sm:text-4xl md:text-[44px] lg:text-[46px] xl:text-[52px] font-extrabold text-white leading-[1.18] font-['Outfit',sans-serif] tracking-tight max-w-4xl text-drop-shadow">
+                  <span class="block whitespace-nowrap mb-1.5 sm:mb-2">Trusted Real Estate &amp; NRI</span>
+                  <span class="block whitespace-nowrap">Property Management Company</span>
                 </h1>
 
                 <!-- Sub-description below H1 -->
-                <p class="text-white/90 font-['Inter',sans-serif] text-base sm:text-lg font-normal max-w-xl leading-relaxed">
+                <p class="text-white/90 font-['Inter',sans-serif] text-base sm:text-lg font-normal max-w-3xl leading-relaxed">
                   Your Reliable Partner for Land, Property &amp; Asset Management in Coimbatore
                 </p>
 
@@ -298,7 +298,7 @@
               </div>
 
               <!-- Right Center Interactive Video Play Icon (Matches Image 1 Style) -->
-              <div class="lg:col-span-4 flex justify-center items-center py-4">
+              <div class="lg:col-span-3 xl:col-span-3 flex justify-center items-center py-4">
                 <button onclick="openVideoModal()" class="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-white/15 backdrop-blur-md border border-white/50 flex items-center justify-center cursor-pointer hover:scale-110 transition-all shadow-2xl group" aria-label="Play Property Video">
                   <!-- Inner White Circle with Burgundy Play Triangle -->
                   <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white flex items-center justify-center pl-1 shadow-lg group-hover:scale-105 transition-transform">
@@ -689,244 +689,136 @@
       <!-- ROW 1: Scrolling Left Continuously (Short, Long, Short, Long, Short, Long) -->
       <div class="marquee-container py-1">
         <div class="marquee-track-ltr flex items-center gap-6">
-          <!-- Short Video Box -->
+          <!-- Short Video Box 1 -->
           <div class="w-[240px] sm:w-[270px] h-[290px] sm:h-[330px] rounded-[24px] overflow-hidden relative group bg-stone-900 border border-white/10 shadow-2xl shrink-0 cursor-pointer transition-transform duration-500 hover:scale-[1.03]">
-            <img src="assets/images/carousel-villa-1.jpg" alt="Kalapatti Grand Enclave" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/20"></div>
-            <!-- Top Badge -->
-            <div class="absolute top-3.5 left-3.5 z-10">
-              <span class="bg-[#c5a880] text-[#2D1217] text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider font-['Inter',sans-serif]">Luxury Villa</span>
-            </div>
+            <img src="assets/images/carousel-villa-1.jpg" alt="Video Project" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/35 transition-colors duration-500"></div>
             <!-- Center Reel Play Button -->
             <div class="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
-              <div class="w-11 h-11 rounded-full bg-white/25 backdrop-blur-md border border-white/40 text-white flex items-center justify-center group-hover:scale-110 group-hover:bg-[#c5a880] group-hover:text-[#2D1217] transition-all shadow-lg">
-                <i class="fa-solid fa-play text-xs ml-0.5"></i>
+              <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/25 backdrop-blur-md border border-white/40 text-white flex items-center justify-center group-hover:scale-110 group-hover:bg-[#c5a880] group-hover:text-[#2D1217] transition-all shadow-lg">
+                <i class="fa-solid fa-play text-xs sm:text-sm ml-0.5"></i>
               </div>
             </div>
-            <!-- Bottom Content -->
-            <div class="absolute bottom-0 inset-x-0 p-4 sm:p-5 text-left z-10">
-              <span class="text-[#c5a880] text-[10px] font-bold uppercase tracking-wider block mb-0.5">Coimbatore North</span>
-              <h3 class="text-white font-['Outfit',sans-serif] font-bold text-base sm:text-lg leading-tight truncate">Kalapatti Grand Enclave</h3>
-            </div>
           </div>
-          <!-- Long Video Box -->
+          <!-- Long Video Box 2 -->
           <div class="w-[240px] sm:w-[270px] h-[390px] sm:h-[440px] rounded-[24px] overflow-hidden relative group bg-stone-900 border border-white/10 shadow-2xl shrink-0 cursor-pointer transition-transform duration-500 hover:scale-[1.03]">
-            <img src="assets/images/carousel-villa-2.jpg" alt="Western County Villa" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/20"></div>
-            <!-- Top Badge -->
-            <div class="absolute top-3.5 left-3.5 z-10">
-              <span class="bg-[#c5a880] text-[#2D1217] text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider font-['Inter',sans-serif]">Gated Enclave</span>
-            </div>
+            <img src="assets/images/carousel-villa-2.jpg" alt="Video Project" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/35 transition-colors duration-500"></div>
             <!-- Center Reel Play Button -->
             <div class="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
-              <div class="w-11 h-11 rounded-full bg-white/25 backdrop-blur-md border border-white/40 text-white flex items-center justify-center group-hover:scale-110 group-hover:bg-[#c5a880] group-hover:text-[#2D1217] transition-all shadow-lg">
-                <i class="fa-solid fa-play text-xs ml-0.5"></i>
+              <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/25 backdrop-blur-md border border-white/40 text-white flex items-center justify-center group-hover:scale-110 group-hover:bg-[#c5a880] group-hover:text-[#2D1217] transition-all shadow-lg">
+                <i class="fa-solid fa-play text-xs sm:text-sm ml-0.5"></i>
               </div>
             </div>
-            <!-- Bottom Content -->
-            <div class="absolute bottom-0 inset-x-0 p-4 sm:p-5 text-left z-10">
-              <span class="text-[#c5a880] text-[10px] font-bold uppercase tracking-wider block mb-0.5">Kovaipudur</span>
-              <h3 class="text-white font-['Outfit',sans-serif] font-bold text-base sm:text-lg leading-tight truncate">Western County Villa</h3>
-            </div>
           </div>
-          <!-- Short Video Box -->
+          <!-- Short Video Box 3 -->
           <div class="w-[240px] sm:w-[270px] h-[290px] sm:h-[330px] rounded-[24px] overflow-hidden relative group bg-stone-900 border border-white/10 shadow-2xl shrink-0 cursor-pointer transition-transform duration-500 hover:scale-[1.03]">
-            <img src="assets/images/plot-layout-1.jpg" alt="Tech Corridor Plots" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/20"></div>
-            <!-- Top Badge -->
-            <div class="absolute top-3.5 left-3.5 z-10">
-              <span class="bg-[#c5a880] text-[#2D1217] text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider font-['Inter',sans-serif]">DTCP Plots</span>
-            </div>
+            <img src="assets/images/plot-layout-1.jpg" alt="Video Project" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/35 transition-colors duration-500"></div>
             <!-- Center Reel Play Button -->
             <div class="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
-              <div class="w-11 h-11 rounded-full bg-white/25 backdrop-blur-md border border-white/40 text-white flex items-center justify-center group-hover:scale-110 group-hover:bg-[#c5a880] group-hover:text-[#2D1217] transition-all shadow-lg">
-                <i class="fa-solid fa-play text-xs ml-0.5"></i>
+              <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/25 backdrop-blur-md border border-white/40 text-white flex items-center justify-center group-hover:scale-110 group-hover:bg-[#c5a880] group-hover:text-[#2D1217] transition-all shadow-lg">
+                <i class="fa-solid fa-play text-xs sm:text-sm ml-0.5"></i>
               </div>
             </div>
-            <!-- Bottom Content -->
-            <div class="absolute bottom-0 inset-x-0 p-4 sm:p-5 text-left z-10">
-              <span class="text-[#c5a880] text-[10px] font-bold uppercase tracking-wider block mb-0.5">Saravanampatti</span>
-              <h3 class="text-white font-['Outfit',sans-serif] font-bold text-base sm:text-lg leading-tight truncate">Tech Corridor Plots</h3>
-            </div>
           </div>
-          <!-- Long Video Box -->
+          <!-- Long Video Box 4 -->
           <div class="w-[240px] sm:w-[270px] h-[390px] sm:h-[440px] rounded-[24px] overflow-hidden relative group bg-stone-900 border border-white/10 shadow-2xl shrink-0 cursor-pointer transition-transform duration-500 hover:scale-[1.03]">
-            <img src="assets/images/carousel-villa-3.jpg" alt="Urbania Frontage Landmark" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/20"></div>
-            <!-- Top Badge -->
-            <div class="absolute top-3.5 left-3.5 z-10">
-              <span class="bg-[#c5a880] text-[#2D1217] text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider font-['Inter',sans-serif]">Commercial HQ</span>
-            </div>
+            <img src="assets/images/carousel-villa-3.jpg" alt="Video Project" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/35 transition-colors duration-500"></div>
             <!-- Center Reel Play Button -->
             <div class="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
-              <div class="w-11 h-11 rounded-full bg-white/25 backdrop-blur-md border border-white/40 text-white flex items-center justify-center group-hover:scale-110 group-hover:bg-[#c5a880] group-hover:text-[#2D1217] transition-all shadow-lg">
-                <i class="fa-solid fa-play text-xs ml-0.5"></i>
+              <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/25 backdrop-blur-md border border-white/40 text-white flex items-center justify-center group-hover:scale-110 group-hover:bg-[#c5a880] group-hover:text-[#2D1217] transition-all shadow-lg">
+                <i class="fa-solid fa-play text-xs sm:text-sm ml-0.5"></i>
               </div>
             </div>
-            <!-- Bottom Content -->
-            <div class="absolute bottom-0 inset-x-0 p-4 sm:p-5 text-left z-10">
-              <span class="text-[#c5a880] text-[10px] font-bold uppercase tracking-wider block mb-0.5">Avinashi Road</span>
-              <h3 class="text-white font-['Outfit',sans-serif] font-bold text-base sm:text-lg leading-tight truncate">Urbania Frontage Landmark</h3>
-            </div>
           </div>
-          <!-- Short Video Box -->
+          <!-- Short Video Box 5 -->
           <div class="w-[240px] sm:w-[270px] h-[290px] sm:h-[330px] rounded-[24px] overflow-hidden relative group bg-stone-900 border border-white/10 shadow-2xl shrink-0 cursor-pointer transition-transform duration-500 hover:scale-[1.03]">
-            <img src="assets/images/hero-bright-house.jpg" alt="Presidio Grand Living" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/20"></div>
-            <!-- Top Badge -->
-            <div class="absolute top-3.5 left-3.5 z-10">
-              <span class="bg-[#c5a880] text-[#2D1217] text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider font-['Inter',sans-serif]">Boutique Living</span>
-            </div>
+            <img src="assets/images/hero-bright-house.jpg" alt="Video Project" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/35 transition-colors duration-500"></div>
             <!-- Center Reel Play Button -->
             <div class="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
-              <div class="w-11 h-11 rounded-full bg-white/25 backdrop-blur-md border border-white/40 text-white flex items-center justify-center group-hover:scale-110 group-hover:bg-[#c5a880] group-hover:text-[#2D1217] transition-all shadow-lg">
-                <i class="fa-solid fa-play text-xs ml-0.5"></i>
+              <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/25 backdrop-blur-md border border-white/40 text-white flex items-center justify-center group-hover:scale-110 group-hover:bg-[#c5a880] group-hover:text-[#2D1217] transition-all shadow-lg">
+                <i class="fa-solid fa-play text-xs sm:text-sm ml-0.5"></i>
               </div>
             </div>
-            <!-- Bottom Content -->
-            <div class="absolute bottom-0 inset-x-0 p-4 sm:p-5 text-left z-10">
-              <span class="text-[#c5a880] text-[10px] font-bold uppercase tracking-wider block mb-0.5">Race Course</span>
-              <h3 class="text-white font-['Outfit',sans-serif] font-bold text-base sm:text-lg leading-tight truncate">Presidio Grand Living</h3>
-            </div>
           </div>
-          <!-- Long Video Box -->
+          <!-- Long Video Box 6 -->
           <div class="w-[240px] sm:w-[270px] h-[390px] sm:h-[440px] rounded-[24px] overflow-hidden relative group bg-stone-900 border border-white/10 shadow-2xl shrink-0 cursor-pointer transition-transform duration-500 hover:scale-[1.03]">
-            <img src="assets/images/carousel-villa-5.jpg" alt="Emerald Garden Residence" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/20"></div>
-            <!-- Top Badge -->
-            <div class="absolute top-3.5 left-3.5 z-10">
-              <span class="bg-[#c5a880] text-[#2D1217] text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider font-['Inter',sans-serif]">Garden Estate</span>
-            </div>
+            <img src="assets/images/carousel-villa-5.jpg" alt="Video Project" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/35 transition-colors duration-500"></div>
             <!-- Center Reel Play Button -->
             <div class="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
-              <div class="w-11 h-11 rounded-full bg-white/25 backdrop-blur-md border border-white/40 text-white flex items-center justify-center group-hover:scale-110 group-hover:bg-[#c5a880] group-hover:text-[#2D1217] transition-all shadow-lg">
-                <i class="fa-solid fa-play text-xs ml-0.5"></i>
+              <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/25 backdrop-blur-md border border-white/40 text-white flex items-center justify-center group-hover:scale-110 group-hover:bg-[#c5a880] group-hover:text-[#2D1217] transition-all shadow-lg">
+                <i class="fa-solid fa-play text-xs sm:text-sm ml-0.5"></i>
               </div>
             </div>
-            <!-- Bottom Content -->
-            <div class="absolute bottom-0 inset-x-0 p-4 sm:p-5 text-left z-10">
-              <span class="text-[#c5a880] text-[10px] font-bold uppercase tracking-wider block mb-0.5">Sulur Lakeview</span>
-              <h3 class="text-white font-['Outfit',sans-serif] font-bold text-base sm:text-lg leading-tight truncate">Emerald Garden Residence</h3>
-            </div>
           </div>
-          <!-- Short Video Box -->
+          <!-- Short Video Box 7 (Loop) -->
           <div class="w-[240px] sm:w-[270px] h-[290px] sm:h-[330px] rounded-[24px] overflow-hidden relative group bg-stone-900 border border-white/10 shadow-2xl shrink-0 cursor-pointer transition-transform duration-500 hover:scale-[1.03]">
-            <img src="assets/images/carousel-villa-1.jpg" alt="Kalapatti Grand Enclave" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/20"></div>
-            <!-- Top Badge -->
-            <div class="absolute top-3.5 left-3.5 z-10">
-              <span class="bg-[#c5a880] text-[#2D1217] text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider font-['Inter',sans-serif]">Luxury Villa</span>
-            </div>
+            <img src="assets/images/carousel-villa-1.jpg" alt="Video Project" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/35 transition-colors duration-500"></div>
             <!-- Center Reel Play Button -->
             <div class="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
-              <div class="w-11 h-11 rounded-full bg-white/25 backdrop-blur-md border border-white/40 text-white flex items-center justify-center group-hover:scale-110 group-hover:bg-[#c5a880] group-hover:text-[#2D1217] transition-all shadow-lg">
-                <i class="fa-solid fa-play text-xs ml-0.5"></i>
+              <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/25 backdrop-blur-md border border-white/40 text-white flex items-center justify-center group-hover:scale-110 group-hover:bg-[#c5a880] group-hover:text-[#2D1217] transition-all shadow-lg">
+                <i class="fa-solid fa-play text-xs sm:text-sm ml-0.5"></i>
               </div>
             </div>
-            <!-- Bottom Content -->
-            <div class="absolute bottom-0 inset-x-0 p-4 sm:p-5 text-left z-10">
-              <span class="text-[#c5a880] text-[10px] font-bold uppercase tracking-wider block mb-0.5">Coimbatore North</span>
-              <h3 class="text-white font-['Outfit',sans-serif] font-bold text-base sm:text-lg leading-tight truncate">Kalapatti Grand Enclave</h3>
-            </div>
           </div>
-          <!-- Long Video Box -->
+          <!-- Long Video Box 8 (Loop) -->
           <div class="w-[240px] sm:w-[270px] h-[390px] sm:h-[440px] rounded-[24px] overflow-hidden relative group bg-stone-900 border border-white/10 shadow-2xl shrink-0 cursor-pointer transition-transform duration-500 hover:scale-[1.03]">
-            <img src="assets/images/carousel-villa-2.jpg" alt="Western County Villa" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/20"></div>
-            <!-- Top Badge -->
-            <div class="absolute top-3.5 left-3.5 z-10">
-              <span class="bg-[#c5a880] text-[#2D1217] text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider font-['Inter',sans-serif]">Gated Enclave</span>
-            </div>
+            <img src="assets/images/carousel-villa-2.jpg" alt="Video Project" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/35 transition-colors duration-500"></div>
             <!-- Center Reel Play Button -->
             <div class="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
-              <div class="w-11 h-11 rounded-full bg-white/25 backdrop-blur-md border border-white/40 text-white flex items-center justify-center group-hover:scale-110 group-hover:bg-[#c5a880] group-hover:text-[#2D1217] transition-all shadow-lg">
-                <i class="fa-solid fa-play text-xs ml-0.5"></i>
+              <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/25 backdrop-blur-md border border-white/40 text-white flex items-center justify-center group-hover:scale-110 group-hover:bg-[#c5a880] group-hover:text-[#2D1217] transition-all shadow-lg">
+                <i class="fa-solid fa-play text-xs sm:text-sm ml-0.5"></i>
               </div>
             </div>
-            <!-- Bottom Content -->
-            <div class="absolute bottom-0 inset-x-0 p-4 sm:p-5 text-left z-10">
-              <span class="text-[#c5a880] text-[10px] font-bold uppercase tracking-wider block mb-0.5">Kovaipudur</span>
-              <h3 class="text-white font-['Outfit',sans-serif] font-bold text-base sm:text-lg leading-tight truncate">Western County Villa</h3>
-            </div>
           </div>
-          <!-- Short Video Box -->
+          <!-- Short Video Box 9 (Loop) -->
           <div class="w-[240px] sm:w-[270px] h-[290px] sm:h-[330px] rounded-[24px] overflow-hidden relative group bg-stone-900 border border-white/10 shadow-2xl shrink-0 cursor-pointer transition-transform duration-500 hover:scale-[1.03]">
-            <img src="assets/images/plot-layout-1.jpg" alt="Tech Corridor Plots" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/20"></div>
-            <!-- Top Badge -->
-            <div class="absolute top-3.5 left-3.5 z-10">
-              <span class="bg-[#c5a880] text-[#2D1217] text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider font-['Inter',sans-serif]">DTCP Plots</span>
-            </div>
+            <img src="assets/images/plot-layout-1.jpg" alt="Video Project" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/35 transition-colors duration-500"></div>
             <!-- Center Reel Play Button -->
             <div class="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
-              <div class="w-11 h-11 rounded-full bg-white/25 backdrop-blur-md border border-white/40 text-white flex items-center justify-center group-hover:scale-110 group-hover:bg-[#c5a880] group-hover:text-[#2D1217] transition-all shadow-lg">
-                <i class="fa-solid fa-play text-xs ml-0.5"></i>
+              <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/25 backdrop-blur-md border border-white/40 text-white flex items-center justify-center group-hover:scale-110 group-hover:bg-[#c5a880] group-hover:text-[#2D1217] transition-all shadow-lg">
+                <i class="fa-solid fa-play text-xs sm:text-sm ml-0.5"></i>
               </div>
             </div>
-            <!-- Bottom Content -->
-            <div class="absolute bottom-0 inset-x-0 p-4 sm:p-5 text-left z-10">
-              <span class="text-[#c5a880] text-[10px] font-bold uppercase tracking-wider block mb-0.5">Saravanampatti</span>
-              <h3 class="text-white font-['Outfit',sans-serif] font-bold text-base sm:text-lg leading-tight truncate">Tech Corridor Plots</h3>
-            </div>
           </div>
-          <!-- Long Video Box -->
+          <!-- Long Video Box 10 (Loop) -->
           <div class="w-[240px] sm:w-[270px] h-[390px] sm:h-[440px] rounded-[24px] overflow-hidden relative group bg-stone-900 border border-white/10 shadow-2xl shrink-0 cursor-pointer transition-transform duration-500 hover:scale-[1.03]">
-            <img src="assets/images/carousel-villa-3.jpg" alt="Urbania Frontage Landmark" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/20"></div>
-            <!-- Top Badge -->
-            <div class="absolute top-3.5 left-3.5 z-10">
-              <span class="bg-[#c5a880] text-[#2D1217] text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider font-['Inter',sans-serif]">Commercial HQ</span>
-            </div>
+            <img src="assets/images/carousel-villa-3.jpg" alt="Video Project" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/35 transition-colors duration-500"></div>
             <!-- Center Reel Play Button -->
             <div class="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
-              <div class="w-11 h-11 rounded-full bg-white/25 backdrop-blur-md border border-white/40 text-white flex items-center justify-center group-hover:scale-110 group-hover:bg-[#c5a880] group-hover:text-[#2D1217] transition-all shadow-lg">
-                <i class="fa-solid fa-play text-xs ml-0.5"></i>
+              <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/25 backdrop-blur-md border border-white/40 text-white flex items-center justify-center group-hover:scale-110 group-hover:bg-[#c5a880] group-hover:text-[#2D1217] transition-all shadow-lg">
+                <i class="fa-solid fa-play text-xs sm:text-sm ml-0.5"></i>
               </div>
             </div>
-            <!-- Bottom Content -->
-            <div class="absolute bottom-0 inset-x-0 p-4 sm:p-5 text-left z-10">
-              <span class="text-[#c5a880] text-[10px] font-bold uppercase tracking-wider block mb-0.5">Avinashi Road</span>
-              <h3 class="text-white font-['Outfit',sans-serif] font-bold text-base sm:text-lg leading-tight truncate">Urbania Frontage Landmark</h3>
-            </div>
           </div>
-          <!-- Short Video Box -->
+          <!-- Short Video Box 11 (Loop) -->
           <div class="w-[240px] sm:w-[270px] h-[290px] sm:h-[330px] rounded-[24px] overflow-hidden relative group bg-stone-900 border border-white/10 shadow-2xl shrink-0 cursor-pointer transition-transform duration-500 hover:scale-[1.03]">
-            <img src="assets/images/hero-bright-house.jpg" alt="Presidio Grand Living" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/20"></div>
-            <!-- Top Badge -->
-            <div class="absolute top-3.5 left-3.5 z-10">
-              <span class="bg-[#c5a880] text-[#2D1217] text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider font-['Inter',sans-serif]">Boutique Living</span>
-            </div>
+            <img src="assets/images/hero-bright-house.jpg" alt="Video Project" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/35 transition-colors duration-500"></div>
             <!-- Center Reel Play Button -->
             <div class="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
-              <div class="w-11 h-11 rounded-full bg-white/25 backdrop-blur-md border border-white/40 text-white flex items-center justify-center group-hover:scale-110 group-hover:bg-[#c5a880] group-hover:text-[#2D1217] transition-all shadow-lg">
-                <i class="fa-solid fa-play text-xs ml-0.5"></i>
+              <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/25 backdrop-blur-md border border-white/40 text-white flex items-center justify-center group-hover:scale-110 group-hover:bg-[#c5a880] group-hover:text-[#2D1217] transition-all shadow-lg">
+                <i class="fa-solid fa-play text-xs sm:text-sm ml-0.5"></i>
               </div>
-            </div>
-            <!-- Bottom Content -->
-            <div class="absolute bottom-0 inset-x-0 p-4 sm:p-5 text-left z-10">
-              <span class="text-[#c5a880] text-[10px] font-bold uppercase tracking-wider block mb-0.5">Race Course</span>
-              <h3 class="text-white font-['Outfit',sans-serif] font-bold text-base sm:text-lg leading-tight truncate">Presidio Grand Living</h3>
             </div>
           </div>
-          <!-- Long Video Box -->
+          <!-- Long Video Box 12 (Loop) -->
           <div class="w-[240px] sm:w-[270px] h-[390px] sm:h-[440px] rounded-[24px] overflow-hidden relative group bg-stone-900 border border-white/10 shadow-2xl shrink-0 cursor-pointer transition-transform duration-500 hover:scale-[1.03]">
-            <img src="assets/images/carousel-villa-5.jpg" alt="Emerald Garden Residence" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/20"></div>
-            <!-- Top Badge -->
-            <div class="absolute top-3.5 left-3.5 z-10">
-              <span class="bg-[#c5a880] text-[#2D1217] text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider font-['Inter',sans-serif]">Garden Estate</span>
-            </div>
+            <img src="assets/images/carousel-villa-5.jpg" alt="Video Project" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/35 transition-colors duration-500"></div>
             <!-- Center Reel Play Button -->
             <div class="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
-              <div class="w-11 h-11 rounded-full bg-white/25 backdrop-blur-md border border-white/40 text-white flex items-center justify-center group-hover:scale-110 group-hover:bg-[#c5a880] group-hover:text-[#2D1217] transition-all shadow-lg">
-                <i class="fa-solid fa-play text-xs ml-0.5"></i>
+              <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/25 backdrop-blur-md border border-white/40 text-white flex items-center justify-center group-hover:scale-110 group-hover:bg-[#c5a880] group-hover:text-[#2D1217] transition-all shadow-lg">
+                <i class="fa-solid fa-play text-xs sm:text-sm ml-0.5"></i>
               </div>
-            </div>
-            <!-- Bottom Content -->
-            <div class="absolute bottom-0 inset-x-0 p-4 sm:p-5 text-left z-10">
-              <span class="text-[#c5a880] text-[10px] font-bold uppercase tracking-wider block mb-0.5">Sulur Lakeview</span>
-              <h3 class="text-white font-['Outfit',sans-serif] font-bold text-base sm:text-lg leading-tight truncate">Emerald Garden Residence</h3>
             </div>
           </div>
         </div>
@@ -935,244 +827,136 @@
       <!-- ROW 2: Scrolling Right Continuously (Long, Short, Long, Short, Long, Short) -->
       <div class="marquee-container py-1">
         <div class="marquee-track-rtl flex items-center gap-6">
-          <!-- Long Video Box -->
+          <!-- Long Video Box 1 -->
           <div class="w-[240px] sm:w-[270px] h-[390px] sm:h-[440px] rounded-[24px] overflow-hidden relative group bg-stone-900 border border-white/10 shadow-2xl shrink-0 cursor-pointer transition-transform duration-500 hover:scale-[1.03]">
-            <img src="assets/images/carousel-villa-4.jpg" alt="Contemporary Glass Villa" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/20"></div>
-            <!-- Top Badge -->
-            <div class="absolute top-3.5 left-3.5 z-10">
-              <span class="bg-[#c5a880] text-[#2D1217] text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider font-['Inter',sans-serif]">Glass Facade</span>
-            </div>
+            <img src="assets/images/carousel-villa-4.jpg" alt="Video Project" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/35 transition-colors duration-500"></div>
             <!-- Center Reel Play Button -->
             <div class="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
-              <div class="w-11 h-11 rounded-full bg-white/25 backdrop-blur-md border border-white/40 text-white flex items-center justify-center group-hover:scale-110 group-hover:bg-[#c5a880] group-hover:text-[#2D1217] transition-all shadow-lg">
-                <i class="fa-solid fa-play text-xs ml-0.5"></i>
+              <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/25 backdrop-blur-md border border-white/40 text-white flex items-center justify-center group-hover:scale-110 group-hover:bg-[#c5a880] group-hover:text-[#2D1217] transition-all shadow-lg">
+                <i class="fa-solid fa-play text-xs sm:text-sm ml-0.5"></i>
               </div>
             </div>
-            <!-- Bottom Content -->
-            <div class="absolute bottom-0 inset-x-0 p-4 sm:p-5 text-left z-10">
-              <span class="text-[#c5a880] text-[10px] font-bold uppercase tracking-wider block mb-0.5">Saravanampatti Hills</span>
-              <h3 class="text-white font-['Outfit',sans-serif] font-bold text-base sm:text-lg leading-tight truncate">Contemporary Glass Villa</h3>
-            </div>
           </div>
-          <!-- Short Video Box -->
+          <!-- Short Video Box 2 -->
           <div class="w-[240px] sm:w-[270px] h-[290px] sm:h-[330px] rounded-[24px] overflow-hidden relative group bg-stone-900 border border-white/10 shadow-2xl shrink-0 cursor-pointer transition-transform duration-500 hover:scale-[1.03]">
-            <img src="assets/images/hero-premium-building.jpg" alt="Avenue Central Landmark" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/20"></div>
-            <!-- Top Badge -->
-            <div class="absolute top-3.5 left-3.5 z-10">
-              <span class="bg-[#c5a880] text-[#2D1217] text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider font-['Inter',sans-serif]">Prime Tower</span>
-            </div>
+            <img src="assets/images/hero-premium-building.jpg" alt="Video Project" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/35 transition-colors duration-500"></div>
             <!-- Center Reel Play Button -->
             <div class="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
-              <div class="w-11 h-11 rounded-full bg-white/25 backdrop-blur-md border border-white/40 text-white flex items-center justify-center group-hover:scale-110 group-hover:bg-[#c5a880] group-hover:text-[#2D1217] transition-all shadow-lg">
-                <i class="fa-solid fa-play text-xs ml-0.5"></i>
+              <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/25 backdrop-blur-md border border-white/40 text-white flex items-center justify-center group-hover:scale-110 group-hover:bg-[#c5a880] group-hover:text-[#2D1217] transition-all shadow-lg">
+                <i class="fa-solid fa-play text-xs sm:text-sm ml-0.5"></i>
               </div>
             </div>
-            <!-- Bottom Content -->
-            <div class="absolute bottom-0 inset-x-0 p-4 sm:p-5 text-left z-10">
-              <span class="text-[#c5a880] text-[10px] font-bold uppercase tracking-wider block mb-0.5">Trichy Road</span>
-              <h3 class="text-white font-['Outfit',sans-serif] font-bold text-base sm:text-lg leading-tight truncate">Avenue Central Landmark</h3>
-            </div>
           </div>
-          <!-- Long Video Box -->
+          <!-- Long Video Box 3 -->
           <div class="w-[240px] sm:w-[270px] h-[390px] sm:h-[440px] rounded-[24px] overflow-hidden relative group bg-stone-900 border border-white/10 shadow-2xl shrink-0 cursor-pointer transition-transform duration-500 hover:scale-[1.03]">
-            <img src="assets/images/plot-layout-2.jpg" alt="Avinashi Road Greens" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/20"></div>
-            <!-- Top Badge -->
-            <div class="absolute top-3.5 left-3.5 z-10">
-              <span class="bg-[#c5a880] text-[#2D1217] text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider font-['Inter',sans-serif]">Gated Plots</span>
-            </div>
+            <img src="assets/images/plot-layout-2.jpg" alt="Video Project" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/35 transition-colors duration-500"></div>
             <!-- Center Reel Play Button -->
             <div class="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
-              <div class="w-11 h-11 rounded-full bg-white/25 backdrop-blur-md border border-white/40 text-white flex items-center justify-center group-hover:scale-110 group-hover:bg-[#c5a880] group-hover:text-[#2D1217] transition-all shadow-lg">
-                <i class="fa-solid fa-play text-xs ml-0.5"></i>
+              <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/25 backdrop-blur-md border border-white/40 text-white flex items-center justify-center group-hover:scale-110 group-hover:bg-[#c5a880] group-hover:text-[#2D1217] transition-all shadow-lg">
+                <i class="fa-solid fa-play text-xs sm:text-sm ml-0.5"></i>
               </div>
             </div>
-            <!-- Bottom Content -->
-            <div class="absolute bottom-0 inset-x-0 p-4 sm:p-5 text-left z-10">
-              <span class="text-[#c5a880] text-[10px] font-bold uppercase tracking-wider block mb-0.5">Avinashi Road</span>
-              <h3 class="text-white font-['Outfit',sans-serif] font-bold text-base sm:text-lg leading-tight truncate">Avinashi Road Greens</h3>
-            </div>
           </div>
-          <!-- Short Video Box -->
+          <!-- Short Video Box 4 -->
           <div class="w-[240px] sm:w-[270px] h-[290px] sm:h-[330px] rounded-[24px] overflow-hidden relative group bg-stone-900 border border-white/10 shadow-2xl shrink-0 cursor-pointer transition-transform duration-500 hover:scale-[1.03]">
-            <img src="assets/images/land-development.jpg" alt="Neelambur Bypass Parcels" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/20"></div>
-            <!-- Top Badge -->
-            <div class="absolute top-3.5 left-3.5 z-10">
-              <span class="bg-[#c5a880] text-[#2D1217] text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider font-['Inter',sans-serif]">Commercial Parcels</span>
-            </div>
+            <img src="assets/images/land-development.jpg" alt="Video Project" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/35 transition-colors duration-500"></div>
             <!-- Center Reel Play Button -->
             <div class="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
-              <div class="w-11 h-11 rounded-full bg-white/25 backdrop-blur-md border border-white/40 text-white flex items-center justify-center group-hover:scale-110 group-hover:bg-[#c5a880] group-hover:text-[#2D1217] transition-all shadow-lg">
-                <i class="fa-solid fa-play text-xs ml-0.5"></i>
+              <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/25 backdrop-blur-md border border-white/40 text-white flex items-center justify-center group-hover:scale-110 group-hover:bg-[#c5a880] group-hover:text-[#2D1217] transition-all shadow-lg">
+                <i class="fa-solid fa-play text-xs sm:text-sm ml-0.5"></i>
               </div>
             </div>
-            <!-- Bottom Content -->
-            <div class="absolute bottom-0 inset-x-0 p-4 sm:p-5 text-left z-10">
-              <span class="text-[#c5a880] text-[10px] font-bold uppercase tracking-wider block mb-0.5">Neelambur</span>
-              <h3 class="text-white font-['Outfit',sans-serif] font-bold text-base sm:text-lg leading-tight truncate">Neelambur Bypass Parcels</h3>
-            </div>
           </div>
-          <!-- Long Video Box -->
+          <!-- Long Video Box 5 -->
           <div class="w-[240px] sm:w-[270px] h-[390px] sm:h-[440px] rounded-[24px] overflow-hidden relative group bg-stone-900 border border-white/10 shadow-2xl shrink-0 cursor-pointer transition-transform duration-500 hover:scale-[1.03]">
-            <img src="assets/images/hero-1.jpg" alt="Turnkey Villa Estate" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/20"></div>
-            <!-- Top Badge -->
-            <div class="absolute top-3.5 left-3.5 z-10">
-              <span class="bg-[#c5a880] text-[#2D1217] text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider font-['Inter',sans-serif]">Turnkey Villa</span>
-            </div>
+            <img src="assets/images/hero-1.jpg" alt="Video Project" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/35 transition-colors duration-500"></div>
             <!-- Center Reel Play Button -->
             <div class="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
-              <div class="w-11 h-11 rounded-full bg-white/25 backdrop-blur-md border border-white/40 text-white flex items-center justify-center group-hover:scale-110 group-hover:bg-[#c5a880] group-hover:text-[#2D1217] transition-all shadow-lg">
-                <i class="fa-solid fa-play text-xs ml-0.5"></i>
+              <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/25 backdrop-blur-md border border-white/40 text-white flex items-center justify-center group-hover:scale-110 group-hover:bg-[#c5a880] group-hover:text-[#2D1217] transition-all shadow-lg">
+                <i class="fa-solid fa-play text-xs sm:text-sm ml-0.5"></i>
               </div>
             </div>
-            <!-- Bottom Content -->
-            <div class="absolute bottom-0 inset-x-0 p-4 sm:p-5 text-left z-10">
-              <span class="text-[#c5a880] text-[10px] font-bold uppercase tracking-wider block mb-0.5">Sulur Airport Zone</span>
-              <h3 class="text-white font-['Outfit',sans-serif] font-bold text-base sm:text-lg leading-tight truncate">Turnkey Villa Estate</h3>
-            </div>
           </div>
-          <!-- Short Video Box -->
+          <!-- Short Video Box 6 -->
           <div class="w-[240px] sm:w-[270px] h-[290px] sm:h-[330px] rounded-[24px] overflow-hidden relative group bg-stone-900 border border-white/10 shadow-2xl shrink-0 cursor-pointer transition-transform duration-500 hover:scale-[1.03]">
-            <img src="assets/images/plot-layout-3.jpg" alt="Aeropark Industrial Plots" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/20"></div>
-            <!-- Top Badge -->
-            <div class="absolute top-3.5 left-3.5 z-10">
-              <span class="bg-[#c5a880] text-[#2D1217] text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider font-['Inter',sans-serif]">Aeropark Land</span>
-            </div>
+            <img src="assets/images/plot-layout-3.jpg" alt="Video Project" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/35 transition-colors duration-500"></div>
             <!-- Center Reel Play Button -->
             <div class="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
-              <div class="w-11 h-11 rounded-full bg-white/25 backdrop-blur-md border border-white/40 text-white flex items-center justify-center group-hover:scale-110 group-hover:bg-[#c5a880] group-hover:text-[#2D1217] transition-all shadow-lg">
-                <i class="fa-solid fa-play text-xs ml-0.5"></i>
+              <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/25 backdrop-blur-md border border-white/40 text-white flex items-center justify-center group-hover:scale-110 group-hover:bg-[#c5a880] group-hover:text-[#2D1217] transition-all shadow-lg">
+                <i class="fa-solid fa-play text-xs sm:text-sm ml-0.5"></i>
               </div>
             </div>
-            <!-- Bottom Content -->
-            <div class="absolute bottom-0 inset-x-0 p-4 sm:p-5 text-left z-10">
-              <span class="text-[#c5a880] text-[10px] font-bold uppercase tracking-wider block mb-0.5">Sulur</span>
-              <h3 class="text-white font-['Outfit',sans-serif] font-bold text-base sm:text-lg leading-tight truncate">Aeropark Industrial Plots</h3>
-            </div>
           </div>
-          <!-- Long Video Box -->
+          <!-- Long Video Box 7 (Loop) -->
           <div class="w-[240px] sm:w-[270px] h-[390px] sm:h-[440px] rounded-[24px] overflow-hidden relative group bg-stone-900 border border-white/10 shadow-2xl shrink-0 cursor-pointer transition-transform duration-500 hover:scale-[1.03]">
-            <img src="assets/images/carousel-villa-4.jpg" alt="Contemporary Glass Villa" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/20"></div>
-            <!-- Top Badge -->
-            <div class="absolute top-3.5 left-3.5 z-10">
-              <span class="bg-[#c5a880] text-[#2D1217] text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider font-['Inter',sans-serif]">Glass Facade</span>
-            </div>
+            <img src="assets/images/carousel-villa-4.jpg" alt="Video Project" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/35 transition-colors duration-500"></div>
             <!-- Center Reel Play Button -->
             <div class="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
-              <div class="w-11 h-11 rounded-full bg-white/25 backdrop-blur-md border border-white/40 text-white flex items-center justify-center group-hover:scale-110 group-hover:bg-[#c5a880] group-hover:text-[#2D1217] transition-all shadow-lg">
-                <i class="fa-solid fa-play text-xs ml-0.5"></i>
+              <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/25 backdrop-blur-md border border-white/40 text-white flex items-center justify-center group-hover:scale-110 group-hover:bg-[#c5a880] group-hover:text-[#2D1217] transition-all shadow-lg">
+                <i class="fa-solid fa-play text-xs sm:text-sm ml-0.5"></i>
               </div>
             </div>
-            <!-- Bottom Content -->
-            <div class="absolute bottom-0 inset-x-0 p-4 sm:p-5 text-left z-10">
-              <span class="text-[#c5a880] text-[10px] font-bold uppercase tracking-wider block mb-0.5">Saravanampatti Hills</span>
-              <h3 class="text-white font-['Outfit',sans-serif] font-bold text-base sm:text-lg leading-tight truncate">Contemporary Glass Villa</h3>
-            </div>
           </div>
-          <!-- Short Video Box -->
+          <!-- Short Video Box 8 (Loop) -->
           <div class="w-[240px] sm:w-[270px] h-[290px] sm:h-[330px] rounded-[24px] overflow-hidden relative group bg-stone-900 border border-white/10 shadow-2xl shrink-0 cursor-pointer transition-transform duration-500 hover:scale-[1.03]">
-            <img src="assets/images/hero-premium-building.jpg" alt="Avenue Central Landmark" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/20"></div>
-            <!-- Top Badge -->
-            <div class="absolute top-3.5 left-3.5 z-10">
-              <span class="bg-[#c5a880] text-[#2D1217] text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider font-['Inter',sans-serif]">Prime Tower</span>
-            </div>
+            <img src="assets/images/hero-premium-building.jpg" alt="Video Project" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/35 transition-colors duration-500"></div>
             <!-- Center Reel Play Button -->
             <div class="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
-              <div class="w-11 h-11 rounded-full bg-white/25 backdrop-blur-md border border-white/40 text-white flex items-center justify-center group-hover:scale-110 group-hover:bg-[#c5a880] group-hover:text-[#2D1217] transition-all shadow-lg">
-                <i class="fa-solid fa-play text-xs ml-0.5"></i>
+              <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/25 backdrop-blur-md border border-white/40 text-white flex items-center justify-center group-hover:scale-110 group-hover:bg-[#c5a880] group-hover:text-[#2D1217] transition-all shadow-lg">
+                <i class="fa-solid fa-play text-xs sm:text-sm ml-0.5"></i>
               </div>
             </div>
-            <!-- Bottom Content -->
-            <div class="absolute bottom-0 inset-x-0 p-4 sm:p-5 text-left z-10">
-              <span class="text-[#c5a880] text-[10px] font-bold uppercase tracking-wider block mb-0.5">Trichy Road</span>
-              <h3 class="text-white font-['Outfit',sans-serif] font-bold text-base sm:text-lg leading-tight truncate">Avenue Central Landmark</h3>
-            </div>
           </div>
-          <!-- Long Video Box -->
+          <!-- Long Video Box 9 (Loop) -->
           <div class="w-[240px] sm:w-[270px] h-[390px] sm:h-[440px] rounded-[24px] overflow-hidden relative group bg-stone-900 border border-white/10 shadow-2xl shrink-0 cursor-pointer transition-transform duration-500 hover:scale-[1.03]">
-            <img src="assets/images/plot-layout-2.jpg" alt="Avinashi Road Greens" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/20"></div>
-            <!-- Top Badge -->
-            <div class="absolute top-3.5 left-3.5 z-10">
-              <span class="bg-[#c5a880] text-[#2D1217] text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider font-['Inter',sans-serif]">Gated Plots</span>
-            </div>
+            <img src="assets/images/plot-layout-2.jpg" alt="Video Project" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/35 transition-colors duration-500"></div>
             <!-- Center Reel Play Button -->
             <div class="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
-              <div class="w-11 h-11 rounded-full bg-white/25 backdrop-blur-md border border-white/40 text-white flex items-center justify-center group-hover:scale-110 group-hover:bg-[#c5a880] group-hover:text-[#2D1217] transition-all shadow-lg">
-                <i class="fa-solid fa-play text-xs ml-0.5"></i>
+              <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/25 backdrop-blur-md border border-white/40 text-white flex items-center justify-center group-hover:scale-110 group-hover:bg-[#c5a880] group-hover:text-[#2D1217] transition-all shadow-lg">
+                <i class="fa-solid fa-play text-xs sm:text-sm ml-0.5"></i>
               </div>
             </div>
-            <!-- Bottom Content -->
-            <div class="absolute bottom-0 inset-x-0 p-4 sm:p-5 text-left z-10">
-              <span class="text-[#c5a880] text-[10px] font-bold uppercase tracking-wider block mb-0.5">Avinashi Road</span>
-              <h3 class="text-white font-['Outfit',sans-serif] font-bold text-base sm:text-lg leading-tight truncate">Avinashi Road Greens</h3>
-            </div>
           </div>
-          <!-- Short Video Box -->
+          <!-- Short Video Box 10 (Loop) -->
           <div class="w-[240px] sm:w-[270px] h-[290px] sm:h-[330px] rounded-[24px] overflow-hidden relative group bg-stone-900 border border-white/10 shadow-2xl shrink-0 cursor-pointer transition-transform duration-500 hover:scale-[1.03]">
-            <img src="assets/images/land-development.jpg" alt="Neelambur Bypass Parcels" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/20"></div>
-            <!-- Top Badge -->
-            <div class="absolute top-3.5 left-3.5 z-10">
-              <span class="bg-[#c5a880] text-[#2D1217] text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider font-['Inter',sans-serif]">Commercial Parcels</span>
-            </div>
+            <img src="assets/images/land-development.jpg" alt="Video Project" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/35 transition-colors duration-500"></div>
             <!-- Center Reel Play Button -->
             <div class="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
-              <div class="w-11 h-11 rounded-full bg-white/25 backdrop-blur-md border border-white/40 text-white flex items-center justify-center group-hover:scale-110 group-hover:bg-[#c5a880] group-hover:text-[#2D1217] transition-all shadow-lg">
-                <i class="fa-solid fa-play text-xs ml-0.5"></i>
+              <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/25 backdrop-blur-md border border-white/40 text-white flex items-center justify-center group-hover:scale-110 group-hover:bg-[#c5a880] group-hover:text-[#2D1217] transition-all shadow-lg">
+                <i class="fa-solid fa-play text-xs sm:text-sm ml-0.5"></i>
               </div>
             </div>
-            <!-- Bottom Content -->
-            <div class="absolute bottom-0 inset-x-0 p-4 sm:p-5 text-left z-10">
-              <span class="text-[#c5a880] text-[10px] font-bold uppercase tracking-wider block mb-0.5">Neelambur</span>
-              <h3 class="text-white font-['Outfit',sans-serif] font-bold text-base sm:text-lg leading-tight truncate">Neelambur Bypass Parcels</h3>
-            </div>
           </div>
-          <!-- Long Video Box -->
+          <!-- Long Video Box 11 (Loop) -->
           <div class="w-[240px] sm:w-[270px] h-[390px] sm:h-[440px] rounded-[24px] overflow-hidden relative group bg-stone-900 border border-white/10 shadow-2xl shrink-0 cursor-pointer transition-transform duration-500 hover:scale-[1.03]">
-            <img src="assets/images/hero-1.jpg" alt="Turnkey Villa Estate" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/20"></div>
-            <!-- Top Badge -->
-            <div class="absolute top-3.5 left-3.5 z-10">
-              <span class="bg-[#c5a880] text-[#2D1217] text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider font-['Inter',sans-serif]">Turnkey Villa</span>
-            </div>
+            <img src="assets/images/hero-1.jpg" alt="Video Project" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/35 transition-colors duration-500"></div>
             <!-- Center Reel Play Button -->
             <div class="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
-              <div class="w-11 h-11 rounded-full bg-white/25 backdrop-blur-md border border-white/40 text-white flex items-center justify-center group-hover:scale-110 group-hover:bg-[#c5a880] group-hover:text-[#2D1217] transition-all shadow-lg">
-                <i class="fa-solid fa-play text-xs ml-0.5"></i>
+              <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/25 backdrop-blur-md border border-white/40 text-white flex items-center justify-center group-hover:scale-110 group-hover:bg-[#c5a880] group-hover:text-[#2D1217] transition-all shadow-lg">
+                <i class="fa-solid fa-play text-xs sm:text-sm ml-0.5"></i>
               </div>
-            </div>
-            <!-- Bottom Content -->
-            <div class="absolute bottom-0 inset-x-0 p-4 sm:p-5 text-left z-10">
-              <span class="text-[#c5a880] text-[10px] font-bold uppercase tracking-wider block mb-0.5">Sulur Airport Zone</span>
-              <h3 class="text-white font-['Outfit',sans-serif] font-bold text-base sm:text-lg leading-tight truncate">Turnkey Villa Estate</h3>
             </div>
           </div>
-          <!-- Short Video Box -->
+          <!-- Short Video Box 12 (Loop) -->
           <div class="w-[240px] sm:w-[270px] h-[290px] sm:h-[330px] rounded-[24px] overflow-hidden relative group bg-stone-900 border border-white/10 shadow-2xl shrink-0 cursor-pointer transition-transform duration-500 hover:scale-[1.03]">
-            <img src="assets/images/plot-layout-3.jpg" alt="Aeropark Industrial Plots" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/20"></div>
-            <!-- Top Badge -->
-            <div class="absolute top-3.5 left-3.5 z-10">
-              <span class="bg-[#c5a880] text-[#2D1217] text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider font-['Inter',sans-serif]">Aeropark Land</span>
-            </div>
+            <img src="assets/images/plot-layout-3.jpg" alt="Video Project" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/35 transition-colors duration-500"></div>
             <!-- Center Reel Play Button -->
             <div class="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
-              <div class="w-11 h-11 rounded-full bg-white/25 backdrop-blur-md border border-white/40 text-white flex items-center justify-center group-hover:scale-110 group-hover:bg-[#c5a880] group-hover:text-[#2D1217] transition-all shadow-lg">
-                <i class="fa-solid fa-play text-xs ml-0.5"></i>
+              <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/25 backdrop-blur-md border border-white/40 text-white flex items-center justify-center group-hover:scale-110 group-hover:bg-[#c5a880] group-hover:text-[#2D1217] transition-all shadow-lg">
+                <i class="fa-solid fa-play text-xs sm:text-sm ml-0.5"></i>
               </div>
-            </div>
-            <!-- Bottom Content -->
-            <div class="absolute bottom-0 inset-x-0 p-4 sm:p-5 text-left z-10">
-              <span class="text-[#c5a880] text-[10px] font-bold uppercase tracking-wider block mb-0.5">Sulur</span>
-              <h3 class="text-white font-['Outfit',sans-serif] font-bold text-base sm:text-lg leading-tight truncate">Aeropark Industrial Plots</h3>
             </div>
           </div>
         </div>
@@ -1436,7 +1220,7 @@
     <!-- ==========================================
        WHY CHOOSE VIZHI INFRAGEN SECTION (Matches Reference Image 3 Design: 2-Column with Cut-Corner Scrollable Cards)
        ========================================== -->
-  <section id="why-choose" class="py-24 sm:py-32 relative overflow-hidden bg-cover bg-center bg-no-repeat bg-fixed text-white"
+  <section id="why-choose" class="pt-10 sm:pt-12 lg:pt-14 pb-5 sm:pb-6 lg:pb-7 relative overflow-hidden bg-cover bg-center bg-no-repeat bg-fixed text-white"
     style="background-image: linear-gradient(180deg, rgba(23, 10, 14, 0.95) 0%, rgba(30, 13, 18, 0.97) 100%), url('assets/images/hero-1.jpg');">
     
     <!-- Ambient dark lighting glows -->
@@ -1448,7 +1232,7 @@
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
         <!-- Left Column (Matches Reference Image 3 Left Layout) -->
-        <div class="lg:col-span-5 space-y-6 text-left relative z-10">
+        <div class="lg:col-span-5 space-y-4 sm:space-y-5 text-left relative z-10 lg:-mt-3">
           
 
 
@@ -1458,8 +1242,10 @@
               WHY CHOOSE
             </span>
 
-            <h2 class="text-3xl sm:text-4xl lg:text-[46px] font-extrabold text-white leading-[1.18] font-['Outfit',sans-serif] tracking-tight relative z-10">
-              Why Property Owners<br />and Investors Choose<br /><span class="text-[#c5a880]">Vizhi Infragen</span>
+            <h2 class="text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-white leading-[1.12] sm:leading-[1.14] font-['Outfit',sans-serif] tracking-tight relative z-10">
+              <span class="block">Why Property Owners</span>
+              <span class="block">and Investors Choose</span>
+              <span class="block text-[#c5a880]">Vizhi Infragen</span>
             </h2>
           </div>
 
@@ -1470,7 +1256,7 @@
 
           <!-- Explore More Button (Matches Image 3) -->
           <div class="pt-2">
-            <a href="#contact" class="inline-flex items-center gap-2.5 bg-[#c5a880] hover:bg-[#b59870] text-[#231518] font-bold text-sm px-7 py-3.5 rounded-xl shadow-lg transition-all hover:-translate-y-0.5 font-['Inter',sans-serif]">
+            <a href="services.html" class="inline-flex items-center gap-2.5 bg-[#c5a880] hover:bg-[#b59870] text-[#231518] font-bold text-sm px-7 py-3.5 rounded-xl shadow-lg transition-all hover:-translate-y-0.5 font-['Inter',sans-serif]">
               <span>Explore More</span>
               <i class="fa-solid fa-arrow-right text-xs"></i>
             </a>
@@ -1481,7 +1267,7 @@
         <!-- Right Column: Horizontal Scrollable Cards with Special Arch Cut Corner Style (Matches Image 3) -->
         <div class="lg:col-span-7 relative">
           
-          <div id="why-choose-scroll-track" class="flex space-x-6 sm:space-x-8 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-8 pt-4 px-2 no-scrollbar">
+          <div id="why-choose-scroll-track" class="flex space-x-6 sm:space-x-8 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-3 sm:pb-4 pt-2 sm:pt-3 px-2 no-scrollbar">
             <!-- Card 1: TRANSPARENT DEALINGS (Arch Cut Corner Top-Right) -->
             <div class="min-w-[280px] sm:min-w-[330px] max-w-[350px] flex-shrink-0 snap-start group relative rounded-[24px] rounded-tr-[70px] overflow-hidden bg-stone-900 border border-white/20 shadow-2xl transition-all duration-500 hover:-translate-y-2">
               <div class="h-80 sm:h-96 w-full relative overflow-hidden">
@@ -1489,17 +1275,12 @@
                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
                 
                 <!-- Bottom Content inside Card: Headline Only -->
-                <div class="absolute bottom-0 inset-x-0 p-6 flex items-end justify-between">
-                  <div class="text-left pr-3">
+                <div class="absolute bottom-0 inset-x-0 p-6">
+                  <div class="text-left">
                     <h3 class="text-lg sm:text-xl font-bold text-white font-['Outfit',sans-serif] leading-tight uppercase tracking-wider">
                       TRANSPARENT DEALINGS
                     </h3>
                   </div>
-
-                  <!-- Floating Yellow Circle Arrow Button -->
-                  <a href="#contact" class="w-10 h-10 rounded-full bg-[#c5a880] hover:bg-white text-[#231518] flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform shrink-0" aria-label="Explore Transparent Dealings">
-                    <i class="fa-solid fa-arrow-right text-xs"></i>
-                  </a>
                 </div>
               </div>
             </div>
@@ -1511,17 +1292,12 @@
                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
                 
                 <!-- Bottom Content inside Card: Headline Only -->
-                <div class="absolute bottom-0 inset-x-0 p-6 flex items-end justify-between">
-                  <div class="text-left pr-3">
+                <div class="absolute bottom-0 inset-x-0 p-6">
+                  <div class="text-left">
                     <h3 class="text-lg sm:text-xl font-bold text-white font-['Outfit',sans-serif] leading-tight uppercase tracking-wider">
                       GENUINE LOCAL EXPERTISE
                     </h3>
                   </div>
-
-                  <!-- Floating Yellow Circle Arrow Button -->
-                  <a href="#contact" class="w-10 h-10 rounded-full bg-[#c5a880] hover:bg-white text-[#231518] flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform shrink-0" aria-label="Explore Genuine Local Expertise">
-                    <i class="fa-solid fa-arrow-right text-xs"></i>
-                  </a>
                 </div>
               </div>
             </div>
@@ -1533,17 +1309,12 @@
                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
                 
                 <!-- Bottom Content inside Card: Headline Only -->
-                <div class="absolute bottom-0 inset-x-0 p-6 flex items-end justify-between">
-                  <div class="text-left pr-3">
+                <div class="absolute bottom-0 inset-x-0 p-6">
+                  <div class="text-left">
                     <h3 class="text-lg sm:text-xl font-bold text-white font-['Outfit',sans-serif] leading-tight uppercase tracking-wider">
                       PERSONALISED SOLUTIONS
                     </h3>
                   </div>
-
-                  <!-- Floating Yellow Circle Arrow Button -->
-                  <a href="#contact" class="w-10 h-10 rounded-full bg-[#c5a880] hover:bg-white text-[#231518] flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform shrink-0" aria-label="Explore Personalised Solutions">
-                    <i class="fa-solid fa-arrow-right text-xs"></i>
-                  </a>
                 </div>
               </div>
             </div>
@@ -1555,17 +1326,12 @@
                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
                 
                 <!-- Bottom Content inside Card: Headline Only -->
-                <div class="absolute bottom-0 inset-x-0 p-6 flex items-end justify-between">
-                  <div class="text-left pr-3">
+                <div class="absolute bottom-0 inset-x-0 p-6">
+                  <div class="text-left">
                     <h3 class="text-lg sm:text-xl font-bold text-white font-['Outfit',sans-serif] leading-tight uppercase tracking-wider">
                       END-TO-END SUPPORT
                     </h3>
                   </div>
-
-                  <!-- Floating Yellow Circle Arrow Button -->
-                  <a href="#contact" class="w-10 h-10 rounded-full bg-[#c5a880] hover:bg-white text-[#231518] flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform shrink-0" aria-label="Explore End-to-End Support">
-                    <i class="fa-solid fa-arrow-right text-xs"></i>
-                  </a>
                 </div>
               </div>
             </div>
@@ -1577,17 +1343,12 @@
                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
                 
                 <!-- Bottom Content inside Card: Headline Only -->
-                <div class="absolute bottom-0 inset-x-0 p-6 flex items-end justify-between">
-                  <div class="text-left pr-3">
+                <div class="absolute bottom-0 inset-x-0 p-6">
+                  <div class="text-left">
                     <h3 class="text-lg sm:text-xl font-bold text-white font-['Outfit',sans-serif] leading-tight uppercase tracking-wider">
                       TRUSTED LOCAL NETWORK
                     </h3>
                   </div>
-
-                  <!-- Floating Yellow Circle Arrow Button -->
-                  <a href="#contact" class="w-10 h-10 rounded-full bg-[#c5a880] hover:bg-white text-[#231518] flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform shrink-0" aria-label="Explore Trusted Local Network">
-                    <i class="fa-solid fa-arrow-right text-xs"></i>
-                  </a>
                 </div>
               </div>
             </div>
@@ -1599,17 +1360,12 @@
                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
                 
                 <!-- Bottom Content inside Card: Headline Only -->
-                <div class="absolute bottom-0 inset-x-0 p-6 flex items-end justify-between">
-                  <div class="text-left pr-3">
+                <div class="absolute bottom-0 inset-x-0 p-6">
+                  <div class="text-left">
                     <h3 class="text-lg sm:text-xl font-bold text-white font-['Outfit',sans-serif] leading-tight uppercase tracking-wider">
                       STRONG MARKET KNOWLEDGE
                     </h3>
                   </div>
-
-                  <!-- Floating Yellow Circle Arrow Button -->
-                  <a href="#contact" class="w-10 h-10 rounded-full bg-[#c5a880] hover:bg-white text-[#231518] flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform shrink-0" aria-label="Explore Strong Market Knowledge">
-                    <i class="fa-solid fa-arrow-right text-xs"></i>
-                  </a>
                 </div>
               </div>
             </div>
@@ -1621,17 +1377,12 @@
                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
                 
                 <!-- Bottom Content inside Card: Headline Only -->
-                <div class="absolute bottom-0 inset-x-0 p-6 flex items-end justify-between">
-                  <div class="text-left pr-3">
+                <div class="absolute bottom-0 inset-x-0 p-6">
+                  <div class="text-left">
                     <h3 class="text-lg sm:text-xl font-bold text-white font-['Outfit',sans-serif] leading-tight uppercase tracking-wider">
                       NRI-FRIENDLY SERVICES
                     </h3>
                   </div>
-
-                  <!-- Floating Yellow Circle Arrow Button -->
-                  <a href="#contact" class="w-10 h-10 rounded-full bg-[#c5a880] hover:bg-white text-[#231518] flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform shrink-0" aria-label="Explore NRI-Friendly Services">
-                    <i class="fa-solid fa-arrow-right text-xs"></i>
-                  </a>
                 </div>
               </div>
             </div>
@@ -1643,31 +1394,20 @@
                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
                 
                 <!-- Bottom Content inside Card: Headline Only -->
-                <div class="absolute bottom-0 inset-x-0 p-6 flex items-end justify-between">
-                  <div class="text-left pr-3">
+                <div class="absolute bottom-0 inset-x-0 p-6">
+                  <div class="text-left">
                     <h3 class="text-lg sm:text-xl font-bold text-white font-['Outfit',sans-serif] leading-tight uppercase tracking-wider">
                       INVESTMENT-FOCUSED APPROACH
                     </h3>
                   </div>
-
-                  <!-- Floating Yellow Circle Arrow Button -->
-                  <a href="#contact" class="w-10 h-10 rounded-full bg-[#c5a880] hover:bg-white text-[#231518] flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform shrink-0" aria-label="Explore Investment-Focused Approach">
-                    <i class="fa-solid fa-arrow-right text-xs"></i>
-                  </a>
                 </div>
               </div>
             </div>
 
           </div>
 
-          <!-- Bottom Progress Bar Indicators & Navigation Arrows (Matches Image 3) -->
-          <div class="flex items-center justify-between mt-6 px-2">
-            <div class="flex items-center space-x-3">
-              <div class="w-12 h-1 bg-[#c5a880] rounded-full"></div>
-              <div class="w-8 h-1 bg-white/20 rounded-full"></div>
-              <div class="w-8 h-1 bg-white/20 rounded-full"></div>
-            </div>
-
+          <!-- Bottom Navigation Arrows -->
+          <div class="flex items-center justify-end mt-3 sm:mt-4 px-2">
             <!-- Scroll Animation Navigation Buttons -->
             <div class="flex items-center space-x-3">
               <button id="why-choose-prev-btn" onclick="document.getElementById('why-choose-scroll-track').scrollBy({left: -360, behavior: 'smooth'})" class="w-9 h-9 rounded-full bg-white/10 hover:bg-[#c5a880] hover:text-[#231518] text-white flex items-center justify-center transition-all border border-white/20 cursor-pointer" aria-label="Previous">
@@ -1688,7 +1428,7 @@
   <!-- ==========================================
        ABOUT US SECTION (Sample Screenshot Format with Full User Content)
        ========================================== -->
-  <section id="about" class="py-20 sm:py-28 bg-[#fbf9f5] overflow-hidden relative border-t border-stone-200/60">
+  <section id="about" class="py-14 sm:py-16 lg:py-20 bg-[#fbf9f5] overflow-hidden relative border-t border-stone-200/60">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
       <!-- Top Center Section Header: Subtitle, Large Main Title & Gold Accent Bar -->
@@ -1703,7 +1443,7 @@
       </div>
 
       <!-- Main 2-Column Content Grid: Image with Legacy Badge (Left) & Narrative Story + Stats + Button (Right) -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-20 xl:gap-24 items-center max-w-6xl mx-auto">
 
         <!-- Left Column: Portrait Image with 3D Backside Layer & Overlapping "7+ YEARS OF LEGACY" Badge -->
         <div class="lg:col-span-5 relative flex justify-center lg:justify-end reveal reveal-slide-right">
@@ -1741,11 +1481,15 @@
             <strong class="text-[#612124] font-semibold">Vizhi Infragen Realtors LLP</strong> is a trusted real estate and property management company in Coimbatore. Established in 1998, the company has built a strong reputation through decades of experience in the real estate industry. Today, the business is proudly carried forward by the second generation, combining traditional values with modern real estate expertise. We help individuals, investors, businesses, and NRI clients buy, sell, manage, and develop properties. Our deep local knowledge, transparent approach, and reliable guidance ensure every client makes confident and informed real estate decisions.
           </p>
 
-          <!-- Action Button: READ OUR STORY (Square border structure matching screenshot) -->
+          <p class="text-[#555555] font-['Outfit',_sans-serif] text-base sm:text-lg leading-relaxed sm:leading-8 font-normal">
+            From identifying legally verified properties and coordinating documentation to property transactions, development and ongoing management, we provide professional, end-to-end assistance with complete transparency and accountability.
+          </p>
+
+          <!-- Action Button: READ MORE (Square border structure linking to About Us page) -->
           <div class="pt-2">
-            <a href="#contact"
+            <a href="about.html"
               class="inline-block border-2 border-[#612124] text-[#612124] hover:bg-[#612124] hover:text-white px-8 py-3.5 rounded-none font-bold text-xs tracking-[0.2em] transition-all duration-300 uppercase shadow-sm hover:shadow-md hover:-translate-y-0.5 font-['Inter',_sans-serif]">
-              READ OUR STORY
+              READ MORE
             </a>
           </div>
 
@@ -1795,12 +1539,12 @@
             <!-- ── SET 1: CARDS 1 to 10 ── -->
 
             <!-- CARD 1 (Land Sales) -->
-            <div class="min-w-[320px] sm:min-w-[370px] max-w-[380px] shrink-0 flex flex-col items-center text-center justify-between service-float-card floating-bob-card bg-white p-6 rounded-[22px] shadow-sm border border-stone-200/80" style="animation-delay: 0s;">
+            <a href="land-sales-details.html" class="min-w-[320px] sm:min-w-[370px] max-w-[380px] shrink-0 flex flex-col items-center text-center justify-between service-float-card floating-bob-card bg-white p-6 rounded-[22px] shadow-sm border border-stone-200/80 hover:shadow-xl hover:border-[#c5a880]/60 transition-all cursor-pointer block group text-inherit" style="animation-delay: 0s;">
               <div class="w-full flex flex-col items-center">
                 <div class="w-full aspect-[4/3] rounded-[18px] overflow-hidden shadow-md border border-stone-200 bg-stone-900 mb-5">
-                  <img src="assets/images/service-1.jpg" alt="Land Sales Coimbatore" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+                  <img src="assets/images/service-1.jpg" alt="Land Sales Coimbatore" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                 </div>
-                <h3 class="text-xl sm:text-2xl font-extrabold text-[#612124] font-['Outfit',_sans-serif] mb-1">
+                <h3 class="text-xl sm:text-2xl font-extrabold text-[#612124] group-hover:text-[#c5a880] transition-colors font-['Outfit',_sans-serif] mb-1">
                   Land Sales
                 </h3>
                 <span class="text-xs font-bold text-[#c5a880] uppercase tracking-[0.18em] font-['Inter',_sans-serif] mb-3 block">
@@ -1814,7 +1558,7 @@
                   Verified plots, agricultural land, and development sites across Coimbatore, listed with clear titles and fair market pricing.
                 </p>
               </div>
-            </div>
+            </a>
 
             <!-- CARD 2 (Land Purchase Assistance) -->
             <div class="min-w-[320px] sm:min-w-[370px] max-w-[380px] shrink-0 flex flex-col items-center text-center justify-between service-float-card floating-bob-card bg-white p-6 rounded-[22px] shadow-sm border border-stone-200/80" style="animation-delay: 0.6s;">
@@ -2018,12 +1762,12 @@
             <!-- ── SET 2: DUPLICATED FOR SEAMLESS INFINITE MARQUEE LOOP ── -->
 
             <!-- CARD 1 (Land Sales) -->
-            <div class="min-w-[320px] sm:min-w-[370px] max-w-[380px] shrink-0 flex flex-col items-center text-center justify-between service-float-card floating-bob-card bg-white p-6 rounded-[22px] shadow-sm border border-stone-200/80" style="animation-delay: 0s;">
+            <a href="land-sales-details.html" class="min-w-[320px] sm:min-w-[370px] max-w-[380px] shrink-0 flex flex-col items-center text-center justify-between service-float-card floating-bob-card bg-white p-6 rounded-[22px] shadow-sm border border-stone-200/80 hover:shadow-xl hover:border-[#c5a880]/60 transition-all cursor-pointer block group text-inherit" style="animation-delay: 0s;">
               <div class="w-full flex flex-col items-center">
                 <div class="w-full aspect-[4/3] rounded-[18px] overflow-hidden shadow-md border border-stone-200 bg-stone-900 mb-5">
-                  <img src="assets/images/service-1.jpg" alt="Land Sales Coimbatore" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+                  <img src="assets/images/service-1.jpg" alt="Land Sales Coimbatore" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                 </div>
-                <h3 class="text-xl sm:text-2xl font-extrabold text-[#612124] font-['Outfit',_sans-serif] mb-1">
+                <h3 class="text-xl sm:text-2xl font-extrabold text-[#612124] group-hover:text-[#c5a880] transition-colors font-['Outfit',_sans-serif] mb-1">
                   Land Sales
                 </h3>
                 <span class="text-xs font-bold text-[#c5a880] uppercase tracking-[0.18em] font-['Inter',_sans-serif] mb-3 block">
@@ -2037,7 +1781,7 @@
                   Verified plots, agricultural land, and development sites across Coimbatore, listed with clear titles and fair market pricing.
                 </p>
               </div>
-            </div>
+            </a>
 
             <!-- CARD 2 (Land Purchase Assistance) -->
             <div class="min-w-[320px] sm:min-w-[370px] max-w-[380px] shrink-0 flex flex-col items-center text-center justify-between service-float-card floating-bob-card bg-white p-6 rounded-[22px] shadow-sm border border-stone-200/80" style="animation-delay: 0.6s;">
@@ -2241,9 +1985,9 @@
         </div>
       </div>
 
-      <!-- Action Bottom Button: Single Common READ MORE Button at Section End -->
+      <!-- Action Bottom Button: Single Common READ MORE Button at Section End (Links to Services Page) -->
       <div class="mt-4 text-center reveal reveal-slide-up">
-        <a href="#contact"
+        <a href="services.html"
           class="inline-block border-2 border-[#612124] text-[#612124] hover:bg-[#612124] hover:text-white px-9 py-4 rounded-none font-bold text-xs tracking-[0.25em] transition-all duration-300 uppercase shadow-sm hover:shadow-md hover:-translate-y-0.5 font-['Inter',_sans-serif]">
           READ MORE
         </a>
@@ -2269,9 +2013,9 @@
         </div>
         <div class="flex flex-col gap-0 items-start justify-start self-stretch shrink-0 relative">
           <h2
-            class="text-[#ffffff] text-left font-['Outfit',_sans-serif] text-3xl sm:text-4xl lg:text-[40px] leading-[1.2] font-bold relative self-stretch flex flex-col justify-start drop-shadow-md">
-            <span class="block">Talk to a Coimbatore Real Estate</span>
-            <span class="block">Expert Today</span>
+            class="text-white text-left font-['Outfit',_sans-serif] text-2xl sm:text-3xl md:text-4xl lg:text-[38px] xl:text-[42px] leading-[1.2] font-extrabold relative self-stretch flex flex-col justify-start drop-shadow-md">
+            <span class="block sm:whitespace-nowrap">Talk to a Coimbatore Real Estate</span>
+            <span class="block text-white">Expert Today</span>
           </h2>
         </div>
         <div class="pt-[1.2px] flex flex-col gap-0 items-start justify-start self-stretch shrink-0 relative">
@@ -2355,96 +2099,108 @@
     <!-- ==========================================
        FOOTER SECTION (Background #2E1418, 5 Columns with Map right to Contact Us)
        ========================================== -->
-  <footer class="bg-[#2E1418] pt-16 pb-8 px-6 sm:px-10 lg:px-16 flex flex-col items-center justify-start relative overflow-hidden text-left border-t border-white/10">
-    <div class="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-10 max-w-[1440px] px-2 sm:px-6 lg:px-8 relative z-10 mx-auto">
+        <footer class="bg-[#331C20] text-white pt-14 pb-8 px-6 sm:px-10 lg:px-16 flex flex-col items-center justify-start relative overflow-hidden text-left border-t border-white/10">
+    <div class="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-12 gap-8 lg:gap-6 xl:gap-8 items-start max-w-[1440px] px-2 sm:px-6 lg:px-8 relative z-10 mx-auto">
       
-      <!-- Col 1: Brand Logo & Tagline -->
-      <div class="flex flex-col gap-4 items-start justify-start">
+      <!-- Col 1: Brand Logo & Tagline (Moved Slightly Left and Lifted) -->
+      <div class="col-span-1 sm:col-span-2 md:col-span-1 lg:col-span-2 xl:col-span-2 flex flex-col gap-3.5 items-start justify-start lg:-ml-2 xl:-ml-4 -mt-2.5 sm:-mt-3.5 lg:-mt-4">
         <a href="index.html" class="inline-block hover:scale-105 transition-transform duration-300">
-          <img class="w-[145px] sm:w-[160px] h-auto object-contain footer-logo-img" src="vizhi-infragen-realtors-logo-white.png" alt="Vizhi Infragen Realtors Logo" />
+          <img class="w-[145px] sm:w-[155px] h-auto object-contain footer-logo-img" src="vizhi-infragen-realtors-logo-white.png" alt="Vizhi Infragen Realtors Logo" />
         </a>
-        <p class="text-stone-300 font-['Inter',_sans-serif] text-xs sm:text-sm leading-relaxed max-w-[270px]">
+        <p class="text-stone-300 font-['Inter',_sans-serif] text-xs sm:text-[13px] leading-relaxed max-w-[260px]">
           Building the future with geometric precision and organic harmony. Elevating real estate standards.
         </p>
       </div>
 
       <!-- Col 2: Company -->
-      <div class="flex flex-col gap-2.5 items-start justify-start">
-        <h4 class="text-white font-['Outfit',_sans-serif] text-base font-bold mb-1">Company</h4>
-        <a href="about.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-sm leading-6">About us</a>
-        <a href="services.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-sm leading-6">Residential Property</a>
-        <a href="services.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-sm leading-6">Commercial property</a>
-        <a href="services.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-sm leading-6">Services</a>
-        <a href="contact.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-sm leading-6">Contact</a>
+      <div class="col-span-1 sm:col-span-1 md:col-span-1 lg:col-span-2 xl:col-span-2 flex flex-col gap-2 items-start justify-start">
+        <h4 class="text-white font-['Outfit',_sans-serif] text-base font-bold mb-1 tracking-wide leading-6">Company</h4>
+        <a href="about.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-[13px] leading-5 font-medium">About us</a>
+        <a href="services.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-[13px] leading-5 font-medium">Residential Property</a>
+        <a href="services.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-[13px] leading-5 font-medium">Commercial property</a>
+        <a href="services.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-[13px] leading-5 font-medium">Services</a>
+        <a href="contact.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-[13px] leading-5 font-medium">Contact</a>
       </div>
 
-      <!-- Col 3: Services (Exact 8 Options) -->
-      <div class="flex flex-col gap-2 items-start justify-start">
-        <h4 class="text-white font-['Outfit',_sans-serif] text-base font-bold mb-1">Services</h4>
-        <a href="services.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs leading-5">Land Analysis</a>
-        <a href="services.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs leading-5">Legal verification and clear title property selection</a>
-        <a href="services.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs leading-5">Land purchase</a>
-        <a href="services.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs leading-5">Land conversion</a>
-        <a href="services.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs leading-5">Architectural &amp; Structural design</a>
-        <a href="services.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs leading-5">Building Approvals</a>
-        <a href="services.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs leading-5">Building Construction &amp; quality inspection</a>
-        <a href="services.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs leading-5">Turnkey Handover</a>
+      <!-- Col 3: Services (Centered Header in line with other topics + 2 Equal Columns of 5 / 5 Services) -->
+      <div class="col-span-1 sm:col-span-2 md:col-span-1 lg:col-span-4 xl:col-span-4 flex flex-col gap-2 items-start sm:items-center justify-start w-full">
+        <h4 class="text-white font-['Outfit',_sans-serif] text-base font-bold mb-1 tracking-wide leading-6 text-left sm:text-center sm:-translate-x-10 w-full">Services</h4>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 sm:gap-x-8 gap-y-2 items-start w-full">
+          <!-- Sub-column 1: Left Side Services -->
+          <div class="flex flex-col gap-2 items-start justify-start">
+            <a href="land-sales-details.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-[13px] leading-5 font-medium">Land sales</a>
+            <a href="services.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-[13px] leading-5 font-medium">Property Management</a>
+            <a href="services.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-[13px] leading-5 font-medium">Building Construction</a>
+            <a href="services.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-[13px] leading-5 font-medium">Land conversion services</a>
+            <a href="services.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-[13px] leading-5 font-medium">land approvals and documentation</a>
+          </div>
+          <!-- Sub-column 2: Right Side Services (Line-by-line matched to Left Side) -->
+          <div class="flex flex-col gap-2 items-start justify-start">
+            <a href="services.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-[13px] leading-5 font-medium">land purchase Assistance</a>
+            <a href="services.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-[13px] leading-5 font-medium">NRI property Management</a>
+            <a href="services.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-[13px] leading-5 font-medium">Building Valuation</a>
+            <a href="services.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-[13px] leading-5 font-medium">Rental services</a>
+            <a href="services.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-[13px] leading-5 font-medium">warehouse and corporate solutions</a>
+          </div>
+        </div>
       </div>
 
       <!-- Col 4: Contact Us -->
-      <div class="flex flex-col gap-2.5 items-start justify-start">
-        <h4 class="text-white font-['Outfit',_sans-serif] text-base font-bold mb-1">Contact Us</h4>
-        <a href="mailto:admin@vizhiinfragenrealtors.com" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-sm leading-6 break-all">
+      <div class="col-span-1 sm:col-span-1 md:col-span-1 lg:col-span-2 xl:col-span-2 flex flex-col gap-2 items-start justify-start min-w-[210px]">
+        <h4 class="text-white font-['Outfit',_sans-serif] text-base font-bold mb-1 tracking-wide leading-6">Contact Us</h4>
+        <a href="mailto:admin@vizhiinfragenrealtors.com" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-[13px] leading-5 font-medium whitespace-nowrap block">
           admin@vizhiinfragenrealtors.com
         </a>
-        <a href="tel:+919688889420" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-sm leading-6">
+        <a href="tel:+919688889420" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-[13px] leading-5 font-medium whitespace-nowrap block">
           +91 96888 89420 / 97871 66889
         </a>
-        <div class="text-stone-300 font-['Inter',_sans-serif] text-xs sm:text-sm leading-relaxed max-w-[260px] pt-1">
+        <div class="text-stone-300 font-['Inter',_sans-serif] text-xs leading-relaxed max-w-[260px] pt-0.5">
           Shop No. 24, Suganthi Nagar, Bus Stand Complex, Sulur Old Bus Stand, Sulur, Coimbatore &ndash; 641402
         </div>
 
         <!-- 3 Social Media Icons Under Details of Contact Us Section -->
-        <div class="flex items-center space-x-5 pt-3">
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="text-[#E4405F] hover:scale-125 transition-transform duration-300" aria-label="Instagram">
-            <i class="fa-brands fa-instagram text-xl"></i>
+        <div class="flex items-center space-x-3 pt-2">
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-[#833AB4] hover:scale-110 transition-all duration-300 shadow-sm" aria-label="Instagram">
+            <i class="fa-brands fa-instagram text-sm"></i>
           </a>
-          <a href="https://wa.me/919688889420?text=Hii!%20I'm%20interested%20Can%20i%20know%20about%20more%20details" target="_blank" rel="noopener noreferrer" class="text-[#25D366] hover:scale-125 transition-transform duration-300" aria-label="WhatsApp">
-            <i class="fa-brands fa-whatsapp text-xl"></i>
+          <a href="https://wa.me/919688889420?text=Hii!%20I'm%20interested%20Can%20i%20know%20about%20more%20details" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-[#25D366] hover:scale-110 transition-all duration-300 shadow-sm" aria-label="WhatsApp">
+            <i class="fa-brands fa-whatsapp text-sm"></i>
           </a>
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="text-[#1877F2] hover:scale-125 transition-transform duration-300" aria-label="Facebook">
-            <i class="fa-brands fa-facebook-f text-lg"></i>
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-[#1877F2] hover:scale-110 transition-all duration-300 shadow-sm" aria-label="Facebook">
+            <i class="fa-brands fa-facebook-f text-xs"></i>
           </a>
         </div>
       </div>
 
-      <!-- Col 5: Find Us (Satellite Google Map Card Right to Contact Us) -->
-      <div class="flex flex-col gap-2.5 items-start justify-start w-full">
-        <h4 class="text-white font-['Outfit',_sans-serif] text-base font-bold mb-1">Find Us</h4>
-        <div class="rounded-2xl border border-white/20 w-full max-w-[260px] h-[155px] relative overflow-hidden shadow-xl group">
+      <!-- Col 5: Find Us (Satellite Google Map Card Moved Slightly Right) -->
+      <div class="col-span-1 sm:col-span-2 md:col-span-1 lg:col-span-2 xl:col-span-2 flex flex-col gap-2.5 items-start justify-start w-full lg:pl-4 xl:pl-6 lg:translate-x-2 xl:translate-x-3">
+        <h4 class="text-white font-['Outfit',_sans-serif] text-base font-bold mb-1 tracking-wide leading-6">Find Us</h4>
+        <a href="https://maps.google.com/?q=First+Floor,+Shop+No.24,+Old+Bus+Stand+Complex,+24,+Suganthi+Nagar+Rd,+Sulur,+Tamil+Nadu+641402" target="_blank" rel="noopener noreferrer"
+          class="rounded-2xl border border-white/20 w-full max-w-[260px] h-[155px] relative overflow-hidden shadow-lg group block cursor-pointer transition-transform hover:scale-[1.02]"
+          aria-label="Open location in Google Maps">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.483981881518!2d77.1235!3d11.0258!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba85703730aa18b%3A0xc3457df7aa121d5a!2sOld%20Bus%20Stand%20Complex%2C%20Suganthi%20Nagar%20Rd%2C%20Sulur%2C%20Tamil%20Nadu%20641402!5e1!3m2!1sen!2sin!4v1721800000000"
-            class="absolute inset-0 w-full h-full border-0 opacity-85 group-hover:opacity-100 transition-opacity duration-300"
+            class="absolute inset-0 w-full h-full border-0 opacity-90 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
             allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
           </iframe>
           <div class="bg-white/95 backdrop-blur-sm rounded-md px-2.5 py-1 flex items-center gap-1.5 absolute left-2.5 top-2.5 z-10 shadow-md">
-            <a href="https://maps.google.com/?q=First+Floor,+Shop+No.24,+Old+Bus+Stand+Complex,+24,+Suganthi+Nagar+Rd,+Sulur,+Tamil+Nadu+641402" target="_blank"
-              class="flex items-center gap-1 text-[#1a73e8] text-[11px] font-semibold hover:underline">
+            <span class="flex items-center gap-1 text-[#1a73e8] text-[11px] font-semibold">
               <span>Maps</span>
               <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
-            </a>
+            </span>
           </div>
-          <div class="absolute bottom-2 left-2 right-2 bg-black/75 backdrop-blur-sm rounded px-2 py-1 pointer-events-none z-10 text-[10px] text-white truncate font-medium">
-            📍 Vizhi Infragen Realtors LLP
+          <div class="absolute bottom-2 left-2 right-2 bg-black/75 backdrop-blur-sm rounded px-2 py-1 z-10 text-[10px] text-white truncate font-medium flex items-center justify-between">
+            <span class="truncate">📍 Vizhi Infragen Realtors LLP</span>
+            <i class="fa-solid fa-arrow-up-right-from-square text-[8px] text-[#c5a880] ml-1 shrink-0"></i>
           </div>
-        </div>
+        </a>
       </div>
 
     </div>
 
     <!-- Bottom Copyright Bar -->
     <div class="border-t border-white/10 pt-6 pb-2 px-2 sm:px-6 lg:px-8 flex items-center justify-center w-full max-w-[1440px] relative z-10 mx-auto mt-10">
-      <div class="text-stone-400 text-center font-['Inter',_sans-serif] text-xs font-normal">
+      <div class="text-stone-400 text-center font-['Inter',_sans-serif] text-xs font-medium">
         &copy; 2026 Vizhi Infragen Realtors LLP. All rights reserved.
       </div>
     </div>

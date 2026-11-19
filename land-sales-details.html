@@ -12,6 +12,24 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link rel="icon" href="vizhi-infragen-realtors-logo.png" type="image/png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            burgundy: { 50:'#FDF2F4',100:'#FAD5DC',500:'#A22C46',600:'#8A1F36',700:'#6B1D2F',800:'#4E1421',900:'#330B14' },
+            gold: { DEFAULT:'#c5a880', hover:'#b59870', bright:'#D4AF37' },
+            cream: { DEFAULT:'#FDFBF7', dark:'#F5EFE6', card:'#FAF6F0' }
+          },
+          fontFamily: {
+            sans: ['Outfit', 'Inter', 'sans-serif'],
+            inter: ['Inter', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
 
   <style>
     :root {
@@ -32,36 +50,11 @@
     img { display: block; max-width: 100%; }
     .shell { width: min(1240px, calc(100% - 48px)); margin: auto; }
 
-    /* HEADER & NAVIGATION */
-    header { height: 96px; background: var(--maroon); position: fixed; z-index: 50; top: 0; width: 100%; color: #fff; border-bottom: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22); }
-    header .shell { width: min(1650px, calc(100% - 48px)); }
-    .nav { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-    .brand img { width: 160px; height: 82px; object-fit: contain; filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.18)); }
-    .navlinks { display: flex; align-items: center; }
-    .navlinks a { padding: 8px clamp(16px, 1.6vw, 25px); display: flex; align-items: center; gap: 7px; border-right: 1px solid rgba(255, 255, 255, 0.2); font: 500 clamp(.875rem, 1vw, .9375rem)/1 'Inter', sans-serif; letter-spacing: .025em; white-space: nowrap; transition: color .2s; }
-    .navlinks a:last-child { border-right: 0; }
-    .navlinks a:hover, .navlinks .active { color: var(--gold); }
-    .navlinks .active { font-weight: 700; }
-    .social { display: flex; align-items: center; gap: 16px; }
-    .social a, .menu { width: 40px; height: 40px; border: 0; border-radius: 50%; background: rgba(255, 255, 255, 0.1); display: grid; place-items: center; color: #fff; font-size: 1.1rem; transition: background .2s, color .2s, transform .2s; }
-    .social a:hover, .social a:focus-visible, .menu:hover, .menu:focus-visible { background: var(--gold); color: var(--maroon); transform: translateY(-2px); }
-    .menu { display: none; cursor: pointer; }
-    .drawer { visibility: hidden; position: fixed; inset: 0; z-index: 100; }
-    .drawer.open { visibility: visible; }
-    .shade { position: absolute; inset: 0; background: rgba(20, 10, 10, 0.62); opacity: 0; transition: .25s; }
-    .drawer.open .shade { opacity: 1; }
-    .panel { position: absolute; right: 0; top: 0; width: min(360px, 88vw); height: 100%; background: var(--ivory); transform: translateX(100%); transition: .3s; padding: 28px; color: var(--ink); }
-    .drawer.open .panel { transform: none; }
-    .close { float: right; border: 0; background: none; font-size: 1.35rem; cursor: pointer; }
-    .drawer nav { clear: both; padding-top: 44px; display: grid; }
-    .drawer nav a { border-bottom: 1px solid var(--line); padding: 16px 2px; font-weight: 700; }
-    .drawer nav a[aria-current="page"] { color: #8a6840; border-left: 3px solid var(--gold); padding-left: 12px; }
-    .drawer .reach { position: absolute; bottom: 32px; color: var(--slate); font-size: .86rem; }
-
     /* GRAND LUXURY HERO SECTION — MATCHING IMAGE 2 DESIGN WITH CITY PHOTO BACKGROUND */
     /* GRAND LUXURY HERO SECTION — MATCHING IMAGE 2 DESIGN WITH INCREASED HERO HEIGHT & ZOOM/FLOAT MOTION */
     .hero-details {
-      margin-top: 96px;
+      margin-top: 0;
+      padding-top: 100px;
       min-height: 780px;
       position: relative;
       isolation: isolate;
@@ -918,51 +911,90 @@
   </style>
 </head>
 <body>
-  <!-- NAVIGATION HEADER -->
-  <header>
-    <div class="shell nav">
-      <a class="brand" href="index.html" aria-label="Vizhi Infragen home">
-        <img src="vizhi-infragen-realtors-logo-white.png" alt="Vizhi Infragen Realtors">
-      </a>
-      <nav class="navlinks" aria-label="Primary navigation">
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="index.html#properties">Properties <i class="fa-solid fa-chevron-down" aria-hidden="true"></i></a>
-        <a class="active" href="services.html">Services</a>
-        <a href="index.html#blog">Blog</a>
-        <a href="contact.html">Contact Us</a>
+  <!-- ==================== SIDE DRAWER ==================== -->
+  <div id="side-drawer-overlay" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[100] opacity-0 pointer-events-none transition-opacity duration-300"></div>
+  <div id="side-drawer" class="fixed top-0 right-0 h-full w-[340px] sm:w-[400px] bg-white z-[101] shadow-2xl translate-x-full transition-transform duration-300 ease-out flex flex-col justify-between p-8 overflow-y-auto">
+    <button id="close-side-drawer" class="absolute top-6 right-6 w-10 h-10 rounded-full bg-stone-100 text-[#4E1421] hover:bg-[#4E1421] hover:text-white flex items-center justify-center transition-all cursor-pointer shadow-sm"><i class="fa-solid fa-xmark text-lg"></i></button>
+    <div class="flex flex-col items-center text-center mt-6 space-y-6">
+      <div class="p-3 bg-stone-50 rounded-2xl border border-stone-200/80 shadow-md inline-block mb-2"><img src="vizhi-infragen-realtors-logo.png" alt="Logo" class="w-36 h-20 object-contain mx-auto" /></div>
+      <nav class="flex flex-col space-y-3 w-full border-t border-b border-stone-100 py-6">
+        <a href="index.html" class="drawer-link text-lg font-bold text-[#334155] hover:text-[#c5a880] transition-colors font-['Inter',sans-serif]">Home</a>
+        <a href="about.html" class="drawer-link text-lg font-bold text-[#334155] hover:text-[#c5a880] transition-colors font-['Inter',sans-serif]">About Us</a>
+        <a href="index.html#properties" class="drawer-link text-lg font-bold text-[#334155] hover:text-[#c5a880] transition-colors font-['Inter',sans-serif]">Properties</a>
+        <a href="services.html" class="drawer-link text-lg font-bold text-[#c5a880] hover:text-[#4E1421] transition-colors font-['Inter',sans-serif]">Services</a>
+        <a href="index.html#blog" class="drawer-link text-lg font-bold text-[#334155] hover:text-[#c5a880] transition-colors font-['Inter',sans-serif]">Blog</a>
+        <a href="contact.html" class="drawer-link text-lg font-bold text-[#334155] hover:text-[#c5a880] transition-colors font-['Inter',sans-serif]">Contact Us</a>
       </nav>
-      <div class="social">
-        <a href="https://wa.me/919688889420?text=Hii!%20I'm%20interested%20Can%20i%20know%20about%20more%20details" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-        <button class="menu" id="menu-button" aria-label="Open navigation" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+      <div class="space-y-3 text-center text-[#334155] font-['Inter',sans-serif] text-sm">
+        <div class="flex items-center justify-center gap-2 text-[#4E1421] font-bold text-base"><i class="fa-solid fa-location-dot text-[#c5a880]"></i><span>Vizhi Infragen Realtors LLP</span></div>
+        <p class="text-xs text-stone-600 leading-relaxed max-w-[280px] mx-auto">First Floor, Shop No.24, Old Bus Stand Complex, 24, Suganthi Nagar Rd, Sulur, Tamil Nadu 641402</p>
+        <div class="pt-2 flex flex-col items-center gap-2 text-xs">
+          <a href="mailto:srissa2006@gmail.com" class="flex items-center gap-2 text-[#4E1421] hover:text-[#c5a880] font-semibold transition-colors"><i class="fa-solid fa-envelope text-[#c5a880]"></i><span>srissa2006@gmail.com</span></a>
+          <a href="tel:9688889420" class="flex items-center gap-2 text-[#4E1421] hover:text-[#c5a880] font-semibold transition-colors"><i class="fa-solid fa-phone text-[#c5a880]"></i><span>+91 96888 89420</span></a>
+        </div>
+      </div>
+      <div class="flex items-center justify-center gap-3 pt-4 border-t border-stone-100 w-full">
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-stone-100 text-[#1877F2] flex items-center justify-center transition-all"><i class="fa-brands fa-facebook-f text-lg"></i></a>
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-stone-100 text-[#E4405F] flex items-center justify-center transition-all"><i class="fa-brands fa-instagram text-lg"></i></a>
+        <a href="https://wa.me/919688889420" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-stone-100 text-[#25D366] flex items-center justify-center transition-all"><i class="fa-brands fa-whatsapp text-lg"></i></a>
       </div>
     </div>
-  </header>
-
-  <!-- MOBILE DRAWER -->
-  <div class="drawer" id="drawer">
-    <div class="shade" id="shade"></div>
-    <aside class="panel" aria-label="Mobile navigation">
-      <button class="close" id="close-menu" aria-label="Close navigation"><i class="fa-solid fa-xmark"></i></button>
-      <a class="brand" href="index.html"><img src="vizhi-infragen-realtors-logo.png" alt="Vizhi Infragen Realtors"></a>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="index.html#properties">Properties</a>
-        <a href="services.html">Services</a>
-        <a href="index.html#blog">Blog</a>
-        <a href="contact.html">Contact Us</a>
-      </nav>
-      <div class="reach">
-        <strong>Vizhi Infragen Realtors</strong><br>
-        First Floor, Shop No.24, Old Bus Stand Complex,<br>
-        Sulur, Tamil Nadu 641402<br><br>
-        <a href="tel:+919688889420">+91 96888 89420</a>
-      </div>
-    </aside>
+    <div class="text-center pt-6 text-[11px] text-stone-400 font-medium">&copy; 2026 Vizhi Infragen Realtors LLP. All Rights Reserved.</div>
   </div>
+
+  <!-- ==========================================
+       TOP NAVBAR - FLOATING PILL CAPSULE (Matches All Other Pages)
+       ========================================== -->
+  <header id="main-header" class="fixed top-4 sm:top-5 left-1/2 -translate-x-1/2 w-[96%] sm:w-[97%] max-w-[1550px] z-[100] transition-all duration-300">
+    <div class="bg-[#341B20]/95 backdrop-blur-md rounded-full px-6 sm:px-8 lg:px-10 h-[70px] sm:h-[78px] md:h-[82px] border border-white/15 shadow-[0_20px_50px_rgba(0,0,0,0.65),0_10px_25px_rgba(0,0,0,0.45)] flex items-center justify-between transition-all duration-300">
+
+      <!-- Left: White Transparent Logo -->
+      <a href="index.html" class="flex items-center hover:scale-[1.02] transition-transform duration-300 shrink-0">
+        <img class="h-[50px] sm:h-[58px] md:h-[64px] w-auto object-contain drop-shadow-md" src="vizhi-infragen-realtors-logo-white.png" alt="Vizhi Infragen Realtors Logo" />
+      </a>
+
+      <!-- Center: Navigation Links in Dark Capsule Container -->
+      <nav class="hidden md:flex items-center gap-2 sm:gap-3.5 bg-[#1F0D11] border border-white/10 rounded-full px-2.5 sm:px-3 py-1 shadow-inner h-[44px] sm:h-[48px]">
+        <a href="index.html" class="text-white hover:text-[#c5a880] font-medium text-xs sm:text-[14px] px-3.5 sm:px-4 h-[36px] sm:h-[40px] flex items-center justify-center transition-colors font-['Inter',sans-serif]">Home</a>
+        <a href="about.html" class="text-white hover:text-[#c5a880] font-medium text-xs sm:text-[14px] px-3.5 sm:px-4 h-[36px] sm:h-[40px] flex items-center justify-center transition-colors font-['Inter',sans-serif]">About Us</a>
+        <div class="relative group flex items-center">
+          <a href="index.html#properties" class="text-white hover:text-[#c5a880] font-medium text-xs sm:text-[14px] px-3.5 sm:px-4 h-[36px] sm:h-[40px] flex items-center justify-center transition-colors font-['Inter',sans-serif] flex items-center gap-1.5">
+            <span>Properties</span>
+            <i class="fa-solid fa-chevron-down text-[10px] opacity-75 group-hover:rotate-180 transition-transform"></i>
+          </a>
+          <div class="absolute top-full left-0 mt-2 w-40 bg-[#2D1217] border border-white/15 rounded-2xl shadow-2xl py-2 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all z-[110]">
+            <a href="land-sales-details.html" class="block px-4 py-2 text-xs text-[#c5a880] bg-white/5 transition-colors font-['Inter',sans-serif]">Land</a>
+            <a href="index.html#properties" class="block px-4 py-2 text-xs text-white hover:text-[#c5a880] hover:bg-white/5 transition-colors font-['Inter',sans-serif]">Building</a>
+          </div>
+        </div>
+        <a href="services.html" class="bg-[#c5a880] text-[#2D1217] font-semibold text-xs sm:text-[14px] px-5 sm:px-6 h-[36px] sm:h-[40px] flex items-center justify-center rounded-full shadow-sm transition-all font-['Inter',sans-serif]">Services</a>
+        <a href="contact.html" class="text-white hover:text-[#c5a880] font-medium text-xs sm:text-[14px] px-3.5 sm:px-4 h-[36px] sm:h-[40px] flex items-center justify-center transition-colors font-['Inter',sans-serif]">Contact Us</a>
+      </nav>
+
+      <!-- Right: Pure White Pill Holding Social Icons -->
+      <div class="flex items-center gap-3 shrink-0">
+        <div class="hidden sm:flex items-center bg-white rounded-full px-4 sm:px-5 h-[38px] sm:h-[42px] space-x-3.5 shadow-md">
+          <a href="https://wa.me/919688889420?text=Hii!%20I'm%20interested%20Can%20i%20know%20about%20more%20details" target="_blank" rel="noopener noreferrer" class="text-[#25D366] hover:scale-125 transition-transform flex items-center justify-center" aria-label="WhatsApp">
+            <i class="fa-brands fa-whatsapp text-base sm:text-lg"></i>
+          </a>
+          <span class="w-[1px] h-3.5 bg-stone-300"></span>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="text-[#E4405F] hover:scale-125 transition-transform flex items-center justify-center" aria-label="Instagram">
+            <i class="fa-brands fa-instagram text-base sm:text-lg"></i>
+          </a>
+          <span class="w-[1px] h-3.5 bg-stone-300"></span>
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="text-[#1877F2] hover:scale-125 transition-transform flex items-center justify-center" aria-label="Facebook">
+            <i class="fa-brands fa-facebook-f text-sm sm:text-base"></i>
+          </a>
+        </div>
+
+        <!-- Mobile Drawer Hamburger Toggle Button -->
+        <button id="open-side-drawer" class="md:hidden w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-all cursor-pointer" aria-label="Open Mobile Navigation">
+          <i class="fa-solid fa-bars text-base"></i>
+        </button>
+      </div>
+
+    </div>
+  </header>
 
   <main>
     <!-- GRAND LUXURY HERO SECTION — MATCHING IMAGE 2 DESIGN WITH CITY PHOTO BACKGROUND -->
@@ -1326,74 +1358,139 @@
   </main>
 
   <!-- FOOTER -->
-  <footer>
-    <div class="shell footer-grid">
-      <!-- Col 1: Logo & Info -->
-      <div>
-        <a href="index.html"><img class="footer-logo" src="vizhi-infragen-realtors-logo-white.png" alt="Vizhi Infragen Realtors"></a>
-        <p style="max-width:250px;">Building the future with geometric precision and organic harmony. Elevating real estate standards in Coimbatore.</p>
-        <a href="contact.html" class="footer-btn">Start Property Journey <i class="fa-solid fa-arrow-right"></i></a>
+        <footer class="bg-[#331C20] text-white pt-14 pb-8 px-6 sm:px-10 lg:px-16 flex flex-col items-center justify-start relative overflow-hidden text-left border-t border-white/10">
+    <div class="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-12 gap-8 lg:gap-6 xl:gap-8 items-start max-w-[1440px] px-2 sm:px-6 lg:px-8 relative z-10 mx-auto">
+      
+      <!-- Col 1: Brand Logo & Tagline (Moved Slightly Left and Lifted) -->
+      <div class="col-span-1 sm:col-span-2 md:col-span-1 lg:col-span-2 xl:col-span-2 flex flex-col gap-3.5 items-start justify-start lg:-ml-2 xl:-ml-4 -mt-2.5 sm:-mt-3.5 lg:-mt-4">
+        <a href="index.html" class="inline-block hover:scale-105 transition-transform duration-300">
+          <img class="w-[145px] sm:w-[155px] h-auto object-contain footer-logo-img" src="vizhi-infragen-realtors-logo-white.png" alt="Vizhi Infragen Realtors Logo" />
+        </a>
+        <p class="text-stone-300 font-['Inter',_sans-serif] text-xs sm:text-[13px] leading-relaxed max-w-[260px]">
+          Building the future with geometric precision and organic harmony. Elevating real estate standards.
+        </p>
       </div>
 
       <!-- Col 2: Company -->
-      <div>
-        <h4>Company</h4>
-        <a href="about.html">About Us</a>
-        <a href="services.html">Our Services</a>
-        <a href="index.html#projects">Projects</a>
-        <a href="contact.html">Contact</a>
+      <div class="col-span-1 sm:col-span-1 md:col-span-1 lg:col-span-2 xl:col-span-2 flex flex-col gap-2 items-start justify-start">
+        <h4 class="text-white font-['Outfit',_sans-serif] text-base font-bold mb-1 tracking-wide leading-6">Company</h4>
+        <a href="about.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-[13px] leading-5 font-medium">About us</a>
+        <a href="services.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-[13px] leading-5 font-medium">Residential Property</a>
+        <a href="services.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-[13px] leading-5 font-medium">Commercial property</a>
+        <a href="services.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-[13px] leading-5 font-medium">Services</a>
+        <a href="contact.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-[13px] leading-5 font-medium">Contact</a>
       </div>
 
-      <!-- Col 3: Services -->
-      <div>
-        <h4>Services</h4>
-        <a href="land-sales-details.html">Land Sales &amp; Plots</a>
-        <a href="services.html#property-management">Property Management</a>
-        <a href="services.html#nri-management">NRI Property Shield</a>
-        <a href="services.html#approvals">DTCP &amp; Legal Approvals</a>
+      <!-- Col 3: Services (Centered Header in line with other topics + 2 Equal Columns of 5 / 5 Services) -->
+      <div class="col-span-1 sm:col-span-2 md:col-span-1 lg:col-span-4 xl:col-span-4 flex flex-col gap-2 items-start sm:items-center justify-start w-full">
+        <h4 class="text-white font-['Outfit',_sans-serif] text-base font-bold mb-1 tracking-wide leading-6 text-left sm:text-center sm:-translate-x-10 w-full">Services</h4>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 sm:gap-x-8 gap-y-2 items-start w-full">
+          <!-- Sub-column 1: Left Side Services -->
+          <div class="flex flex-col gap-2 items-start justify-start">
+            <a href="land-sales-details.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-[13px] leading-5 font-medium">Land sales</a>
+            <a href="services.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-[13px] leading-5 font-medium">Property Management</a>
+            <a href="services.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-[13px] leading-5 font-medium">Building Construction</a>
+            <a href="services.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-[13px] leading-5 font-medium">Land conversion services</a>
+            <a href="services.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-[13px] leading-5 font-medium">land approvals and documentation</a>
+          </div>
+          <!-- Sub-column 2: Right Side Services (Line-by-line matched to Left Side) -->
+          <div class="flex flex-col gap-2 items-start justify-start">
+            <a href="services.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-[13px] leading-5 font-medium">land purchase Assistance</a>
+            <a href="services.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-[13px] leading-5 font-medium">NRI property Management</a>
+            <a href="services.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-[13px] leading-5 font-medium">Building Valuation</a>
+            <a href="services.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-[13px] leading-5 font-medium">Rental services</a>
+            <a href="services.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-[13px] leading-5 font-medium">warehouse and corporate solutions</a>
+          </div>
+        </div>
       </div>
 
       <!-- Col 4: Contact Us -->
-      <div>
-        <h4>Contact Us</h4>
-        <a href="mailto:srissa2006@gmail.com">srissa2006@gmail.com</a>
-        <a href="tel:+919688889420">+91 96888 89420</a>
-        <p style="max-width:220px; margin-top:6px;">First Floor, Shop No.24, Old Bus Stand Complex, 24, Suganthi Nagar Rd, Sulur, TN 641402</p>
-      </div>
+      <div class="col-span-1 sm:col-span-1 md:col-span-1 lg:col-span-2 xl:col-span-2 flex flex-col gap-2 items-start justify-start min-w-[210px]">
+        <h4 class="text-white font-['Outfit',_sans-serif] text-base font-bold mb-1 tracking-wide leading-6">Contact Us</h4>
+        <a href="mailto:admin@vizhiinfragenrealtors.com" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-[13px] leading-5 font-medium whitespace-nowrap block">
+          admin@vizhiinfragenrealtors.com
+        </a>
+        <a href="tel:+919688889420" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-[13px] leading-5 font-medium whitespace-nowrap block">
+          +91 96888 89420 / 97871 66889
+        </a>
+        <div class="text-stone-300 font-['Inter',_sans-serif] text-xs leading-relaxed max-w-[260px] pt-0.5">
+          Shop No. 24, Suganthi Nagar, Bus Stand Complex, Sulur Old Bus Stand, Sulur, Coimbatore &ndash; 641402
+        </div>
 
-      <!-- Col 5: Find Us Map -->
-      <div>
-        <h4>Find Us</h4>
-        <div class="footer-map-card">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.483981881518!2d77.1235!3d11.0258!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba85703730aa18b%3A0xc3457df7aa121d5a!2sOld%20Bus%20Stand%20Complex%2C%20Suganthi%20Nagar%20Rd%2C%20Sulur%2C%20Tamil%20Nadu%20641402!5e0!3m2!1sen!2sin!4v1721800000000" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          <a href="https://maps.google.com/?q=Old+Bus+Stand+Complex+Sulur+Tamil+Nadu" target="_blank" class="footer-map-badge">
-            <span>Maps</span><i class="fa-solid fa-location-dot"></i>
+        <!-- 3 Social Media Icons Under Details of Contact Us Section -->
+        <div class="flex items-center space-x-3 pt-2">
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-[#833AB4] hover:scale-110 transition-all duration-300 shadow-sm" aria-label="Instagram">
+            <i class="fa-brands fa-instagram text-sm"></i>
+          </a>
+          <a href="https://wa.me/919688889420?text=Hii!%20I'm%20interested%20Can%20i%20know%20about%20more%20details" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-[#25D366] hover:scale-110 transition-all duration-300 shadow-sm" aria-label="WhatsApp">
+            <i class="fa-brands fa-whatsapp text-sm"></i>
+          </a>
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-[#1877F2] hover:scale-110 transition-all duration-300 shadow-sm" aria-label="Facebook">
+            <i class="fa-brands fa-facebook-f text-xs"></i>
           </a>
         </div>
       </div>
+
+      <!-- Col 5: Find Us (Satellite Google Map Card Moved Slightly Right) -->
+      <div class="col-span-1 sm:col-span-2 md:col-span-1 lg:col-span-2 xl:col-span-2 flex flex-col gap-2.5 items-start justify-start w-full lg:pl-4 xl:pl-6 lg:translate-x-2 xl:translate-x-3">
+        <h4 class="text-white font-['Outfit',_sans-serif] text-base font-bold mb-1 tracking-wide leading-6">Find Us</h4>
+        <a href="https://maps.google.com/?q=First+Floor,+Shop+No.24,+Old+Bus+Stand+Complex,+24,+Suganthi+Nagar+Rd,+Sulur,+Tamil+Nadu+641402" target="_blank" rel="noopener noreferrer"
+          class="rounded-2xl border border-white/20 w-full max-w-[260px] h-[155px] relative overflow-hidden shadow-lg group block cursor-pointer transition-transform hover:scale-[1.02]"
+          aria-label="Open location in Google Maps">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.483981881518!2d77.1235!3d11.0258!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba85703730aa18b%3A0xc3457df7aa121d5a!2sOld%20Bus%20Stand%20Complex%2C%20Suganthi%20Nagar%20Rd%2C%20Sulur%2C%20Tamil%20Nadu%20641402!5e1!3m2!1sen!2sin!4v1721800000000"
+            class="absolute inset-0 w-full h-full border-0 opacity-90 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+          <div class="bg-white/95 backdrop-blur-sm rounded-md px-2.5 py-1 flex items-center gap-1.5 absolute left-2.5 top-2.5 z-10 shadow-md">
+            <span class="flex items-center gap-1 text-[#1a73e8] text-[11px] font-semibold">
+              <span>Maps</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
+            </span>
+          </div>
+          <div class="absolute bottom-2 left-2 right-2 bg-black/75 backdrop-blur-sm rounded px-2 py-1 z-10 text-[10px] text-white truncate font-medium flex items-center justify-between">
+            <span class="truncate">📍 Vizhi Infragen Realtors LLP</span>
+            <i class="fa-solid fa-arrow-up-right-from-square text-[8px] text-[#c5a880] ml-1 shrink-0"></i>
+          </div>
+        </a>
+      </div>
+
     </div>
 
-    <!-- Copyright & Social Row -->
-    <div class="shell copyright-bar">
-      <span>© 2026 Vizhi Infragen Realtors LLP. All rights reserved.</span>
-      <div class="social-row">
-        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-insta"><i class="fa-brands fa-instagram"></i></a>
-        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="social-yt"><i class="fa-brands fa-youtube"></i></a>
-        <a href="https://wa.me/919688889420" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="social-wa"><i class="fa-brands fa-whatsapp"></i></a>
-        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter" class="social-tw"><i class="fa-brands fa-twitter"></i></a>
-        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="social-fb"><i class="fa-brands fa-facebook-f"></i></a>
+    <!-- Bottom Copyright Bar -->
+    <div class="border-t border-white/10 pt-6 pb-2 px-2 sm:px-6 lg:px-8 flex items-center justify-center w-full max-w-[1440px] relative z-10 mx-auto mt-10">
+      <div class="text-stone-400 text-center font-['Inter',_sans-serif] text-xs font-medium">
+        &copy; 2026 Vizhi Infragen Realtors LLP. All rights reserved.
       </div>
     </div>
   </footer>
 
   <script>
     // Side drawer toggle logic
-    const d = document.getElementById('drawer'), b = document.getElementById('menu-button');
-    function closeMenu(){ d.classList.remove('open'); b.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
-    b.addEventListener('click',()=>{ d.classList.add('open'); b.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; });
-    document.getElementById('close-menu').addEventListener('click',closeMenu);
-    document.getElementById('shade').addEventListener('click',closeMenu);
-    document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeMenu(); });
+    const openDrawerBtn = document.getElementById('open-side-drawer');
+    const closeDrawerBtn = document.getElementById('close-side-drawer');
+    const sideDrawer = document.getElementById('side-drawer');
+    const drawerOverlay = document.getElementById('side-drawer-overlay');
+    const drawerLinks = document.querySelectorAll('.drawer-link');
+
+    function openDrawer() {
+      if (sideDrawer && drawerOverlay) {
+        sideDrawer.classList.remove('translate-x-full');
+        drawerOverlay.classList.remove('opacity-0', 'pointer-events-none');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+    function closeDrawer() {
+      if (sideDrawer && drawerOverlay) {
+        sideDrawer.classList.add('translate-x-full');
+        drawerOverlay.classList.add('opacity-0', 'pointer-events-none');
+        document.body.style.overflow = '';
+      }
+    }
+    if (openDrawerBtn) openDrawerBtn.addEventListener('click', openDrawer);
+    if (closeDrawerBtn) closeDrawerBtn.addEventListener('click', closeDrawer);
+    if (drawerOverlay) drawerOverlay.addEventListener('click', closeDrawer);
+    drawerLinks.forEach(link => link.addEventListener('click', closeDrawer));
 
     // IMAGE 4 FORMAT TRUSTWORTHY SLIDER LOGIC
     const trustItems = [

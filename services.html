@@ -968,10 +968,9 @@
             <span>Properties</span>
             <i class="fa-solid fa-chevron-down text-[10px] opacity-75 group-hover:rotate-180 transition-transform"></i>
           </a>
-          <div class="absolute top-full left-0 mt-2 w-48 bg-[#2D1217] border border-white/15 rounded-2xl shadow-2xl py-2 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all z-[110]">
-            <a href="index.html#our-projects" class="block px-4 py-2 text-xs text-white hover:text-[#c5a880] hover:bg-white/5 transition-colors font-['Inter',sans-serif]">Our Projects</a>
-            <a href="index.html#properties" class="block px-4 py-2 text-xs text-white hover:text-[#c5a880] hover:bg-white/5 transition-colors font-['Inter',sans-serif]">Explore Properties</a>
-            <a href="land-sales-details.html" class="block px-4 py-2 text-xs text-white hover:text-[#c5a880] hover:bg-white/5 transition-colors font-['Inter',sans-serif]">Land Sales &amp; Plots</a>
+          <div class="absolute top-full left-0 mt-2 w-40 bg-[#2D1217] border border-white/15 rounded-2xl shadow-2xl py-2 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all z-[110]">
+            <a href="land-sales-details.html" class="block px-4 py-2 text-xs text-white hover:text-[#c5a880] hover:bg-white/5 transition-colors font-['Inter',sans-serif]">Land</a>
+            <a href="index.html#properties" class="block px-4 py-2 text-xs text-white hover:text-[#c5a880] hover:bg-white/5 transition-colors font-['Inter',sans-serif]">Building</a>
           </div>
         </div>
         <a href="services.html" class="bg-[#c5a880] text-[#2D1217] font-semibold text-xs sm:text-[14px] px-5 sm:px-6 h-[36px] sm:h-[40px] flex items-center justify-center rounded-full shadow-sm transition-all font-['Inter',sans-serif]">Services</a>
@@ -1747,96 +1746,108 @@
     <!-- ==========================================
        FOOTER SECTION (Background #2E1418, 5 Columns with Map right to Contact Us)
        ========================================== -->
-  <footer class="bg-[#2E1418] pt-16 pb-8 px-6 sm:px-10 lg:px-16 flex flex-col items-center justify-start relative overflow-hidden text-left border-t border-white/10">
-    <div class="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-10 max-w-[1440px] px-2 sm:px-6 lg:px-8 relative z-10 mx-auto">
+        <footer class="bg-[#331C20] text-white pt-14 pb-8 px-6 sm:px-10 lg:px-16 flex flex-col items-center justify-start relative overflow-hidden text-left border-t border-white/10">
+    <div class="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-12 gap-8 lg:gap-6 xl:gap-8 items-start max-w-[1440px] px-2 sm:px-6 lg:px-8 relative z-10 mx-auto">
       
-      <!-- Col 1: Brand Logo & Tagline -->
-      <div class="flex flex-col gap-4 items-start justify-start">
+      <!-- Col 1: Brand Logo & Tagline (Moved Slightly Left and Lifted) -->
+      <div class="col-span-1 sm:col-span-2 md:col-span-1 lg:col-span-2 xl:col-span-2 flex flex-col gap-3.5 items-start justify-start lg:-ml-2 xl:-ml-4 -mt-2.5 sm:-mt-3.5 lg:-mt-4">
         <a href="index.html" class="inline-block hover:scale-105 transition-transform duration-300">
-          <img class="w-[145px] sm:w-[160px] h-auto object-contain footer-logo-img" src="vizhi-infragen-realtors-logo-white.png" alt="Vizhi Infragen Realtors Logo" />
+          <img class="w-[145px] sm:w-[155px] h-auto object-contain footer-logo-img" src="vizhi-infragen-realtors-logo-white.png" alt="Vizhi Infragen Realtors Logo" />
         </a>
-        <p class="text-stone-300 font-['Inter',_sans-serif] text-xs sm:text-sm leading-relaxed max-w-[270px]">
+        <p class="text-stone-300 font-['Inter',_sans-serif] text-xs sm:text-[13px] leading-relaxed max-w-[260px]">
           Building the future with geometric precision and organic harmony. Elevating real estate standards.
         </p>
       </div>
 
       <!-- Col 2: Company -->
-      <div class="flex flex-col gap-2.5 items-start justify-start">
-        <h4 class="text-white font-['Outfit',_sans-serif] text-base font-bold mb-1">Company</h4>
-        <a href="about.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-sm leading-6">About us</a>
-        <a href="services.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-sm leading-6">Residential Property</a>
-        <a href="services.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-sm leading-6">Commercial property</a>
-        <a href="services.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-sm leading-6">Services</a>
-        <a href="contact.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-sm leading-6">Contact</a>
+      <div class="col-span-1 sm:col-span-1 md:col-span-1 lg:col-span-2 xl:col-span-2 flex flex-col gap-2 items-start justify-start">
+        <h4 class="text-white font-['Outfit',_sans-serif] text-base font-bold mb-1 tracking-wide leading-6">Company</h4>
+        <a href="about.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-[13px] leading-5 font-medium">About us</a>
+        <a href="services.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-[13px] leading-5 font-medium">Residential Property</a>
+        <a href="services.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-[13px] leading-5 font-medium">Commercial property</a>
+        <a href="services.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-[13px] leading-5 font-medium">Services</a>
+        <a href="contact.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-[13px] leading-5 font-medium">Contact</a>
       </div>
 
-      <!-- Col 3: Services (Exact 8 Options) -->
-      <div class="flex flex-col gap-2 items-start justify-start">
-        <h4 class="text-white font-['Outfit',_sans-serif] text-base font-bold mb-1">Services</h4>
-        <a href="services.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs leading-5">Land Analysis</a>
-        <a href="services.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs leading-5">Legal verification and clear title property selection</a>
-        <a href="services.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs leading-5">Land purchase</a>
-        <a href="services.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs leading-5">Land conversion</a>
-        <a href="services.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs leading-5">Architectural &amp; Structural design</a>
-        <a href="services.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs leading-5">Building Approvals</a>
-        <a href="services.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs leading-5">Building Construction &amp; quality inspection</a>
-        <a href="services.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs leading-5">Turnkey Handover</a>
+      <!-- Col 3: Services (Centered Header in line with other topics + 2 Equal Columns of 5 / 5 Services) -->
+      <div class="col-span-1 sm:col-span-2 md:col-span-1 lg:col-span-4 xl:col-span-4 flex flex-col gap-2 items-start sm:items-center justify-start w-full">
+        <h4 class="text-white font-['Outfit',_sans-serif] text-base font-bold mb-1 tracking-wide leading-6 text-left sm:text-center sm:-translate-x-10 w-full">Services</h4>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 sm:gap-x-8 gap-y-2 items-start w-full">
+          <!-- Sub-column 1: Left Side Services -->
+          <div class="flex flex-col gap-2 items-start justify-start">
+            <a href="land-sales-details.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-[13px] leading-5 font-medium">Land sales</a>
+            <a href="services.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-[13px] leading-5 font-medium">Property Management</a>
+            <a href="services.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-[13px] leading-5 font-medium">Building Construction</a>
+            <a href="services.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-[13px] leading-5 font-medium">Land conversion services</a>
+            <a href="services.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-[13px] leading-5 font-medium">land approvals and documentation</a>
+          </div>
+          <!-- Sub-column 2: Right Side Services (Line-by-line matched to Left Side) -->
+          <div class="flex flex-col gap-2 items-start justify-start">
+            <a href="services.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-[13px] leading-5 font-medium">land purchase Assistance</a>
+            <a href="services.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-[13px] leading-5 font-medium">NRI property Management</a>
+            <a href="services.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-[13px] leading-5 font-medium">Building Valuation</a>
+            <a href="services.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-[13px] leading-5 font-medium">Rental services</a>
+            <a href="services.html" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-[13px] leading-5 font-medium">warehouse and corporate solutions</a>
+          </div>
+        </div>
       </div>
 
       <!-- Col 4: Contact Us -->
-      <div class="flex flex-col gap-2.5 items-start justify-start">
-        <h4 class="text-white font-['Outfit',_sans-serif] text-base font-bold mb-1">Contact Us</h4>
-        <a href="mailto:admin@vizhiinfragenrealtors.com" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-sm leading-6 break-all">
+      <div class="col-span-1 sm:col-span-1 md:col-span-1 lg:col-span-2 xl:col-span-2 flex flex-col gap-2 items-start justify-start min-w-[210px]">
+        <h4 class="text-white font-['Outfit',_sans-serif] text-base font-bold mb-1 tracking-wide leading-6">Contact Us</h4>
+        <a href="mailto:admin@vizhiinfragenrealtors.com" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-[13px] leading-5 font-medium whitespace-nowrap block">
           admin@vizhiinfragenrealtors.com
         </a>
-        <a href="tel:+919688889420" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-sm leading-6">
+        <a href="tel:+919688889420" class="text-stone-300 hover:text-[#c5a880] transition-colors font-['Inter',_sans-serif] text-xs sm:text-[13px] leading-5 font-medium whitespace-nowrap block">
           +91 96888 89420 / 97871 66889
         </a>
-        <div class="text-stone-300 font-['Inter',_sans-serif] text-xs sm:text-sm leading-relaxed max-w-[260px] pt-1">
+        <div class="text-stone-300 font-['Inter',_sans-serif] text-xs leading-relaxed max-w-[260px] pt-0.5">
           Shop No. 24, Suganthi Nagar, Bus Stand Complex, Sulur Old Bus Stand, Sulur, Coimbatore &ndash; 641402
         </div>
 
         <!-- 3 Social Media Icons Under Details of Contact Us Section -->
-        <div class="flex items-center space-x-5 pt-3">
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="text-[#E4405F] hover:scale-125 transition-transform duration-300" aria-label="Instagram">
-            <i class="fa-brands fa-instagram text-xl"></i>
+        <div class="flex items-center space-x-3 pt-2">
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-[#833AB4] hover:scale-110 transition-all duration-300 shadow-sm" aria-label="Instagram">
+            <i class="fa-brands fa-instagram text-sm"></i>
           </a>
-          <a href="https://wa.me/919688889420?text=Hii!%20I'm%20interested%20Can%20i%20know%20about%20more%20details" target="_blank" rel="noopener noreferrer" class="text-[#25D366] hover:scale-125 transition-transform duration-300" aria-label="WhatsApp">
-            <i class="fa-brands fa-whatsapp text-xl"></i>
+          <a href="https://wa.me/919688889420?text=Hii!%20I'm%20interested%20Can%20i%20know%20about%20more%20details" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-[#25D366] hover:scale-110 transition-all duration-300 shadow-sm" aria-label="WhatsApp">
+            <i class="fa-brands fa-whatsapp text-sm"></i>
           </a>
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="text-[#1877F2] hover:scale-125 transition-transform duration-300" aria-label="Facebook">
-            <i class="fa-brands fa-facebook-f text-lg"></i>
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-[#1877F2] hover:scale-110 transition-all duration-300 shadow-sm" aria-label="Facebook">
+            <i class="fa-brands fa-facebook-f text-xs"></i>
           </a>
         </div>
       </div>
 
-      <!-- Col 5: Find Us (Satellite Google Map Card Right to Contact Us) -->
-      <div class="flex flex-col gap-2.5 items-start justify-start w-full">
-        <h4 class="text-white font-['Outfit',_sans-serif] text-base font-bold mb-1">Find Us</h4>
-        <div class="rounded-2xl border border-white/20 w-full max-w-[260px] h-[155px] relative overflow-hidden shadow-xl group">
+      <!-- Col 5: Find Us (Satellite Google Map Card Moved Slightly Right) -->
+      <div class="col-span-1 sm:col-span-2 md:col-span-1 lg:col-span-2 xl:col-span-2 flex flex-col gap-2.5 items-start justify-start w-full lg:pl-4 xl:pl-6 lg:translate-x-2 xl:translate-x-3">
+        <h4 class="text-white font-['Outfit',_sans-serif] text-base font-bold mb-1 tracking-wide leading-6">Find Us</h4>
+        <a href="https://maps.google.com/?q=First+Floor,+Shop+No.24,+Old+Bus+Stand+Complex,+24,+Suganthi+Nagar+Rd,+Sulur,+Tamil+Nadu+641402" target="_blank" rel="noopener noreferrer"
+          class="rounded-2xl border border-white/20 w-full max-w-[260px] h-[155px] relative overflow-hidden shadow-lg group block cursor-pointer transition-transform hover:scale-[1.02]"
+          aria-label="Open location in Google Maps">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.483981881518!2d77.1235!3d11.0258!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba85703730aa18b%3A0xc3457df7aa121d5a!2sOld%20Bus%20Stand%20Complex%2C%20Suganthi%20Nagar%20Rd%2C%20Sulur%2C%20Tamil%20Nadu%20641402!5e1!3m2!1sen!2sin!4v1721800000000"
-            class="absolute inset-0 w-full h-full border-0 opacity-85 group-hover:opacity-100 transition-opacity duration-300"
+            class="absolute inset-0 w-full h-full border-0 opacity-90 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
             allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
           </iframe>
           <div class="bg-white/95 backdrop-blur-sm rounded-md px-2.5 py-1 flex items-center gap-1.5 absolute left-2.5 top-2.5 z-10 shadow-md">
-            <a href="https://maps.google.com/?q=First+Floor,+Shop+No.24,+Old+Bus+Stand+Complex,+24,+Suganthi+Nagar+Rd,+Sulur,+Tamil+Nadu+641402" target="_blank"
-              class="flex items-center gap-1 text-[#1a73e8] text-[11px] font-semibold hover:underline">
+            <span class="flex items-center gap-1 text-[#1a73e8] text-[11px] font-semibold">
               <span>Maps</span>
               <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
-            </a>
+            </span>
           </div>
-          <div class="absolute bottom-2 left-2 right-2 bg-black/75 backdrop-blur-sm rounded px-2 py-1 pointer-events-none z-10 text-[10px] text-white truncate font-medium">
-            📍 Vizhi Infragen Realtors LLP
+          <div class="absolute bottom-2 left-2 right-2 bg-black/75 backdrop-blur-sm rounded px-2 py-1 z-10 text-[10px] text-white truncate font-medium flex items-center justify-between">
+            <span class="truncate">📍 Vizhi Infragen Realtors LLP</span>
+            <i class="fa-solid fa-arrow-up-right-from-square text-[8px] text-[#c5a880] ml-1 shrink-0"></i>
           </div>
-        </div>
+        </a>
       </div>
 
     </div>
 
     <!-- Bottom Copyright Bar -->
     <div class="border-t border-white/10 pt-6 pb-2 px-2 sm:px-6 lg:px-8 flex items-center justify-center w-full max-w-[1440px] relative z-10 mx-auto mt-10">
-      <div class="text-stone-400 text-center font-['Inter',_sans-serif] text-xs font-normal">
+      <div class="text-stone-400 text-center font-['Inter',_sans-serif] text-xs font-medium">
         &copy; 2026 Vizhi Infragen Realtors LLP. All rights reserved.
       </div>
     </div>
