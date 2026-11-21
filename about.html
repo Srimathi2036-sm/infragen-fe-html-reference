@@ -806,32 +806,36 @@
     @media (max-width: 768px) {
       .conn-viewport {
         height: 500px;
+        overflow: hidden;
       }
 
       .conn-card {
         width: min(92vw, 360px);
         height: 460px;
+        transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.4s ease, visibility 0.4s ease;
       }
 
       .conn-card-body {
         padding: 1rem 0.85rem;
       }
 
+      /* In mobile view: ONLY the active center card is visible. Side peek cards and shadows are hidden */
       .conn-card[data-offset="0"] {
-        transform: translate(-50%, calc(-50% - 16px)) scale(1);
+        transform: translate(-50%, calc(-50% - 16px)) scale(1) !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
         z-index: 20;
       }
 
-      .conn-card[data-offset="-1"] {
-        transform: translate(calc(-50% - 140px), calc(-50% + 22px)) scale(0.66);
-        opacity: 0.35;
-        z-index: 10;
-      }
-
-      .conn-card[data-offset="1"] {
-        transform: translate(calc(-50% + 140px), calc(-50% + 22px)) scale(0.66);
-        opacity: 0.35;
-        z-index: 10;
+      .conn-card[data-offset="-1"],
+      .conn-card[data-offset="1"],
+      .conn-card:not([data-offset="0"]) {
+        transform: translate(-50%, calc(-50% - 16px)) scale(0.92) !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+        z-index: 1;
       }
     }
 
@@ -932,13 +936,15 @@
     class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[100] opacity-0 pointer-events-none transition-opacity duration-300">
   </div>
   <div id="side-drawer"
-    class="fixed top-0 right-0 h-full w-[340px] sm:w-[400px] bg-white z-[101] shadow-2xl translate-x-full transition-transform duration-300 ease-out flex flex-col justify-between p-8 overflow-y-auto">
+    class="fixed top-0 right-0 h-full w-[300px] sm:w-[380px] max-w-[90vw] bg-white z-[101] shadow-2xl translate-x-full transition-transform duration-300 ease-out flex flex-col justify-between p-6 sm:p-8 overflow-y-auto">
     <button id="close-side-drawer"
       class="absolute top-6 right-6 w-10 h-10 rounded-full bg-stone-100 text-[#4E1421] hover:bg-[#4E1421] hover:text-white flex items-center justify-center transition-all cursor-pointer shadow-sm"><i
         class="fa-solid fa-xmark text-lg"></i></button>
     <div class="flex flex-col items-center text-center mt-6 space-y-6">
-      <div class="p-3 bg-stone-50 rounded-2xl border border-stone-200/80 shadow-md inline-block mb-2"><img
-          src="vizhi-infragen-realtors-logo.png" alt="Logo" class="w-36 h-20 object-contain mx-auto" /></div>
+      <!-- Company Logo in Center (Shown on mobile, removed on tab view) -->
+      <div class="drawer-top-logo block md:hidden p-3.5 bg-white rounded-2xl border border-stone-200/90 shadow-[0_4px_20px_rgba(0,0,0,0.06)] inline-block mb-1">
+        <img src="vizhi-infragen-realtors-logo.png" alt="Vizhi Infragen Realtors Logo" class="w-36 h-20 object-contain mx-auto" />
+      </div>
       <nav class="flex flex-col space-y-3 w-full border-t border-b border-stone-100 py-6">
         <a href="index.html"
           class="drawer-link text-lg font-bold text-[#334155] hover:text-[#c5a880] transition-colors font-['Inter',sans-serif]">Home</a>
@@ -949,36 +955,41 @@
           class="drawer-link text-lg font-bold text-[#334155] hover:text-[#c5a880] transition-colors font-['Inter',sans-serif]">Properties</a>
         <a href="services.html"
           class="drawer-link text-lg font-bold text-[#334155] hover:text-[#c5a880] transition-colors font-['Inter',sans-serif]">Services</a>
-        <a href="index.html#blog"
-          class="drawer-link text-lg font-bold text-[#334155] hover:text-[#c5a880] transition-colors font-['Inter',sans-serif]">Blog</a>
         <a href="contact.html"
           class="drawer-link text-lg font-bold text-[#334155] hover:text-[#c5a880] transition-colors font-['Inter',sans-serif]">Contact
           Us</a>
       </nav>
       <div class="space-y-3 text-center text-[#334155] font-['Inter',sans-serif] text-sm">
         <div class="flex items-center justify-center gap-2 text-[#4E1421] font-bold text-base"><i
-            class="fa-solid fa-location-dot text-[#c5a880]"></i><span>Vizhi Infragen Realtors LLP</span></div>
-        <p class="text-xs text-stone-600 leading-relaxed max-w-[280px] mx-auto">First Floor, Shop No.24, Old Bus Stand
-          Complex, 24, Suganthi Nagar Rd, Sulur, Tamil Nadu 641402</p>
+            class="fa-solid fa-location-dot text-[#c5a880]"></i><span>Vizhi Infragen Realtors</span></div>
+        <p class="text-xs text-stone-600 leading-relaxed max-w-[280px] mx-auto">
+          Shop No. 24, Suganthi Nagar Road, Bus Stand Complex, Sulur Old Bus Stand, Sulur, Coimbatore – 641402
+        </p>
         <div class="pt-2 flex flex-col items-center gap-2 text-xs">
-          <a href="mailto:srissa2006@gmail.com"
+          <a href="mailto:admin@vizhiinfragenrealtors.com"
             class="flex items-center gap-2 text-[#4E1421] hover:text-[#c5a880] font-semibold transition-colors"><i
-              class="fa-solid fa-envelope text-[#c5a880]"></i><span>srissa2006@gmail.com</span></a>
-          <a href="tel:9688889420"
-            class="flex items-center gap-2 text-[#4E1421] hover:text-[#c5a880] font-semibold transition-colors"><i
-              class="fa-solid fa-phone text-[#c5a880]"></i><span>+91 96888 89420</span></a>
+              class="fa-solid fa-envelope text-[#c5a880]"></i><span>admin@vizhiinfragenrealtors.com</span></a>
+          <div class="flex items-center gap-2 text-[#4E1421] font-semibold">
+            <i class="fa-solid fa-phone text-[#c5a880]"></i>
+            <a href="tel:9688889420" class="hover:text-[#c5a880] transition-colors">+91 96888 89420</a>
+            <span>/</span>
+            <a href="tel:9787166889" class="hover:text-[#c5a880] transition-colors">97871 66889</a>
+          </div>
         </div>
       </div>
-      <div class="flex items-center justify-center gap-3 pt-4 border-t border-stone-100 w-full">
-        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
-          class="w-10 h-10 rounded-full bg-stone-100 text-[#1877F2] flex items-center justify-center transition-all"><i
-            class="fa-brands fa-facebook-f text-lg"></i></a>
-        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
-          class="w-10 h-10 rounded-full bg-stone-100 text-[#E4405F] flex items-center justify-center transition-all"><i
-            class="fa-brands fa-instagram text-lg"></i></a>
+      <div class="flex items-center justify-center gap-4 pt-4 border-t border-stone-100 w-full">
         <a href="https://wa.me/919688889420" target="_blank" rel="noopener noreferrer"
-          class="w-10 h-10 rounded-full bg-stone-100 text-[#25D366] flex items-center justify-center transition-all"><i
+          class="w-10 h-10 rounded-full bg-stone-100 text-[#25D366] hover:bg-[#25D366]/10 flex items-center justify-center transition-all shadow-sm"
+          aria-label="WhatsApp"><i
             class="fa-brands fa-whatsapp text-lg"></i></a>
+        <a href="https://www.instagram.com/vizhi_infragen_realtors/" target="_blank" rel="noopener noreferrer"
+          class="w-10 h-10 rounded-full bg-stone-100 text-[#E4405F] hover:bg-[#E4405F]/10 flex items-center justify-center transition-all shadow-sm"
+          aria-label="Instagram"><i
+            class="fa-brands fa-instagram text-lg"></i></a>
+        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"
+          class="w-10 h-10 rounded-full bg-stone-100 text-[#1877F2] hover:bg-[#1877F2]/10 flex items-center justify-center transition-all shadow-sm"
+          aria-label="Facebook"><i
+            class="fa-brands fa-facebook-f text-lg"></i></a>
       </div>
     </div>
     <div class="text-center pt-6 text-[11px] text-stone-400 font-medium">&copy; 2026 Vizhi Infragen Realtors LLP. All
@@ -1005,7 +1016,7 @@
 
       <!-- Center: Navigation Links in Dark Capsule Container -->
       <nav
-        class="hidden md:flex items-center gap-2 sm:gap-3.5 bg-[#1F0D11] border border-white/10 rounded-full px-2.5 sm:px-3 py-1 shadow-inner h-[44px] sm:h-[48px]">
+        class="hidden lg:flex items-center gap-2 sm:gap-3.5 bg-[#1F0D11] border border-white/10 rounded-full px-2.5 sm:px-3 py-1 shadow-inner h-[44px] sm:h-[48px]">
         <a href="index.html"
           class="text-white hover:text-[#c5a880] font-medium text-xs sm:text-[14px] px-3.5 sm:px-4 h-[36px] sm:h-[40px] flex items-center justify-center transition-colors font-['Inter',sans-serif]">Home</a>
         <a href="about.html"
@@ -1058,7 +1069,7 @@
 
         <!-- Mobile Drawer Hamburger Toggle Button -->
         <button id="open-side-drawer"
-          class="md:hidden w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-all cursor-pointer"
+          class="lg:hidden w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-all cursor-pointer"
           aria-label="Open Mobile Navigation">
           <i class="fa-solid fa-bars text-base"></i>
         </button>
@@ -1105,11 +1116,11 @@
           <span class="text-[#c5a880]"> Coimbatore</span>
         </h1>
 
-        <!-- Gold wide accent bar below heading -->
-        <div class="flex items-center justify-center gap-3 pt-1 hero-fade-in-3">
-          <div class="w-8 h-px bg-[#c5a880]/50 rounded-full"></div>
-          <div class="w-24 h-1.5 bg-[#c5a880] rounded-full shadow-lg shadow-[#c5a880]/60"></div>
-          <div class="w-8 h-px bg-[#c5a880]/50 rounded-full"></div>
+        <!-- Gold wide accent bar below heading (Responsive Mobile & Desktop Size) -->
+        <div class="flex items-center justify-center gap-2 sm:gap-3 pt-1 hero-fade-in-3">
+          <div class="w-6 sm:w-8 h-px bg-[#c5a880]/50 rounded-full"></div>
+          <div class="w-14 sm:w-20 md:w-24 h-1 sm:h-1.5 bg-[#c5a880] rounded-full shadow-md sm:shadow-lg shadow-[#c5a880]/60"></div>
+          <div class="w-6 sm:w-8 h-px bg-[#c5a880]/50 rounded-full"></div>
         </div>
 
       </div>
@@ -1932,7 +1943,7 @@
           range of property services so you never have to coordinate multiple agencies.</p>
       </div>
       <div class="wwd-grid reveal-up">
-        <div class="wwd-card wwd-tall"><img src="assets/images/service-1.jpg" alt="Land Sales" />
+        <a href="land-sales-details.html" class="wwd-card wwd-tall block"><img src="assets/images/service-1.jpg" alt="Land Sales" />
           <div class="wwd-card-overlay"></div>
           <div class="wwd-card-label">
             <div class="flex items-end justify-between">
@@ -1943,8 +1954,8 @@
               <div class="wwd-arrow-btn"><i class="fa-solid fa-arrow-right text-xs"></i></div>
             </div>
           </div>
-        </div>
-        <div class="wwd-card"><img src="assets/images/service-2.jpg" alt="Purchase Assistance" />
+        </a>
+        <a href="services.html#purchase-assistance" class="wwd-card block"><img src="assets/images/service-2.jpg" alt="Purchase Assistance" />
           <div class="wwd-card-overlay"></div>
           <div class="wwd-card-label">
             <div class="flex items-end justify-between">
@@ -1955,8 +1966,8 @@
               <div class="wwd-arrow-btn"><i class="fa-solid fa-arrow-right text-xs"></i></div>
             </div>
           </div>
-        </div>
-        <div class="wwd-card wwd-tall"><img src="assets/images/service-4.jpg" alt="Property Management" />
+        </a>
+        <a href="services.html#property-management" class="wwd-card wwd-tall block"><img src="assets/images/service-4.jpg" alt="Property Management" />
           <div class="wwd-card-overlay"></div>
           <div class="wwd-card-label">
             <div class="flex items-end justify-between">
@@ -1967,8 +1978,8 @@
               <div class="wwd-arrow-btn"><i class="fa-solid fa-arrow-right text-xs"></i></div>
             </div>
           </div>
-        </div>
-        <div class="wwd-card"><img src="assets/images/service-3.jpg" alt="NRI Property Shield" />
+        </a>
+        <a href="services.html#nri-management" class="wwd-card block"><img src="assets/images/service-3.jpg" alt="NRI Property Shield" />
           <div class="wwd-card-overlay"></div>
           <div class="wwd-card-label">
             <div class="flex items-end justify-between">
@@ -1979,10 +1990,10 @@
               <div class="wwd-arrow-btn"><i class="fa-solid fa-arrow-right text-xs"></i></div>
             </div>
           </div>
-        </div>
+        </a>
       </div>
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 reveal-up" style="transition-delay:200ms;">
-        <div class="wwd-card" style="min-height:165px;"><img src="assets/images/service-5.jpg"
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 reveal-up" style="transition-delay:200ms;">
+        <a href="services.html#construction" class="wwd-card block" style="min-height:165px;"><img src="assets/images/service-5.jpg"
             alt="Building Construction" />
           <div class="wwd-card-overlay"></div>
           <div class="wwd-card-label">
@@ -1992,8 +2003,8 @@
                   style="font-size:9px;"></i></div>
             </div>
           </div>
-        </div>
-        <div class="wwd-card" style="min-height:165px;"><img src="assets/images/service-6.jpg"
+        </a>
+        <a href="services.html#valuation" class="wwd-card block" style="min-height:165px;"><img src="assets/images/service-6.jpg"
             alt="Building Valuation" />
           <div class="wwd-card-overlay"></div>
           <div class="wwd-card-label">
@@ -2003,8 +2014,8 @@
                   style="font-size:9px;"></i></div>
             </div>
           </div>
-        </div>
-        <div class="wwd-card" style="min-height:165px;"><img src="assets/images/service-7.jpg" alt="Land Approvals" />
+        </a>
+        <a href="services.html#approvals" class="wwd-card block" style="min-height:165px;"><img src="assets/images/service-7.jpg" alt="Land Approvals" />
           <div class="wwd-card-overlay"></div>
           <div class="wwd-card-label">
             <div class="flex items-end justify-between">
@@ -2013,8 +2024,18 @@
                   style="font-size:9px;"></i></div>
             </div>
           </div>
-        </div>
-        <div class="wwd-card" style="min-height:165px;"><img src="assets/images/service-8.jpg" alt="Rental Services" />
+        </a>
+        <a href="services.html#conversion" class="wwd-card block" style="min-height:165px;"><img src="assets/images/service-8.jpg" alt="Land Conversion Services" />
+          <div class="wwd-card-overlay"></div>
+          <div class="wwd-card-label">
+            <div class="flex items-end justify-between">
+              <h4 class="text-white font-extrabold text-sm font-['Outfit',sans-serif]">Land Conversion</h4>
+              <div class="wwd-arrow-btn" style="width:22px;height:22px;"><i class="fa-solid fa-arrow-right"
+                  style="font-size:9px;"></i></div>
+            </div>
+          </div>
+        </a>
+        <a href="services.html#rental" class="wwd-card block" style="min-height:165px;"><img src="assets/images/service-9.jpg" alt="Rental Services" />
           <div class="wwd-card-overlay"></div>
           <div class="wwd-card-label">
             <div class="flex items-end justify-between">
@@ -2023,8 +2044,8 @@
                   style="font-size:9px;"></i></div>
             </div>
           </div>
-        </div>
-        <div class="wwd-card" style="min-height:165px;"><img src="assets/images/service-9.jpg"
+        </a>
+        <a href="services.html#warehouse" class="wwd-card block" style="min-height:165px;"><img src="assets/images/service-10.jpg"
             alt="Warehouse & Corporate" />
           <div class="wwd-card-overlay"></div>
           <div class="wwd-card-label">
@@ -2034,7 +2055,7 @@
                   style="font-size:9px;"></i></div>
             </div>
           </div>
-        </div>
+        </a>
       </div>
     </div>
   </section>
@@ -2281,32 +2302,31 @@
        WHY CLIENTS TRUST VIZHI INFRAGEN — Full Width, Unique
        ========================================== -->
   <section class="relative w-full overflow-hidden"
-    style="background:linear-gradient(135deg,#1F0A10 0%,#2d0f17 40%,#120508 100%); margin:0;">
+    style="background: #D0B999; margin: 0;">
 
-    <!-- Decorative background glow orbs -->
+    <!-- Decorative subtle light tints -->
     <div class="absolute top-0 left-0 w-[500px] h-[500px] rounded-full pointer-events-none"
-      style="background:radial-gradient(circle,rgba(197,168,128,0.12) 0%,transparent 70%); transform:translate(-30%,-30%);">
+      style="background: radial-gradient(circle, rgba(255,255,255,0.28) 0%, transparent 70%); transform: translate(-30%, -30%);">
     </div>
     <div class="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full pointer-events-none"
-      style="background:radial-gradient(circle,rgba(197,168,128,0.08) 0%,transparent 70%); transform:translate(30%,30%);">
+      style="background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%); transform: translate(30%, 30%);">
     </div>
 
-    <!-- Gold top border line -->
+    <!-- Maroon top accent line -->
     <div class="w-full h-[3px]"
-      style="background:linear-gradient(90deg,transparent,#c5a880 30%,#c5a880 70%,transparent);"></div>
+      style="background: linear-gradient(90deg, transparent, #331C20 30%, #331C20 70%, transparent);"></div>
 
     <div class="relative z-10 w-full px-8 sm:px-16 lg:px-24 py-20 sm:py-28">
 
       <!-- Header -->
       <div class="text-center mb-16 reveal-up">
-        <span class="font-['Inter',sans-serif] text-xs font-bold tracking-[0.30em] uppercase block mb-3"
-          style="color:#c5a880;">EARNED TRUST &amp; DEPENDABILITY</span>
-        <h2 class="font-['Outfit',sans-serif] font-extrabold text-white leading-tight"
+        <span class="font-['Inter',sans-serif] text-xs font-extrabold tracking-[0.30em] uppercase block mb-3 text-[#331C20]">EARNED TRUST &amp; DEPENDABILITY</span>
+        <h2 class="font-['Outfit',sans-serif] font-extrabold text-[#1F0A10] leading-tight"
           style="font-size:clamp(2rem,5vw,3.5rem);">
-          Why Clients Trust <span style="color:#c5a880;">Vizhi Infragen</span>
+          Why Clients Trust <span class="text-[#521922]">Vizhi Infragen</span>
         </h2>
         <div class="w-20 h-[2px] mx-auto mt-5"
-          style="background:linear-gradient(90deg,transparent,#c5a880,transparent);"></div>
+          style="background: linear-gradient(90deg, transparent, #331C20, transparent);"></div>
       </div>
 
       <!-- Two-column layout: text left, 4-grid right -->
@@ -2314,21 +2334,21 @@
 
         <!-- Left: narrative text -->
         <div class="space-y-6 reveal-left">
-          <p class="font-['Inter',sans-serif] text-stone-300 leading-[1.9]" style="font-size:15px;">
+          <p class="font-['Inter',sans-serif] text-[#331C20]/90 leading-[1.85] text-base sm:text-[17.5px]">
             Confidence in real estate is earned, never claimed. Every transaction we handle is led by people who have
             done it before — verifying titles, walking sites, negotiating fairly, and reporting honestly.
           </p>
-          <p class="font-['Inter',sans-serif] font-semibold text-white leading-[1.9]" style="font-size:15px;">
+          <p class="font-['Inter',sans-serif] font-bold text-[#1F0A10] leading-[1.85] text-base sm:text-[17.5px]">
             For our NRI clients especially, this means consistent updates and verifiable records, so your property is as
             secure as if you were managing it yourself.
           </p>
-          <p class="font-['Inter',sans-serif] text-stone-300 leading-[1.9]" style="font-size:15px;">
+          <p class="font-['Inter',sans-serif] text-[#331C20]/90 leading-[1.85] text-base sm:text-[17.5px]">
             We believe in showing our work, not just promising results. That commitment to professionalism and
             transparency is what makes Vizhi Infragen a partner clients return to and recommend.
           </p>
           <a href="contact.html"
-            class="inline-flex items-center gap-3 mt-2 font-['Inter',sans-serif] font-semibold text-sm px-7 py-3 rounded-full transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-            style="background:#c5a880; color:#1F0A10;">
+            class="inline-flex items-center gap-3 mt-2 font-['Inter',sans-serif] font-semibold text-sm sm:text-base px-8 py-3.5 rounded-full transition-all duration-300 hover:-translate-y-1 hover:shadow-xl text-white"
+            style="background: #331C20;">
             Start Your Journey <i class="fa-solid fa-arrow-right text-xs"></i>
           </a>
         </div>
@@ -2336,51 +2356,39 @@
         <!-- Right: 4 trust feature cards -->
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 reveal-right">
 
-          <div class="group p-6 rounded-2xl border transition-all duration-300 hover:-translate-y-1"
-            style="background:rgba(255,255,255,0.04); border-color:rgba(197,168,128,0.20);">
-            <div
-              class="w-12 h-12 rounded-xl flex items-center justify-center text-xl mb-4 transition-all duration-300 group-hover:scale-110"
-              style="background:rgba(197,168,128,0.15); color:#c5a880;">
+          <div class="group p-6 rounded-2xl border transition-all duration-300 hover:-translate-y-1 bg-white border-[#331C20]/15 shadow-sm hover:shadow-md">
+            <div class="mb-4 text-[#331C20] text-3xl transition-transform duration-300 group-hover:scale-110">
               <i class="fa-solid fa-file-contract"></i>
             </div>
-            <h4 class="font-['Outfit',sans-serif] font-bold text-white text-base mb-2">Verified Property Titles</h4>
-            <p class="font-['Inter',sans-serif] text-stone-400 text-xs leading-relaxed">Every title thoroughly checked —
+            <h4 class="font-['Outfit',sans-serif] font-bold text-[#1F0A10] text-base sm:text-lg mb-2">Verified Property Titles</h4>
+            <p class="font-['Inter',sans-serif] text-[#331C20]/80 text-xs sm:text-[13px] leading-relaxed">Every title thoroughly checked —
               no hidden encumbrances, no legal surprises.</p>
           </div>
 
-          <div class="group p-6 rounded-2xl border transition-all duration-300 hover:-translate-y-1"
-            style="background:rgba(255,255,255,0.04); border-color:rgba(197,168,128,0.20);">
-            <div
-              class="w-12 h-12 rounded-xl flex items-center justify-center text-xl mb-4 transition-all duration-300 group-hover:scale-110"
-              style="background:rgba(197,168,128,0.15); color:#c5a880;">
+          <div class="group p-6 rounded-2xl border transition-all duration-300 hover:-translate-y-1 bg-white border-[#331C20]/15 shadow-sm hover:shadow-md">
+            <div class="mb-4 text-[#331C20] text-3xl transition-transform duration-300 group-hover:scale-110">
               <i class="fa-solid fa-earth-asia"></i>
             </div>
-            <h4 class="font-['Outfit',sans-serif] font-bold text-white text-base mb-2">Regular NRI Field Audits</h4>
-            <p class="font-['Inter',sans-serif] text-stone-400 text-xs leading-relaxed">Periodic on-site visits and
+            <h4 class="font-['Outfit',sans-serif] font-bold text-[#1F0A10] text-base sm:text-lg mb-2">Regular NRI Field Audits</h4>
+            <p class="font-['Inter',sans-serif] text-[#331C20]/80 text-xs sm:text-[13px] leading-relaxed">Periodic on-site visits and
               photo reports so you always know your property's condition.</p>
           </div>
 
-          <div class="group p-6 rounded-2xl border transition-all duration-300 hover:-translate-y-1"
-            style="background:rgba(255,255,255,0.04); border-color:rgba(197,168,128,0.20);">
-            <div
-              class="w-12 h-12 rounded-xl flex items-center justify-center text-xl mb-4 transition-all duration-300 group-hover:scale-110"
-              style="background:rgba(197,168,128,0.15); color:#c5a880;">
+          <div class="group p-6 rounded-2xl border transition-all duration-300 hover:-translate-y-1 bg-white border-[#331C20]/15 shadow-sm hover:shadow-md">
+            <div class="mb-4 text-[#331C20] text-3xl transition-transform duration-300 group-hover:scale-110">
               <i class="fa-solid fa-shield-halved"></i>
             </div>
-            <h4 class="font-['Outfit',sans-serif] font-bold text-white text-base mb-2">No Hidden Surprises</h4>
-            <p class="font-['Inter',sans-serif] text-stone-400 text-xs leading-relaxed">Fully transparent pricing,
+            <h4 class="font-['Outfit',sans-serif] font-bold text-[#1F0A10] text-base sm:text-lg mb-2">No Hidden Surprises</h4>
+            <p class="font-['Inter',sans-serif] text-[#331C20]/80 text-xs sm:text-[13px] leading-relaxed">Fully transparent pricing,
               documentation, and process from day one to handover.</p>
           </div>
 
-          <div class="group p-6 rounded-2xl border transition-all duration-300 hover:-translate-y-1"
-            style="background:rgba(255,255,255,0.04); border-color:rgba(197,168,128,0.20);">
-            <div
-              class="w-12 h-12 rounded-xl flex items-center justify-center text-xl mb-4 transition-all duration-300 group-hover:scale-110"
-              style="background:rgba(197,168,128,0.15); color:#c5a880;">
+          <div class="group p-6 rounded-2xl border transition-all duration-300 hover:-translate-y-1 bg-white border-[#331C20]/15 shadow-sm hover:shadow-md">
+            <div class="mb-4 text-[#331C20] text-3xl transition-transform duration-300 group-hover:scale-110">
               <i class="fa-solid fa-handshake-simple"></i>
             </div>
-            <h4 class="font-['Outfit',sans-serif] font-bold text-white text-base mb-2">Dedicated Hands-on Advice</h4>
-            <p class="font-['Inter',sans-serif] text-stone-400 text-xs leading-relaxed">Personal expert guidance
+            <h4 class="font-['Outfit',sans-serif] font-bold text-[#1F0A10] text-base sm:text-lg mb-2">Dedicated Hands-on Advice</h4>
+            <p class="font-['Inter',sans-serif] text-[#331C20]/80 text-xs sm:text-[13px] leading-relaxed">Personal expert guidance
               tailored to your goals, budget, and unique situation.</p>
           </div>
 
@@ -2388,9 +2396,9 @@
       </div>
     </div>
 
-    <!-- Gold bottom border line — seamlessly connects to footer -->
+    <!-- Maroon bottom border line — seamlessly connects to footer -->
     <div class="w-full h-[2px]"
-      style="background:linear-gradient(90deg,transparent,#c5a880 30%,#c5a880 70%,transparent);"></div>
+      style="background: linear-gradient(90deg, transparent, #331C20 30%, #331C20 70%, transparent);"></div>
   </section>
 
 
@@ -2503,7 +2511,7 @@
           +91 96888 89420 / 97871 66889
         </a>
         <div class="text-stone-300 font-['Inter',_sans-serif] text-xs leading-relaxed max-w-[260px] pt-0.5">
-          Shop No. 24, Suganthi Nagar, Bus Stand Complex, Sulur Old Bus Stand, Sulur, Coimbatore &ndash; 641402
+          Shop No. 24, Suganthi Nagar Road, Bus Stand Complex, Sulur Old Bus Stand, Sulur, Coimbatore &ndash; 641402
         </div>
 
         <!-- 3 Social Media Icons Under Details of Contact Us Section -->

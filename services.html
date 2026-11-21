@@ -791,20 +791,28 @@
       display: flex;
       align-items: center;
       gap: 10px;
+      min-width: 0;
     }
     .desk-avatar {
-      width: 32px;
-      height: 32px;
-      border-radius: 0px !important;
-      object-fit: cover;
-      border: 1px solid var(--line);
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      width: 38px;
+      height: 38px;
+      border-radius: 4px;
+      object-fit: contain !important;
+      object-position: center;
+      background: #ffffff;
+      padding: 3px 4px;
+      border: 1.5px solid #d0b999;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+      box-sizing: border-box;
+      flex-shrink: 0;
+      display: block;
     }
     .desk-name {
       font-family: 'Inter', sans-serif;
-      font-size: 0.83rem;
+      font-size: 0.84rem;
       font-weight: 700;
       color: var(--maroon);
+      line-height: 1.2;
     }
     .card-actions {
       display: flex;
@@ -841,47 +849,75 @@
     .quality b { display: block; margin: 10px 0 4px; font-family: 'Outfit', sans-serif; }
     .quality span { font-size: .82rem; font-family: 'Inter', sans-serif; color: #d7c7b7; }
     
-    /* FINAL CALL TO ACTION WITH MOVING BACKGROUND & FLOATING CONTENT */
+    /* FINAL CALL TO ACTION (Clean Shade #D0B999, No Background Image) */
     .final {
-      padding: 110px 0;
+      padding: 100px 0;
       position: relative;
       overflow: hidden;
-      color: white;
+      color: #1F0A10;
       text-align: center;
-      isolation: isolate;
-      background: #180d0f;
+      background: #D0B999 !important;
+      background-image: none !important;
     }
     .final:before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(28,14,17,0.86) 0%, rgba(56,30,35,0.78) 50%, rgba(18,10,12,0.88) 100%);
-      z-index: 1;
+      display: none !important;
     }
     .final-bg-motion {
-      position: absolute;
-      inset: -12%;
-      background: url('assets/images/hero-premium-building.jpg') center/cover no-repeat;
-      z-index: 0;
-      animation: ctaBgPan 18s ease-in-out infinite alternate;
-    }
-    @keyframes ctaBgPan {
-      0% { transform: scale(1) translate(0, 0); }
-      50% { transform: scale(1.14) translate(-20px, -12px); }
-      100% { transform: scale(1.06) translate(18px, 12px); }
+      display: none !important;
     }
     .final .shell {
       position: relative;
       z-index: 2;
-      animation: ctaContentFloat 5s ease-in-out infinite alternate;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 24px;
     }
-    @keyframes ctaContentFloat {
-      0% { transform: translateY(0px); }
-      50% { transform: translateY(-10px); }
-      100% { transform: translateY(4px); }
+    .final .intro-eyebrow {
+      display: inline-block;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #331C20;
+      margin-bottom: 12px;
     }
-    .final h2 { font: 600 clamp(2.3rem, 4.5vw, 4.2rem)/1.08 'Outfit', sans-serif; max-width: 780px; margin: 11px auto 17px; text-shadow: 0 4px 20px rgba(0,0,0,0.6); }
-    .final p { color: #eadfd3; font-family: 'Inter', sans-serif; max-width: 570px; margin: 0 auto 28px; }
+    .final h2 {
+      font: 700 clamp(2.2rem, 4.5vw, 3.8rem)/1.15 'Outfit', sans-serif;
+      max-width: 820px;
+      margin: 0 auto 18px;
+      color: #1F0A10;
+      text-shadow: none;
+    }
+    .final p {
+      color: #381E23;
+      font-family: 'Inter', sans-serif;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      max-width: 620px;
+      margin: 0 auto 32px;
+      font-weight: 500;
+    }
+    .final .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #331C20;
+      color: #ffffff;
+      padding: 15px 34px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      font-family: 'Inter', sans-serif;
+      border-radius: 9999px;
+      transition: all 0.3s ease;
+      box-shadow: 0 6px 18px rgba(51, 28, 32, 0.22);
+    }
+    .final .btn:hover {
+      background: #4E1E26;
+      color: #ffffff;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(51, 28, 32, 0.32);
+    }
 
     /* FOOTER */
     footer { background: #121212; color: #aaa; padding: 60px 0 28px; font-family: 'Inter', sans-serif; }
@@ -932,7 +968,7 @@
       .brand img { width: 120px; height: 63px; }
       .social { gap: 9px; }
       .social a, .menu { width: 36px; height: 36px; font-size: 1rem; }
-      .hero { margin-top: 76px; min-height: 500px; }
+      .hero { margin-top: 0px !important; min-height: 500px; }
       .hero-title { font-size: 28px; line-height: 36px; }
       .hero-subtitle { font-size: 12px; letter-spacing: 0.22em; }
       .trust { padding: 70px 0; }
@@ -940,7 +976,92 @@
       .footer-grid { grid-template-columns: 1fr; gap: 25px; }
       .copyright-bar { flex-direction: column; gap: 14px; text-align: center; }
     }
-  </style>
+  
+    /* MOBILE ALIGNMENT FIXES (HERO CAROUSEL, FILTERS & VERTICAL PROPERTY SERVICES) */
+    @media (max-width: 768px) {
+      .hero {
+        margin-top: 0 !important;
+        padding-top: 110px !important;
+        min-height: 480px !important;
+        padding-bottom: 40px !important;
+        text-align: center !important;
+      }
+      .hero-inner {
+        padding: 30px 16px !important;
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+      }
+      .hero-title {
+        font-size: 26px !important;
+        line-height: 34px !important;
+        text-align: center !important;
+      }
+      .hero:after {
+        background-position: center center !important;
+        inset: 0 !important;
+      }
+      .filter-container-wrapper {
+        padding: 0 !important;
+        width: 100% !important;
+        margin-bottom: 30px !important;
+      }
+      .service-filters-same-color {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        gap: 10px !important;
+        align-items: stretch !important;
+      }
+      .filter-btn-square {
+        width: 100% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        padding: 13px 18px !important;
+        font-size: 0.88rem !important;
+        border-radius: 4px !important;
+      }
+      .filter-horizontal-touch-line {
+        display: none !important;
+      }
+      /* Real Estate & Property Services cards: Vertical Layout in Mobile View */
+      .types-carousel-wrapper {
+        display: block !important;
+        width: 100% !important;
+      }
+      .types-carousel-track-container {
+        overflow-x: visible !important;
+        padding: 0 !important;
+        width: 100% !important;
+      }
+      .types-2row-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px !important;
+        width: 100% !important;
+      }
+      .type-card-img2 {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+      .types-nav-arrow {
+        display: none !important;
+      }
+    }
+    /* Side Drawer Top Logo: Shown on mobile (< 768px), removed on tab view (>= 768px) */
+    .drawer-top-logo {
+      display: block !important;
+    }
+    @media (min-width: 768px) {
+      .drawer-top-logo {
+        display: none !important;
+      }
+    }
+</style>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
@@ -960,7 +1081,7 @@
       </a>
 
       <!-- Center: Navigation Links in Dark Capsule Container -->
-      <nav class="hidden md:flex items-center gap-2 sm:gap-3.5 bg-[#1F0D11] border border-white/10 rounded-full px-2.5 sm:px-3 py-1 shadow-inner h-[44px] sm:h-[48px]">
+      <nav class="hidden lg:flex items-center gap-2 sm:gap-3.5 bg-[#1F0D11] border border-white/10 rounded-full px-2.5 sm:px-3 py-1 shadow-inner h-[44px] sm:h-[48px]">
         <a href="index.html" class="text-white hover:text-[#c5a880] font-medium text-xs sm:text-[14px] px-3.5 sm:px-4 h-[36px] sm:h-[40px] flex items-center justify-center transition-colors font-['Inter',sans-serif]">Home</a>
         <a href="about.html" class="text-white hover:text-[#c5a880] font-medium text-xs sm:text-[14px] px-3.5 sm:px-4 h-[36px] sm:h-[40px] flex items-center justify-center transition-colors font-['Inter',sans-serif]">About Us</a>
         <div class="relative group flex items-center">
@@ -994,7 +1115,7 @@
         </div>
 
         <!-- Mobile Drawer Hamburger Toggle Button -->
-        <button id="menu-button" onclick="if(document.getElementById('drawer'))document.getElementById('drawer').classList.add('open')" class="md:hidden w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-all cursor-pointer" aria-label="Open Mobile Navigation">
+        <button id="open-side-drawer" class="lg:hidden w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-all cursor-pointer" aria-label="Open Mobile Navigation">
           <i class="fa-solid fa-bars text-base"></i>
         </button>
       </div>
@@ -1002,27 +1123,69 @@
     </div>
   </header>
 
-  <!-- MOBILE DRAWER -->
-  <div class="drawer" id="drawer">
-    <div class="shade" id="shade"></div>
-    <aside class="panel" aria-label="Mobile navigation">
-      <button class="close" id="close-menu" aria-label="Close navigation"><i class="fa-solid fa-xmark"></i></button>
-      <a class="brand" href="index.html"><img src="vizhi-infragen-realtors-logo.png" alt="Vizhi Infragen Realtors"></a>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="index.html#properties">Properties</a>
-        <a href="services.html" aria-current="page">Services</a>
-        <a href="index.html#blog">Blog</a>
-        <a href="contact.html">Contact Us</a>
-      </nav>
-      <div class="reach">
-        <strong>Vizhi Infragen Realtors</strong><br>
-        First Floor, Shop No.24, Old Bus Stand Complex,<br>
-        Sulur, Tamil Nadu 641402<br><br>
-        <a href="tel:+919688889420">+91 96888 89420</a>
+  <!-- ==================== SIDE DRAWER ==================== -->
+  <div id="side-drawer-overlay" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[100] opacity-0 pointer-events-none transition-opacity duration-300"></div>
+
+  <div id="side-drawer" class="fixed top-0 right-0 h-full w-[300px] sm:w-[380px] max-w-[90vw] bg-white z-[101] shadow-2xl translate-x-full transition-transform duration-300 ease-out flex flex-col justify-between p-6 sm:p-8 overflow-y-auto">
+    <!-- Top Close Button -->
+    <button id="close-side-drawer" class="absolute top-6 right-6 w-10 h-10 rounded-full bg-stone-100 text-[#4E1421] hover:bg-[#4E1421] hover:text-white flex items-center justify-center transition-all cursor-pointer shadow-sm">
+      <i class="fa-solid fa-xmark text-lg"></i>
+    </button>
+
+    <div class="flex flex-col items-center text-center mt-6 space-y-6">
+      <!-- Company Logo in Center (Shown on mobile, removed on tab view) -->
+      <div class="drawer-top-logo block md:hidden p-3.5 bg-white rounded-2xl border border-stone-200/90 shadow-[0_4px_20px_rgba(0,0,0,0.06)] inline-block mb-1">
+        <img src="vizhi-infragen-realtors-logo.png" alt="Vizhi Infragen Realtors Logo" class="w-36 h-20 object-contain mx-auto" />
       </div>
-    </aside>
+
+      <!-- Navigation Links List inside Drawer -->
+      <nav class="flex flex-col space-y-3 w-full border-t border-b border-stone-100 py-6">
+        <a href="index.html" class="drawer-link text-lg font-bold text-[#334155] hover:text-[#c5a880] transition-colors font-['Inter',sans-serif]">Home</a>
+        <a href="about.html" class="drawer-link text-lg font-bold text-[#334155] hover:text-[#c5a880] transition-colors font-['Inter',sans-serif]">About Us</a>
+        <a href="index.html#properties" class="drawer-link text-lg font-bold text-[#334155] hover:text-[#c5a880] transition-colors font-['Inter',sans-serif]">Properties</a>
+        <a href="services.html" class="drawer-link text-lg font-bold text-[#c5a880] hover:text-[#4E1421] transition-colors font-['Inter',sans-serif]">Services</a>
+        <a href="contact.html" class="drawer-link text-lg font-bold text-[#334155] hover:text-[#c5a880] transition-colors font-['Inter',sans-serif]">Contact Us</a>
+      </nav>
+
+      <!-- Company Address & Contact Details -->
+      <div class="space-y-3 text-center text-[#334155] font-['Inter',sans-serif] text-sm">
+        <div class="flex items-center justify-center gap-2 text-[#4E1421] font-bold text-base font-['Inter',sans-serif]">
+          <i class="fa-solid fa-location-dot text-[#c5a880]"></i>
+          <span>Vizhi Infragen Realtors</span>
+        </div>
+        <p class="text-xs text-stone-600 leading-relaxed max-w-[280px] mx-auto">
+          Shop No. 24, Suganthi Nagar Road, Bus Stand Complex, Sulur Old Bus Stand, Sulur, Coimbatore – 641402
+        </p>
+
+        <div class="pt-2 flex flex-col items-center gap-2 text-xs">
+          <a href="mailto:admin@vizhiinfragenrealtors.com?subject=Inquiry%20Regarding%20Coimbatore%20Real%20Estate%20Properties" class="flex items-center gap-2 text-[#4E1421] hover:text-[#c5a880] font-semibold transition-colors">
+            <i class="fa-solid fa-envelope text-[#c5a880]"></i>
+            <span>admin@vizhiinfragenrealtors.com</span>
+          </a>
+          <div class="flex items-center gap-2 text-[#4E1421] font-semibold">
+            <i class="fa-solid fa-phone text-[#c5a880]"></i>
+            <a href="tel:9688889420" class="hover:text-[#c5a880] transition-colors">+91 96888 89420</a>
+            <span>/</span>
+            <a href="tel:9787166889" class="hover:text-[#c5a880] transition-colors">97871 66889</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Social Media Icons Row (WhatsApp, Instagram, Facebook only) -->
+      <div class="flex items-center justify-center gap-4 pt-4 border-t border-stone-100 w-full">
+        <a href="https://wa.me/919688889420" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-stone-100 text-[#25D366] hover:bg-[#25D366]/10 flex items-center justify-center transition-all shadow-sm" aria-label="WhatsApp">
+          <i class="fa-brands fa-whatsapp text-lg"></i>
+        </a>
+        <a href="https://www.instagram.com/vizhi_infragen_realtors/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-stone-100 text-[#E4405F] hover:bg-[#E4405F]/10 flex items-center justify-center transition-all shadow-sm" aria-label="Instagram">
+          <i class="fa-brands fa-instagram text-lg"></i>
+        </a>
+        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-stone-100 text-[#1877F2] hover:bg-[#1877F2]/10 flex items-center justify-center transition-all shadow-sm" aria-label="Facebook">
+          <i class="fa-brands fa-facebook-f text-lg"></i>
+        </a>
+      </div>
+
+    </div>
+    <div class="text-center pt-6 text-[11px] text-stone-400 font-medium">&copy; 2026 Vizhi Infragen Realtors LLP. All Rights Reserved.</div>
   </div>
 
   <main>
@@ -1724,9 +1887,8 @@
     </section>
 
 
-    <!-- FINAL CALL TO ACTION WITH MOVING BACKGROUND & FLOATING CONTENT -->
+    <!-- FINAL CALL TO ACTION (Clean Shade #D0B999, No Image) -->
     <section class="final">
-      <div class="final-bg-motion"></div>
       <div class="shell">
         <span class="intro-eyebrow">Ready to get started?</span>
         <h2>Whatever your property goal, our team is ready to help.</h2>
@@ -1802,7 +1964,7 @@
           +91 96888 89420 / 97871 66889
         </a>
         <div class="text-stone-300 font-['Inter',_sans-serif] text-xs leading-relaxed max-w-[260px] pt-0.5">
-          Shop No. 24, Suganthi Nagar, Bus Stand Complex, Sulur Old Bus Stand, Sulur, Coimbatore &ndash; 641402
+          Shop No. 24, Suganthi Nagar Road, Bus Stand Complex, Sulur Old Bus Stand, Sulur, Coimbatore &ndash; 641402
         </div>
 
         <!-- 3 Social Media Icons Under Details of Contact Us Section -->
@@ -1856,12 +2018,35 @@
   <script>
 
     // Side drawer toggle logic
-    const d = document.getElementById('drawer'), b = document.getElementById('menu-button');
-    function closeMenu(){ d.classList.remove('open'); b.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
-    b.addEventListener('click',()=>{ d.classList.add('open'); b.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; });
-    document.getElementById('close-menu').addEventListener('click',closeMenu);
-    document.getElementById('shade').addEventListener('click',closeMenu);
-    document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeMenu(); });
+    const openDrawerBtn = document.getElementById('open-side-drawer') || document.getElementById('menu-button');
+    const closeDrawerBtn = document.getElementById('close-side-drawer') || document.getElementById('close-menu');
+    const sideDrawer = document.getElementById('side-drawer') || document.getElementById('drawer');
+    const drawerOverlay = document.getElementById('side-drawer-overlay') || document.getElementById('shade');
+    const drawerLinks = document.querySelectorAll('.drawer-link');
+
+    function openDrawer() {
+      if (sideDrawer && drawerOverlay) {
+        sideDrawer.classList.remove('translate-x-full');
+        sideDrawer.classList.add('open');
+        drawerOverlay.classList.remove('opacity-0', 'pointer-events-none');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closeDrawer() {
+      if (sideDrawer && drawerOverlay) {
+        sideDrawer.classList.add('translate-x-full');
+        sideDrawer.classList.remove('open');
+        drawerOverlay.classList.add('opacity-0', 'pointer-events-none');
+        document.body.style.overflow = '';
+      }
+    }
+
+    if (openDrawerBtn) openDrawerBtn.addEventListener('click', openDrawer);
+    if (closeDrawerBtn) closeDrawerBtn.addEventListener('click', closeDrawer);
+    if (drawerOverlay) drawerOverlay.addEventListener('click', closeDrawer);
+    drawerLinks.forEach(link => link.addEventListener('click', closeDrawer));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
 
     // FILTER TABS LOGIC
     const filterBtns = document.querySelectorAll('.filter-btn-square');

@@ -76,7 +76,7 @@
        ========================================== -->
   <div id="side-drawer-overlay" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[100] opacity-0 pointer-events-none transition-opacity duration-300"></div>
 
-  <div id="side-drawer" class="fixed top-0 right-0 h-full w-[340px] sm:w-[400px] bg-white z-[101] shadow-2xl translate-x-full transition-transform duration-300 ease-out flex flex-col justify-between p-8 overflow-y-auto">
+  <div id="side-drawer" class="fixed top-0 right-0 h-full w-[300px] sm:w-[380px] max-w-[90vw] bg-white z-[101] shadow-2xl translate-x-full transition-transform duration-300 ease-out flex flex-col justify-between p-6 sm:p-8 overflow-y-auto">
     
     <!-- Top Close Button -->
     <button id="close-side-drawer" class="absolute top-6 right-6 w-10 h-10 rounded-full bg-stone-100 text-[#612124] hover:bg-[#612124] hover:text-white flex items-center justify-center transition-all cursor-pointer shadow-sm">
@@ -85,8 +85,8 @@
 
     <div class="flex flex-col items-center text-center mt-6 space-y-6">
       
-      <!-- Company Logo in Center -->
-      <div class="p-3 bg-stone-50 rounded-2xl border border-stone-200/80 shadow-md inline-block mb-2">
+      <!-- Company Logo in Center (Shown on mobile, removed on tab view) -->
+      <div class="drawer-top-logo block md:hidden p-3.5 bg-white rounded-2xl border border-stone-200/90 shadow-[0_4px_20px_rgba(0,0,0,0.06)] inline-block mb-1">
         <img src="vizhi-infragen-realtors-logo.png" alt="Vizhi Infragen Realtors Logo" class="w-36 h-20 object-contain mx-auto" />
       </div>
 
@@ -95,8 +95,7 @@
         <a href="#home" class="drawer-link text-lg font-bold text-[#c5a880] hover:text-[#612124] transition-colors font-['Inter',sans-serif]">Home</a>
         <a href="about.html" class="drawer-link text-lg font-bold text-[#334155] hover:text-[#c5a880] transition-colors font-['Inter',sans-serif]">About Us</a>
         <a href="#properties" class="drawer-link text-lg font-bold text-[#334155] hover:text-[#c5a880] transition-colors font-['Inter',sans-serif]">Properties</a>
-        <a href="#services" class="drawer-link text-lg font-bold text-[#334155] hover:text-[#c5a880] transition-colors font-['Inter',sans-serif]">Services</a>
-        <a href="#blog" class="drawer-link text-lg font-bold text-[#334155] hover:text-[#c5a880] transition-colors font-['Inter',sans-serif]">Blog</a>
+        <a href="services.html" class="drawer-link text-lg font-bold text-[#334155] hover:text-[#c5a880] transition-colors font-['Inter',sans-serif]">Services</a>
         <a href="contact.html" class="drawer-link text-lg font-bold text-[#334155] hover:text-[#c5a880] transition-colors font-['Inter',sans-serif]">Contact Us</a>
       </nav>
 
@@ -107,44 +106,36 @@
           <span>Vizhi Infragen Realtors</span>
         </div>
         <p class="text-xs text-stone-600 leading-relaxed max-w-[280px] mx-auto">
-          First Floor, Shop No.24, Old Bus Stand Complex, 24, Suganthi Nagar Rd, Sulur, Tamil Nadu 641402
+          Shop No. 24, Suganthi Nagar Road, Bus Stand Complex, Sulur Old Bus Stand, Sulur, Coimbatore – 641402
         </p>
 
         <div class="pt-2 flex flex-col items-center gap-2 text-xs">
-          <a href="mailto:srissa2006@gmail.com?subject=Inquiry%20Regarding%20Coimbatore%20Real%20Estate%20Properties&body=Hii!%20I'm%20interested%20can%20i%20know%20about%20more%20details" class="flex items-center gap-2 text-[#612124] hover:text-[#c5a880] font-semibold transition-colors">
+          <a href="mailto:admin@vizhiinfragenrealtors.com?subject=Inquiry%20Regarding%20Coimbatore%20Real%20Estate%20Properties" class="flex items-center gap-2 text-[#612124] hover:text-[#c5a880] font-semibold transition-colors">
             <i class="fa-solid fa-envelope text-[#c5a880]"></i>
-            <span>srissa2006@gmail.com</span>
+            <span>admin@vizhiinfragenrealtors.com</span>
           </a>
-          <a href="tel:9688889420" class="flex items-center gap-2 text-[#612124] hover:text-[#c5a880] font-semibold transition-colors">
+          <div class="flex items-center gap-2 text-[#612124] font-semibold">
             <i class="fa-solid fa-phone text-[#c5a880]"></i>
-            <span>+91 96888 89420</span>
-          </a>
+            <a href="tel:9688889420" class="hover:text-[#c5a880] transition-colors">+91 96888 89420</a>
+            <span>/</span>
+            <a href="tel:9787166889" class="hover:text-[#c5a880] transition-colors">97871 66889</a>
+          </div>
         </div>
       </div>
 
-      <!-- Social Media Icons Row -->
-      <div class="flex items-center justify-center gap-3 pt-4 border-t border-stone-100 w-full">
-        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-stone-100 text-[#1877F2] hover:bg-[#1877F2]/10 flex items-center justify-center transition-all">
-          <i class="fa-brands fa-facebook-f text-lg"></i>
+      <!-- Social Media Icons Row (WhatsApp, Instagram, Facebook only) -->
+      <div class="flex items-center justify-center gap-4 pt-4 border-t border-stone-100 w-full">
+        <a href="https://wa.me/919688889420" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-stone-100 text-[#25D366] hover:bg-[#25D366]/10 flex items-center justify-center transition-all shadow-sm" aria-label="WhatsApp">
+          <i class="fa-brands fa-whatsapp text-lg"></i>
         </a>
-        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-stone-100 text-[#1DA1F2] hover:bg-[#1DA1F2]/10 flex items-center justify-center transition-all">
-          <i class="fa-brands fa-twitter text-lg"></i>
-        </a>
-        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-stone-100 text-[#FF0000] hover:bg-[#FF0000]/10 flex items-center justify-center transition-all">
-          <i class="fa-brands fa-youtube text-lg"></i>
-        </a>
-        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-stone-100 text-[#E4405F] hover:bg-[#E4405F]/10 flex items-center justify-center transition-all">
+        <a href="https://www.instagram.com/vizhi_infragen_realtors/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-stone-100 text-[#E4405F] hover:bg-[#E4405F]/10 flex items-center justify-center transition-all shadow-sm" aria-label="Instagram">
           <i class="fa-brands fa-instagram text-lg"></i>
         </a>
-        <a href="https://wa.me/919688889420" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-stone-100 text-[#25D366] hover:bg-[#25D366]/10 flex items-center justify-center transition-all">
-          <i class="fa-brands fa-whatsapp text-lg"></i>
+        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-stone-100 text-[#1877F2] hover:bg-[#1877F2]/10 flex items-center justify-center transition-all shadow-sm" aria-label="Facebook">
+          <i class="fa-brands fa-facebook-f text-lg"></i>
         </a>
       </div>
 
-    </div>
-
-    <div class="text-center pt-6 text-[11px] text-stone-400 font-medium">
-      &copy; 2026 Vizhi Infragen Realtors. All Rights Reserved.
     </div>
 
   </div>
@@ -170,7 +161,7 @@
       </a>
 
       <!-- Center: Navigation Links in Dark Capsule Container -->
-      <nav class="hidden md:flex items-center gap-2 sm:gap-3.5 bg-[#1F0D11] border border-white/10 rounded-full px-2.5 sm:px-3 py-1 shadow-inner h-[44px] sm:h-[48px]">
+      <nav class="hidden lg:flex items-center gap-2 sm:gap-3.5 bg-[#1F0D11] border border-white/10 rounded-full px-2.5 sm:px-3 py-1 shadow-inner h-[44px] sm:h-[48px]">
         <a href="index.html" class="bg-[#c5a880] text-[#2D1217] font-semibold text-xs sm:text-[14px] px-5 sm:px-6 h-[36px] sm:h-[40px] flex items-center justify-center rounded-full shadow-sm transition-all font-['Inter',sans-serif]">Home</a>
         <a href="about.html" class="text-white hover:text-[#c5a880] font-medium text-xs sm:text-[14px] px-3.5 sm:px-4 h-[36px] sm:h-[40px] flex items-center justify-center transition-colors font-['Inter',sans-serif]">About Us</a>
         <div class="relative group flex items-center">
@@ -204,7 +195,7 @@
         </div>
 
         <!-- Mobile Drawer Hamburger Toggle Button -->
-        <button id="open-side-drawer" class="md:hidden w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-all cursor-pointer" aria-label="Open Mobile Navigation">
+        <button id="open-side-drawer" class="lg:hidden w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-all cursor-pointer" aria-label="Open Mobile Navigation">
           <i class="fa-solid fa-bars text-base"></i>
         </button>
       </div>
@@ -553,104 +544,96 @@
       </div><!-- end desktop serpentine timeline -->
 
 
-      <!-- Mobile & Tablet Responsive View (2-Column Grid with Circular Step Images) -->
-      <div class="block lg:hidden space-y-8 my-8">
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      <!-- Mobile & Tablet Responsive View (Step Titles Only - Aligned Cleanly Across All Screen Sizes) -->
+      <div class="block lg:hidden space-y-6 my-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
 
           <!-- Mobile Step 1 -->
           <div
-            class="bg-stone-50 rounded-2xl p-5 border border-stone-200 shadow-sm hover:shadow-md flex items-center gap-4 group">
-            <div class="relative w-24 h-24 rounded-full shrink-0 overflow-hidden shadow-md border-2 border-white">
+            class="bg-stone-50 rounded-2xl p-3.5 sm:p-5 border border-stone-200/90 shadow-sm hover:shadow-md flex items-center gap-3.5 sm:gap-4 group transition-all">
+            <div class="relative w-16 h-16 sm:w-20 sm:h-20 rounded-full shrink-0 overflow-hidden shadow-md border-2 border-white">
               <img src="assets/images/about-property-management.jpg" alt="Land analysis"
-                class="w-full h-full object-cover" />
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform" />
             </div>
             <div>
-              <h3 class="text-lg font-bold font-['Outfit',_sans-serif] text-[#612124]">1. Land analysis</h3>
-              <p class="text-xs text-[#5c525c] mt-1">Feasibility study, soil testing &amp; location assessment</p>
+              <h3 class="text-sm sm:text-base md:text-lg font-bold font-['Outfit',_sans-serif] text-[#612124] leading-snug">1. Land analysis</h3>
             </div>
           </div>
 
           <!-- Mobile Step 2 -->
           <div
-            class="bg-stone-50 rounded-2xl p-5 border border-stone-200 shadow-sm hover:shadow-md flex items-center gap-4 group">
-            <div class="relative w-24 h-24 rounded-full shrink-0 overflow-hidden shadow-md border-2 border-white">
-              <img src="assets/images/service-6.jpg" alt="Legal verification & clear-title property selection" class="w-full h-full object-cover" />
+            class="bg-stone-50 rounded-2xl p-3.5 sm:p-5 border border-stone-200/90 shadow-sm hover:shadow-md flex items-center gap-3.5 sm:gap-4 group transition-all">
+            <div class="relative w-16 h-16 sm:w-20 sm:h-20 rounded-full shrink-0 overflow-hidden shadow-md border-2 border-white">
+              <img src="assets/images/service-6.jpg" alt="Legal verification & clear-title property selection" class="w-full h-full object-cover group-hover:scale-105 transition-transform" />
             </div>
             <div>
-              <h3 class="text-lg font-bold font-['Outfit',_sans-serif] text-[#612124]">2. Legal verification &amp; clear-title property selection</h3>
-              <p class="text-xs text-[#5c525c] mt-1">Title deed vetting, parent document &amp; encumbrance check</p>
+              <h3 class="text-sm sm:text-base md:text-lg font-bold font-['Outfit',_sans-serif] text-[#612124] leading-snug">2. Legal verification &amp; clear-title property selection</h3>
             </div>
           </div>
 
           <!-- Mobile Step 3 -->
           <div
-            class="bg-stone-50 rounded-2xl p-5 border border-stone-200 shadow-sm hover:shadow-md flex items-center gap-4 group">
-            <div class="relative w-24 h-24 rounded-full shrink-0 overflow-hidden shadow-md border-2 border-white">
-              <img src="assets/images/handshake-deal.jpg" alt="Land purchase" class="w-full h-full object-cover" />
+            class="bg-stone-50 rounded-2xl p-3.5 sm:p-5 border border-stone-200/90 shadow-sm hover:shadow-md flex items-center gap-3.5 sm:gap-4 group transition-all">
+            <div class="relative w-16 h-16 sm:w-20 sm:h-20 rounded-full shrink-0 overflow-hidden shadow-md border-2 border-white">
+              <img src="assets/images/handshake-deal.jpg" alt="Land purchase" class="w-full h-full object-cover group-hover:scale-105 transition-transform" />
             </div>
             <div>
-              <h3 class="text-lg font-bold font-['Outfit',_sans-serif] text-[#612124]">3. Land purchase</h3>
-              <p class="text-xs text-[#5c525c] mt-1">Transparent pricing, deal closing &amp; deed registration</p>
+              <h3 class="text-sm sm:text-base md:text-lg font-bold font-['Outfit',_sans-serif] text-[#612124] leading-snug">3. Land purchase</h3>
             </div>
           </div>
 
           <!-- Mobile Step 4 -->
           <div
-            class="bg-stone-50 rounded-2xl p-5 border border-stone-200 shadow-sm hover:shadow-md flex items-center gap-4 group">
-            <div class="relative w-24 h-24 rounded-full shrink-0 overflow-hidden shadow-md border-2 border-white">
-              <img src="assets/images/plot-layout-1.jpg" alt="Land conversion" class="w-full h-full object-cover" />
+            class="bg-stone-50 rounded-2xl p-3.5 sm:p-5 border border-stone-200/90 shadow-sm hover:shadow-md flex items-center gap-3.5 sm:gap-4 group transition-all">
+            <div class="relative w-16 h-16 sm:w-20 sm:h-20 rounded-full shrink-0 overflow-hidden shadow-md border-2 border-white">
+              <img src="assets/images/plot-layout-1.jpg" alt="Land conversion" class="w-full h-full object-cover group-hover:scale-105 transition-transform" />
             </div>
             <div>
-              <h3 class="text-lg font-bold font-['Outfit',_sans-serif] text-[#612124]">4. Land conversion</h3>
-              <p class="text-xs text-[#5c525c] mt-1">Zoning conversion, DTCP / CMDA &amp; RERA layout approvals</p>
+              <h3 class="text-sm sm:text-base md:text-lg font-bold font-['Outfit',_sans-serif] text-[#612124] leading-snug">4. Land conversion</h3>
             </div>
           </div>
 
           <!-- Mobile Step 5 -->
           <div
-            class="bg-stone-50 rounded-2xl p-5 border border-stone-200 shadow-sm hover:shadow-md flex items-center gap-4 group">
-            <div class="relative w-24 h-24 rounded-full shrink-0 overflow-hidden shadow-md border-2 border-white">
-              <img src="assets/images/hero-3.jpg" alt="Architectural & structural Design" class="w-full h-full object-cover" />
+            class="bg-stone-50 rounded-2xl p-3.5 sm:p-5 border border-stone-200/90 shadow-sm hover:shadow-md flex items-center gap-3.5 sm:gap-4 group transition-all">
+            <div class="relative w-16 h-16 sm:w-20 sm:h-20 rounded-full shrink-0 overflow-hidden shadow-md border-2 border-white">
+              <img src="assets/images/hero-3.jpg" alt="Architectural & structural Design" class="w-full h-full object-cover group-hover:scale-105 transition-transform" />
             </div>
             <div>
-              <h3 class="text-lg font-bold font-['Outfit',_sans-serif] text-[#612124]">5. Architectural &amp; structural Design</h3>
-              <p class="text-xs text-[#5c525c] mt-1">2D/3D elevations, Vaastu planning &amp; structural drawings</p>
+              <h3 class="text-sm sm:text-base md:text-lg font-bold font-['Outfit',_sans-serif] text-[#612124] leading-snug">5. Architectural &amp; structural Design</h3>
             </div>
           </div>
 
           <!-- Mobile Step 6 -->
           <div
-            class="bg-stone-50 rounded-2xl p-5 border border-stone-200 shadow-sm hover:shadow-md flex items-center gap-4 group">
-            <div class="relative w-24 h-24 rounded-full shrink-0 overflow-hidden shadow-md border-2 border-white">
-              <img src="assets/images/hero-4.jpg" alt="Building Approvals" class="w-full h-full object-cover" />
+            class="bg-stone-50 rounded-2xl p-3.5 sm:p-5 border border-stone-200/90 shadow-sm hover:shadow-md flex items-center gap-3.5 sm:gap-4 group transition-all">
+            <div class="relative w-16 h-16 sm:w-20 sm:h-20 rounded-full shrink-0 overflow-hidden shadow-md border-2 border-white">
+              <img src="assets/images/hero-4.jpg" alt="Building Approvals" class="w-full h-full object-cover group-hover:scale-105 transition-transform" />
             </div>
             <div>
-              <h3 class="text-lg font-bold font-['Outfit',_sans-serif] text-[#612124]">6. Building Approvals</h3>
-              <p class="text-xs text-[#5c525c] mt-1">Municipal blueprint sanctions &amp; government clearances</p>
+              <h3 class="text-sm sm:text-base md:text-lg font-bold font-['Outfit',_sans-serif] text-[#612124] leading-snug">6. Building Approvals</h3>
             </div>
           </div>
 
           <!-- Mobile Step 7 -->
           <div
-            class="bg-stone-50 rounded-2xl p-5 border border-stone-200 shadow-sm hover:shadow-md flex items-center gap-4 group">
-            <div class="relative w-24 h-24 rounded-full shrink-0 overflow-hidden shadow-md border-2 border-white">
-              <img src="assets/images/hero-1.jpg" alt="Building Construction & quality inspection" class="w-full h-full object-cover" />
+            class="bg-stone-50 rounded-2xl p-3.5 sm:p-5 border border-stone-200/90 shadow-sm hover:shadow-md flex items-center gap-3.5 sm:gap-4 group transition-all">
+            <div class="relative w-16 h-16 sm:w-20 sm:h-20 rounded-full shrink-0 overflow-hidden shadow-md border-2 border-white">
+              <img src="assets/images/hero-1.jpg" alt="Building Construction & quality inspection" class="w-full h-full object-cover group-hover:scale-105 transition-transform" />
             </div>
             <div>
-              <h3 class="text-lg font-bold font-['Outfit',_sans-serif] text-[#612124]">7. Building Construction &amp; quality inspection</h3>
-              <p class="text-xs text-[#5c525c] mt-1">Rigorous civil construction, stage audits &amp; quality testing</p>
+              <h3 class="text-sm sm:text-base md:text-lg font-bold font-['Outfit',_sans-serif] text-[#612124] leading-snug">7. Building Construction &amp; quality inspection</h3>
             </div>
           </div>
 
           <!-- Mobile Step 8 -->
           <div
-            class="bg-stone-50 rounded-2xl p-5 border border-stone-200 shadow-sm hover:shadow-md flex items-center gap-4 group">
-            <div class="relative w-24 h-24 rounded-full shrink-0 overflow-hidden shadow-md border-2 border-white">
-              <img src="assets/images/key-handover.jpg" alt="Turnkey Handover" class="w-full h-full object-cover" />
+            class="bg-stone-50 rounded-2xl p-3.5 sm:p-5 border border-stone-200/90 shadow-sm hover:shadow-md flex items-center gap-3.5 sm:gap-4 group transition-all">
+            <div class="relative w-16 h-16 sm:w-20 sm:h-20 rounded-full shrink-0 overflow-hidden shadow-md border-2 border-white">
+              <img src="assets/images/key-handover.jpg" alt="Turnkey Handover" class="w-full h-full object-cover group-hover:scale-105 transition-transform" />
             </div>
             <div>
-              <h3 class="text-lg font-bold font-['Outfit',_sans-serif] text-[#612124]">8. Turnkey Handover</h3>
-              <p class="text-xs text-[#5c525c] mt-1">Completion Certificate (CC) &amp; ceremonial key presentation</p>
+              <h3 class="text-sm sm:text-base md:text-lg font-bold font-['Outfit',_sans-serif] text-[#612124] leading-snug">8. Turnkey Handover</h3>
             </div>
           </div>
 
@@ -1410,10 +1393,10 @@
           <div class="flex items-center justify-end mt-3 sm:mt-4 px-2">
             <!-- Scroll Animation Navigation Buttons -->
             <div class="flex items-center space-x-3">
-              <button id="why-choose-prev-btn" onclick="document.getElementById('why-choose-scroll-track').scrollBy({left: -360, behavior: 'smooth'})" class="w-9 h-9 rounded-full bg-white/10 hover:bg-[#c5a880] hover:text-[#231518] text-white flex items-center justify-center transition-all border border-white/20 cursor-pointer" aria-label="Previous">
+              <button id="why-choose-prev-btn" class="w-9 h-9 rounded-full bg-white/10 hover:bg-[#c5a880] hover:text-[#231518] text-white flex items-center justify-center transition-all border border-white/20 opacity-30 cursor-not-allowed pointer-events-none" aria-label="Previous" disabled>
                 <i class="fa-solid fa-chevron-left text-xs"></i>
               </button>
-              <button id="why-choose-next-btn" onclick="document.getElementById('why-choose-scroll-track').scrollBy({left: 360, behavior: 'smooth'})" class="w-9 h-9 rounded-full bg-white/10 hover:bg-[#c5a880] hover:text-[#231518] text-white flex items-center justify-center transition-all border border-white/20 cursor-pointer" aria-label="Next">
+              <button id="why-choose-next-btn" class="w-9 h-9 rounded-full bg-white/10 hover:bg-[#c5a880] hover:text-[#231518] text-white flex items-center justify-center transition-all border border-white/20 cursor-pointer" aria-label="Next">
                 <i class="fa-solid fa-chevron-right text-xs"></i>
               </button>
             </div>
@@ -1521,25 +1504,22 @@
         
         <!-- Left & Right Floating Arrow Buttons Overlay on Track End -->
         <button id="services-track-left"
-          class="absolute left-2 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-white/95 backdrop-blur-md text-[#612124] border border-[#612124]/30 hover:bg-[#612124] hover:text-white shadow-2xl flex items-center justify-center transition-all cursor-pointer">
+          class="absolute left-2 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-white/95 backdrop-blur-md text-[#612124] border border-[#612124]/30 hover:bg-[#612124] hover:text-white shadow-2xl flex items-center justify-center transition-all opacity-30 cursor-not-allowed pointer-events-none" aria-label="Previous services" disabled>
           <i class="fa-solid fa-chevron-left text-lg"></i>
         </button>
 
         <button id="services-track-right"
-          class="absolute right-2 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-white/95 backdrop-blur-md text-[#612124] border border-[#612124]/30 hover:bg-[#612124] hover:text-white shadow-2xl flex items-center justify-center transition-all cursor-pointer">
+          class="absolute right-2 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-white/95 backdrop-blur-md text-[#612124] border border-[#612124]/30 hover:bg-[#612124] hover:text-white shadow-2xl flex items-center justify-center transition-all cursor-pointer" aria-label="Next services">
           <i class="fa-solid fa-chevron-right text-lg"></i>
         </button>
 
-        <!-- The 10-Card Horizontal Infinite Auto-Moving & Floating Marquee Track -->
+        <!-- The 10-Card Horizontal Scrollable Services Slider Track -->
         <div id="services-track"
-          class="flex items-stretch overflow-hidden no-scrollbar px-0 py-6 min-h-[560px] relative">
+          class="flex items-stretch overflow-x-auto scroll-smooth no-scrollbar px-2 sm:px-4 py-6 min-h-[560px] relative">
           
-          <div class="infinite-marquee-track flex items-stretch space-x-6 sm:space-x-8 pr-6 sm:pr-8">
-
-            <!-- ── SET 1: CARDS 1 to 10 ── -->
-
-            <!-- CARD 1 (Land Sales) -->
-            <a href="land-sales-details.html" class="min-w-[320px] sm:min-w-[370px] max-w-[380px] shrink-0 flex flex-col items-center text-center justify-between service-float-card floating-bob-card bg-white p-6 rounded-[22px] shadow-sm border border-stone-200/80 hover:shadow-xl hover:border-[#c5a880]/60 transition-all cursor-pointer block group text-inherit" style="animation-delay: 0s;">
+          <div class="flex items-stretch space-x-6 sm:space-x-8 pr-6 sm:pr-8">
+<!-- CARD 1 (Land Sales) -->
+            <a href="land-sales-details.html" class="snap-start min-w-[280px] sm:min-w-[350px] md:min-w-[370px] max-w-[380px] shrink-0 flex flex-col items-center text-center justify-between service-float-card floating-bob-card bg-white p-6 rounded-[22px] shadow-sm border border-stone-200/80 hover:shadow-xl hover:border-[#c5a880]/60 transition-all cursor-pointer block group text-inherit" style="animation-delay: 0s;">
               <div class="w-full flex flex-col items-center">
                 <div class="w-full aspect-[4/3] rounded-[18px] overflow-hidden shadow-md border border-stone-200 bg-stone-900 mb-5">
                   <img src="assets/images/service-1.jpg" alt="Land Sales Coimbatore" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
@@ -1561,7 +1541,7 @@
             </a>
 
             <!-- CARD 2 (Land Purchase Assistance) -->
-            <div class="min-w-[320px] sm:min-w-[370px] max-w-[380px] shrink-0 flex flex-col items-center text-center justify-between service-float-card floating-bob-card bg-white p-6 rounded-[22px] shadow-sm border border-stone-200/80" style="animation-delay: 0.6s;">
+            <div class="snap-start min-w-[280px] sm:min-w-[350px] md:min-w-[370px] max-w-[380px] shrink-0 flex flex-col items-center text-center justify-between service-float-card floating-bob-card bg-white p-6 rounded-[22px] shadow-sm border border-stone-200/80" style="animation-delay: 0.6s;">
               <div class="w-full flex flex-col items-center">
                 <div class="w-full aspect-[4/3] rounded-[18px] overflow-hidden shadow-md border border-stone-200 bg-stone-900 mb-5">
                   <img src="assets/images/service-2.jpg" alt="Land Purchase Assistance" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
@@ -1583,7 +1563,7 @@
             </div>
 
             <!-- CARD 3 (Property Management) -->
-            <div class="min-w-[320px] sm:min-w-[370px] max-w-[380px] shrink-0 flex flex-col items-center text-center justify-between service-float-card floating-bob-card bg-white p-6 rounded-[22px] shadow-sm border border-stone-200/80" style="animation-delay: 1.2s;">
+            <div class="snap-start min-w-[280px] sm:min-w-[350px] md:min-w-[370px] max-w-[380px] shrink-0 flex flex-col items-center text-center justify-between service-float-card floating-bob-card bg-white p-6 rounded-[22px] shadow-sm border border-stone-200/80" style="animation-delay: 1.2s;">
               <div class="w-full flex flex-col items-center">
                 <div class="w-full aspect-[4/3] rounded-[18px] overflow-hidden shadow-md border border-stone-200 bg-stone-900 mb-5">
                   <img src="assets/images/service-3.jpg" alt="Property Management" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
@@ -1605,7 +1585,7 @@
             </div>
 
             <!-- CARD 4 (NRI Property Management) -->
-            <div class="min-w-[320px] sm:min-w-[370px] max-w-[380px] shrink-0 flex flex-col items-center text-center justify-between service-float-card floating-bob-card bg-white p-6 rounded-[22px] shadow-sm border border-stone-200/80" style="animation-delay: 1.8s;">
+            <div class="snap-start min-w-[280px] sm:min-w-[350px] md:min-w-[370px] max-w-[380px] shrink-0 flex flex-col items-center text-center justify-between service-float-card floating-bob-card bg-white p-6 rounded-[22px] shadow-sm border border-stone-200/80" style="animation-delay: 1.8s;">
               <div class="w-full flex flex-col items-center">
                 <div class="w-full aspect-[4/3] rounded-[18px] overflow-hidden shadow-md border border-stone-200 bg-stone-900 mb-5">
                   <img src="assets/images/service-4.jpg" alt="NRI Property Management" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
@@ -1627,7 +1607,7 @@
             </div>
 
             <!-- CARD 5 (Building Construction) -->
-            <div class="min-w-[320px] sm:min-w-[370px] max-w-[380px] shrink-0 flex flex-col items-center text-center justify-between service-float-card floating-bob-card bg-white p-6 rounded-[22px] shadow-sm border border-stone-200/80" style="animation-delay: 2.4s;">
+            <div class="snap-start min-w-[280px] sm:min-w-[350px] md:min-w-[370px] max-w-[380px] shrink-0 flex flex-col items-center text-center justify-between service-float-card floating-bob-card bg-white p-6 rounded-[22px] shadow-sm border border-stone-200/80" style="animation-delay: 2.4s;">
               <div class="w-full flex flex-col items-center">
                 <div class="w-full aspect-[4/3] rounded-[18px] overflow-hidden shadow-md border border-stone-200 bg-stone-900 mb-5">
                   <img src="assets/images/service-5.jpg" alt="Building Construction" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
@@ -1649,7 +1629,7 @@
             </div>
 
             <!-- CARD 6 (Building Valuation) -->
-            <div class="min-w-[320px] sm:min-w-[370px] max-w-[380px] shrink-0 flex flex-col items-center text-center justify-between service-float-card floating-bob-card bg-white p-6 rounded-[22px] shadow-sm border border-stone-200/80" style="animation-delay: 3s;">
+            <div class="snap-start min-w-[280px] sm:min-w-[350px] md:min-w-[370px] max-w-[380px] shrink-0 flex flex-col items-center text-center justify-between service-float-card floating-bob-card bg-white p-6 rounded-[22px] shadow-sm border border-stone-200/80" style="animation-delay: 3s;">
               <div class="w-full flex flex-col items-center">
                 <div class="w-full aspect-[4/3] rounded-[18px] overflow-hidden shadow-md border border-stone-200 bg-stone-900 mb-5">
                   <img src="assets/images/service-6.jpg" alt="Building Valuation" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
@@ -1671,7 +1651,7 @@
             </div>
 
             <!-- CARD 7 (Land Approval and Documentation) -->
-            <div class="min-w-[320px] sm:min-w-[370px] max-w-[380px] shrink-0 flex flex-col items-center text-center justify-between service-float-card floating-bob-card bg-white p-6 rounded-[22px] shadow-sm border border-stone-200/80" style="animation-delay: 0.3s;">
+            <div class="snap-start min-w-[280px] sm:min-w-[350px] md:min-w-[370px] max-w-[380px] shrink-0 flex flex-col items-center text-center justify-between service-float-card floating-bob-card bg-white p-6 rounded-[22px] shadow-sm border border-stone-200/80" style="animation-delay: 0.3s;">
               <div class="w-full flex flex-col items-center">
                 <div class="w-full aspect-[4/3] rounded-[18px] overflow-hidden shadow-md border border-stone-200 bg-stone-900 mb-5">
                   <img src="assets/images/service-7.jpg" alt="Land Approval and Documentation" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
@@ -1693,7 +1673,7 @@
             </div>
 
             <!-- CARD 8 (Land Conversion Services) -->
-            <div class="min-w-[320px] sm:min-w-[370px] max-w-[380px] shrink-0 flex flex-col items-center text-center justify-between service-float-card floating-bob-card bg-white p-6 rounded-[22px] shadow-sm border border-stone-200/80" style="animation-delay: 0.9s;">
+            <div class="snap-start min-w-[280px] sm:min-w-[350px] md:min-w-[370px] max-w-[380px] shrink-0 flex flex-col items-center text-center justify-between service-float-card floating-bob-card bg-white p-6 rounded-[22px] shadow-sm border border-stone-200/80" style="animation-delay: 0.9s;">
               <div class="w-full flex flex-col items-center">
                 <div class="w-full aspect-[4/3] rounded-[18px] overflow-hidden shadow-md border border-stone-200 bg-stone-900 mb-5">
                   <img src="assets/images/service-8.jpg" alt="Land Conversion Services" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
@@ -1715,7 +1695,7 @@
             </div>
 
             <!-- CARD 9 (Rental Services) -->
-            <div class="min-w-[320px] sm:min-w-[370px] max-w-[380px] shrink-0 flex flex-col items-center text-center justify-between service-float-card floating-bob-card bg-white p-6 rounded-[22px] shadow-sm border border-stone-200/80" style="animation-delay: 1.5s;">
+            <div class="snap-start min-w-[280px] sm:min-w-[350px] md:min-w-[370px] max-w-[380px] shrink-0 flex flex-col items-center text-center justify-between service-float-card floating-bob-card bg-white p-6 rounded-[22px] shadow-sm border border-stone-200/80" style="animation-delay: 1.5s;">
               <div class="w-full flex flex-col items-center">
                 <div class="w-full aspect-[4/3] rounded-[18px] overflow-hidden shadow-md border border-stone-200 bg-stone-900 mb-5">
                   <img src="assets/images/service-9.jpg" alt="Rental Services" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
@@ -1737,7 +1717,7 @@
             </div>
 
             <!-- CARD 10 (Warehouse and Corporate Solutions) -->
-            <div class="min-w-[320px] sm:min-w-[370px] max-w-[380px] shrink-0 flex flex-col items-center text-center justify-between service-float-card floating-bob-card bg-white p-6 rounded-[22px] shadow-sm border border-stone-200/80" style="animation-delay: 2.1s;">
+            <div class="snap-start min-w-[280px] sm:min-w-[350px] md:min-w-[370px] max-w-[380px] shrink-0 flex flex-col items-center text-center justify-between service-float-card floating-bob-card bg-white p-6 rounded-[22px] shadow-sm border border-stone-200/80" style="animation-delay: 2.1s;">
               <div class="w-full flex flex-col items-center">
                 <div class="w-full aspect-[4/3] rounded-[18px] overflow-hidden shadow-md border border-stone-200 bg-stone-900 mb-5">
                   <img src="assets/images/service-10.jpg" alt="Warehouse and Corporate Solutions" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
@@ -1757,230 +1737,6 @@
                 </p>
               </div>
             </div>
-
-
-            <!-- ── SET 2: DUPLICATED FOR SEAMLESS INFINITE MARQUEE LOOP ── -->
-
-            <!-- CARD 1 (Land Sales) -->
-            <a href="land-sales-details.html" class="min-w-[320px] sm:min-w-[370px] max-w-[380px] shrink-0 flex flex-col items-center text-center justify-between service-float-card floating-bob-card bg-white p-6 rounded-[22px] shadow-sm border border-stone-200/80 hover:shadow-xl hover:border-[#c5a880]/60 transition-all cursor-pointer block group text-inherit" style="animation-delay: 0s;">
-              <div class="w-full flex flex-col items-center">
-                <div class="w-full aspect-[4/3] rounded-[18px] overflow-hidden shadow-md border border-stone-200 bg-stone-900 mb-5">
-                  <img src="assets/images/service-1.jpg" alt="Land Sales Coimbatore" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                </div>
-                <h3 class="text-xl sm:text-2xl font-extrabold text-[#612124] group-hover:text-[#c5a880] transition-colors font-['Outfit',_sans-serif] mb-1">
-                  Land Sales
-                </h3>
-                <span class="text-xs font-bold text-[#c5a880] uppercase tracking-[0.18em] font-['Inter',_sans-serif] mb-3 block">
-                  Coimbatore Plots &amp; Sites
-                </span>
-                <div class="flex items-center justify-center gap-4 text-xs font-semibold text-stone-500 py-2 border-t border-b border-stone-200/80 w-full mb-3 font-['Inter',_sans-serif]">
-                  <span><i class="fa-solid fa-shield-halved text-[#c5a880] mr-1"></i> Verified Titles</span>
-                  <span><i class="fa-solid fa-map-location-dot text-[#c5a880] mr-1"></i> Fair Pricing</span>
-                </div>
-                <p class="text-xs sm:text-sm text-stone-600 font-normal leading-relaxed font-['Inter',_sans-serif]">
-                  Verified plots, agricultural land, and development sites across Coimbatore, listed with clear titles and fair market pricing.
-                </p>
-              </div>
-            </a>
-
-            <!-- CARD 2 (Land Purchase Assistance) -->
-            <div class="min-w-[320px] sm:min-w-[370px] max-w-[380px] shrink-0 flex flex-col items-center text-center justify-between service-float-card floating-bob-card bg-white p-6 rounded-[22px] shadow-sm border border-stone-200/80" style="animation-delay: 0.6s;">
-              <div class="w-full flex flex-col items-center">
-                <div class="w-full aspect-[4/3] rounded-[18px] overflow-hidden shadow-md border border-stone-200 bg-stone-900 mb-5">
-                  <img src="assets/images/service-2.jpg" alt="Land Purchase Assistance" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
-                </div>
-                <h3 class="text-xl sm:text-2xl font-extrabold text-[#612124] font-['Outfit',_sans-serif] mb-1">
-                  Land Purchase Assistance
-                </h3>
-                <span class="text-xs font-bold text-[#c5a880] uppercase tracking-[0.18em] font-['Inter',_sans-serif] mb-3 block">
-                  End-to-End Buyer Support
-                </span>
-                <div class="flex items-center justify-center gap-4 text-xs font-semibold text-stone-500 py-2 border-t border-b border-stone-200/80 w-full mb-3 font-['Inter',_sans-serif]">
-                  <span><i class="fa-solid fa-handshake text-[#c5a880] mr-1"></i> Due Diligence</span>
-                  <span><i class="fa-solid fa-file-contract text-[#c5a880] mr-1"></i> Title Verification</span>
-                </div>
-                <p class="text-xs sm:text-sm text-stone-600 font-normal leading-relaxed font-['Inter',_sans-serif]">
-                  End-to-end buyer support, including site shortlisting, due diligence, price negotiation, and title verification, so you invest with confidence.
-                </p>
-              </div>
-            </div>
-
-            <!-- CARD 3 (Property Management) -->
-            <div class="min-w-[320px] sm:min-w-[370px] max-w-[380px] shrink-0 flex flex-col items-center text-center justify-between service-float-card floating-bob-card bg-white p-6 rounded-[22px] shadow-sm border border-stone-200/80" style="animation-delay: 1.2s;">
-              <div class="w-full flex flex-col items-center">
-                <div class="w-full aspect-[4/3] rounded-[18px] overflow-hidden shadow-md border border-stone-200 bg-stone-900 mb-5">
-                  <img src="assets/images/service-3.jpg" alt="Property Management" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
-                </div>
-                <h3 class="text-xl sm:text-2xl font-extrabold text-[#612124] font-['Outfit',_sans-serif] mb-1">
-                  Property Management
-                </h3>
-                <span class="text-xs font-bold text-[#c5a880] uppercase tracking-[0.18em] font-['Inter',_sans-serif] mb-3 block">
-                  Asset Security &amp; Care
-                </span>
-                <div class="flex items-center justify-center gap-4 text-xs font-semibold text-stone-500 py-2 border-t border-b border-stone-200/80 w-full mb-3 font-['Inter',_sans-serif]">
-                  <span><i class="fa-solid fa-building text-[#c5a880] mr-1"></i> Tenant Coordination</span>
-                  <span><i class="fa-solid fa-screwdriver-wrench text-[#c5a880] mr-1"></i> Regular Audits</span>
-                </div>
-                <p class="text-xs sm:text-sm text-stone-600 font-normal leading-relaxed font-['Inter',_sans-serif]">
-                  As an experienced property management company in Coimbatore, we handle residential and commercial assets with care: tenant coordination, rent collection, maintenance, and regular property inspections.
-                </p>
-              </div>
-            </div>
-
-            <!-- CARD 4 (NRI Property Management) -->
-            <div class="min-w-[320px] sm:min-w-[370px] max-w-[380px] shrink-0 flex flex-col items-center text-center justify-between service-float-card floating-bob-card bg-white p-6 rounded-[22px] shadow-sm border border-stone-200/80" style="animation-delay: 1.8s;">
-              <div class="w-full flex flex-col items-center">
-                <div class="w-full aspect-[4/3] rounded-[18px] overflow-hidden shadow-md border border-stone-200 bg-stone-900 mb-5">
-                  <img src="assets/images/service-4.jpg" alt="NRI Property Management" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
-                </div>
-                <h3 class="text-xl sm:text-2xl font-extrabold text-[#612124] font-['Outfit',_sans-serif] mb-1">
-                  NRI Property Management
-                </h3>
-                <span class="text-xs font-bold text-[#c5a880] uppercase tracking-[0.18em] font-['Inter',_sans-serif] mb-3 block">
-                  Dedicated Remote Protection
-                </span>
-                <div class="flex items-center justify-center gap-4 text-xs font-semibold text-stone-500 py-2 border-t border-b border-stone-200/80 w-full mb-3 font-['Inter',_sans-serif]">
-                  <span><i class="fa-solid fa-globe text-[#c5a880] mr-1"></i> Global Protection</span>
-                  <span><i class="fa-solid fa-chart-pie text-[#c5a880] mr-1"></i> Transparent Reporting</span>
-                </div>
-                <p class="text-xs sm:text-sm text-stone-600 font-normal leading-relaxed font-['Inter',_sans-serif]">
-                  A dedicated, NRI-focused service that protects your property while you're abroad — secure rent handling, encroachment monitoring, document management, and transparent reporting you can trust from anywhere in the world.
-                </p>
-              </div>
-            </div>
-
-            <!-- CARD 5 (Building Construction) -->
-            <div class="min-w-[320px] sm:min-w-[370px] max-w-[380px] shrink-0 flex flex-col items-center text-center justify-between service-float-card floating-bob-card bg-white p-6 rounded-[22px] shadow-sm border border-stone-200/80" style="animation-delay: 2.4s;">
-              <div class="w-full flex flex-col items-center">
-                <div class="w-full aspect-[4/3] rounded-[18px] overflow-hidden shadow-md border border-stone-200 bg-stone-900 mb-5">
-                  <img src="assets/images/service-5.jpg" alt="Building Construction" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
-                </div>
-                <h3 class="text-xl sm:text-2xl font-extrabold text-[#612124] font-['Outfit',_sans-serif] mb-1">
-                  Building Construction
-                </h3>
-                <span class="text-xs font-bold text-[#c5a880] uppercase tracking-[0.18em] font-['Inter',_sans-serif] mb-3 block">
-                  Turnkey Architectural Construction
-                </span>
-                <div class="flex items-center justify-center gap-4 text-xs font-semibold text-stone-500 py-2 border-t border-b border-stone-200/80 w-full mb-3 font-['Inter',_sans-serif]">
-                  <span><i class="fa-solid fa-helmet-safety text-[#c5a880] mr-1"></i> Quality Control</span>
-                  <span><i class="fa-solid fa-clock text-[#c5a880] mr-1"></i> On-Time Delivery</span>
-                </div>
-                <p class="text-xs sm:text-sm text-stone-600 font-normal leading-relaxed font-['Inter',_sans-serif]">
-                  Reliable construction support for homes, commercial units, and rental developments, managed with quality control and on-time delivery.
-                </p>
-              </div>
-            </div>
-
-            <!-- CARD 6 (Building Valuation) -->
-            <div class="min-w-[320px] sm:min-w-[370px] max-w-[380px] shrink-0 flex flex-col items-center text-center justify-between service-float-card floating-bob-card bg-white p-6 rounded-[22px] shadow-sm border border-stone-200/80" style="animation-delay: 3s;">
-              <div class="w-full flex flex-col items-center">
-                <div class="w-full aspect-[4/3] rounded-[18px] overflow-hidden shadow-md border border-stone-200 bg-stone-900 mb-5">
-                  <img src="assets/images/service-6.jpg" alt="Building Valuation" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
-                </div>
-                <h3 class="text-xl sm:text-2xl font-extrabold text-[#612124] font-['Outfit',_sans-serif] mb-1">
-                  Building Valuation
-                </h3>
-                <span class="text-xs font-bold text-[#c5a880] uppercase tracking-[0.18em] font-['Inter',_sans-serif] mb-3 block">
-                  Market-Aligned Valuation Reports
-                </span>
-                <div class="flex items-center justify-center gap-4 text-xs font-semibold text-stone-500 py-2 border-t border-b border-stone-200/80 w-full mb-3 font-['Inter',_sans-serif]">
-                  <span><i class="fa-solid fa-chart-line text-[#c5a880] mr-1"></i> Price Intelligence</span>
-                  <span><i class="fa-solid fa-scale-balanced text-[#c5a880] mr-1"></i> Legal &amp; Loan Reports</span>
-                </div>
-                <p class="text-xs sm:text-sm text-stone-600 font-normal leading-relaxed font-['Inter',_sans-serif]">
-                  Accurate, market-aligned valuations for sale, purchase, loan, or legal purposes, prepared with local price intelligence.
-                </p>
-              </div>
-            </div>
-
-            <!-- CARD 7 (Land Approval and Documentation) -->
-            <div class="min-w-[320px] sm:min-w-[370px] max-w-[380px] shrink-0 flex flex-col items-center text-center justify-between service-float-card floating-bob-card bg-white p-6 rounded-[22px] shadow-sm border border-stone-200/80" style="animation-delay: 0.3s;">
-              <div class="w-full flex flex-col items-center">
-                <div class="w-full aspect-[4/3] rounded-[18px] overflow-hidden shadow-md border border-stone-200 bg-stone-900 mb-5">
-                  <img src="assets/images/service-7.jpg" alt="Land Approval and Documentation" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
-                </div>
-                <h3 class="text-xl sm:text-2xl font-extrabold text-[#612124] font-['Outfit',_sans-serif] mb-1">
-                  Land Approval and Documentation
-                </h3>
-                <span class="text-xs font-bold text-[#c5a880] uppercase tracking-[0.18em] font-['Inter',_sans-serif] mb-3 block">
-                  DTCP / RERA / Legal Clearances
-                </span>
-                <div class="flex items-center justify-center gap-4 text-xs font-semibold text-stone-500 py-2 border-t border-b border-stone-200/80 w-full mb-3 font-['Inter',_sans-serif]">
-                  <span><i class="fa-solid fa-stamp text-[#c5a880] mr-1"></i> DTCP Approvals</span>
-                  <span><i class="fa-solid fa-file-signature text-[#c5a880] mr-1"></i> Registration Support</span>
-                </div>
-                <p class="text-xs sm:text-sm text-stone-600 font-normal leading-relaxed font-['Inter',_sans-serif]">
-                  Guidance through DTCP/local body approvals, registrations, and paperwork, reducing delays and compliance risk.
-                </p>
-              </div>
-            </div>
-
-            <!-- CARD 8 (Land Conversion Services) -->
-            <div class="min-w-[320px] sm:min-w-[370px] max-w-[380px] shrink-0 flex flex-col items-center text-center justify-between service-float-card floating-bob-card bg-white p-6 rounded-[22px] shadow-sm border border-stone-200/80" style="animation-delay: 0.9s;">
-              <div class="w-full flex flex-col items-center">
-                <div class="w-full aspect-[4/3] rounded-[18px] overflow-hidden shadow-md border border-stone-200 bg-stone-900 mb-5">
-                  <img src="assets/images/service-8.jpg" alt="Land Conversion Services" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
-                </div>
-                <h3 class="text-xl sm:text-2xl font-extrabold text-[#612124] font-['Outfit',_sans-serif] mb-1">
-                  Land Conversion Services
-                </h3>
-                <span class="text-xs font-bold text-[#c5a880] uppercase tracking-[0.18em] font-['Inter',_sans-serif] mb-3 block">
-                  Agricultural to Layout Conversion
-                </span>
-                <div class="flex items-center justify-center gap-4 text-xs font-semibold text-stone-500 py-2 border-t border-b border-stone-200/80 w-full mb-3 font-['Inter',_sans-serif]">
-                  <span><i class="fa-solid fa-wheat-awn text-[#c5a880] mr-1"></i> Zoning Change</span>
-                  <span><i class="fa-solid fa-certificate text-[#c5a880] mr-1"></i> Legal Compliance</span>
-                </div>
-                <p class="text-xs sm:text-sm text-stone-600 font-normal leading-relaxed font-['Inter',_sans-serif]">
-                  Professional assistance converting agricultural land to residential or commercial use, handled correctly the first time.
-                </p>
-              </div>
-            </div>
-
-            <!-- CARD 9 (Rental Services) -->
-            <div class="min-w-[320px] sm:min-w-[370px] max-w-[380px] shrink-0 flex flex-col items-center text-center justify-between service-float-card floating-bob-card bg-white p-6 rounded-[22px] shadow-sm border border-stone-200/80" style="animation-delay: 1.5s;">
-              <div class="w-full flex flex-col items-center">
-                <div class="w-full aspect-[4/3] rounded-[18px] overflow-hidden shadow-md border border-stone-200 bg-stone-900 mb-5">
-                  <img src="assets/images/service-9.jpg" alt="Rental Services" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
-                </div>
-                <h3 class="text-xl sm:text-2xl font-extrabold text-[#612124] font-['Outfit',_sans-serif] mb-1">
-                  Rental Services
-                </h3>
-                <span class="text-xs font-bold text-[#c5a880] uppercase tracking-[0.18em] font-['Inter',_sans-serif] mb-3 block">
-                  Leasing &amp; Tenant Sourcing
-                </span>
-                <div class="flex items-center justify-center gap-4 text-xs font-semibold text-stone-500 py-2 border-t border-b border-stone-200/80 w-full mb-3 font-['Inter',_sans-serif]">
-                  <span><i class="fa-solid fa-key text-[#c5a880] mr-1"></i> Tenant Sourcing</span>
-                  <span><i class="fa-solid fa-file-pen text-[#c5a880] mr-1"></i> Property Finding</span>
-                </div>
-                <p class="text-xs sm:text-sm text-stone-600 font-normal leading-relaxed font-['Inter',_sans-serif]">
-                  Tenant sourcing and rental management for owners, plus property-finding help for tenants seeking homes, offices, and commercial space.
-                </p>
-              </div>
-            </div>
-
-            <!-- CARD 10 (Warehouse and Corporate Solutions) -->
-            <div class="min-w-[320px] sm:min-w-[370px] max-w-[380px] shrink-0 flex flex-col items-center text-center justify-between service-float-card floating-bob-card bg-white p-6 rounded-[22px] shadow-sm border border-stone-200/80" style="animation-delay: 2.1s;">
-              <div class="w-full flex flex-col items-center">
-                <div class="w-full aspect-[4/3] rounded-[18px] overflow-hidden shadow-md border border-stone-200 bg-stone-900 mb-5">
-                  <img src="assets/images/service-10.jpg" alt="Warehouse and Corporate Solutions" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
-                </div>
-                <h3 class="text-xl sm:text-2xl font-extrabold text-[#612124] font-['Outfit',_sans-serif] mb-1">
-                  Warehouse and Corporate Solutions
-                </h3>
-                <span class="text-xs font-bold text-[#c5a880] uppercase tracking-[0.18em] font-['Inter',_sans-serif] mb-3 block">
-                  Industrial &amp; Corporate Spaces
-                </span>
-                <div class="flex items-center justify-center gap-4 text-xs font-semibold text-stone-500 py-2 border-t border-b border-stone-200/80 w-full mb-3 font-['Inter',_sans-serif]">
-                  <span><i class="fa-solid fa-warehouse text-[#c5a880] mr-1"></i> Warehousing &amp; Godowns</span>
-                  <span><i class="fa-solid fa-briefcase text-[#c5a880] mr-1"></i> Corporate Spaces</span>
-                </div>
-                <p class="text-xs sm:text-sm text-stone-600 font-normal leading-relaxed font-['Inter',_sans-serif]">
-                  Industrial and commercial real estate support for businesses needing warehousing, godowns, and corporate spaces along Coimbatore's key logistics routes.
-                </p>
-              </div>
-            </div>
-
           </div>
         </div>
       </div>
@@ -2027,12 +1783,13 @@
         </div>
 
         <a href="tel:9688889420"
-          class="bg-[#8A1F36] hover:bg-[#a22c46] rounded-md border-none pt-[15px] pr-[28px] pb-[15px] pl-[28px] flex flex-row gap-2.5 items-center justify-start shrink-0 relative hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 group shadow-lg">
-          <i class="fa-solid fa-arrow-right text-white text-sm group-hover:translate-x-1 transition-transform"></i>
-          <div
+          class="bg-[#8A1F36] hover:bg-[#a22c46] rounded-md border-none pt-[15px] pr-[28px] pb-[15px] pl-[28px] flex flex-row gap-3 items-center justify-start shrink-0 relative hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 group shadow-lg">
+          <i class="fa-solid fa-phone-volume text-[#c5a880] text-lg group-hover:rotate-12 transition-transform"></i>
+          <span
             class="text-white text-left font-['Inter',_sans-serif] text-base leading-[26px] font-semibold relative flex items-center justify-start">
             Start Your Property Journey
-          </div>
+          </span>
+          <i class="fa-solid fa-arrow-right text-white text-sm group-hover:translate-x-1 transition-transform"></i>
         </a>
       </div>
 
@@ -2044,36 +1801,47 @@
           QUICK ENQUIRY
         </div>
 
-        <form id="inquiry-form"
+        <form id="inquiry-form" novalidate
           class="flex flex-col gap-4 items-start justify-start self-stretch shrink-0 relative w-full">
           <div class="flex flex-col sm:flex-row gap-4 items-start justify-center self-stretch shrink-0 relative w-full">
             <!-- Your Name Input -->
-            <div
-              class="bg-white/90 rounded-md border border-gray-300/80 px-4 py-3.5 flex flex-col gap-0 items-start justify-start flex-1 relative overflow-hidden focus-within:border-burgundy-600 focus-within:ring-2 focus-within:ring-burgundy-600/20 transition-all w-full">
-              <input type="text" id="inquiry-name" required placeholder="Your Name"
-                class="w-full bg-transparent border-none outline-none text-[#000000] text-[14px] font-['Inter',_sans-serif] font-medium placeholder-[#666666] focus:ring-0 p-0" />
+            <div class="flex flex-col flex-1 w-full text-left">
+              <div id="inquiry-name-wrapper"
+                class="bg-white/90 rounded-md border border-gray-300/80 px-4 py-3.5 flex flex-col gap-0 items-start justify-start relative overflow-hidden focus-within:border-[#612124] focus-within:ring-2 focus-within:ring-[#612124]/20 transition-all w-full">
+                <input type="text" id="inquiry-name" required placeholder="Your Name"
+                  class="w-full bg-transparent border-none outline-none text-[#000000] text-[14px] font-['Inter',_sans-serif] font-medium placeholder-[#666666] focus:ring-0 p-0" />
+              </div>
+              <span id="inquiry-name-error" class="text-xs text-red-500 font-medium mt-1 hidden text-left font-['Inter',sans-serif]"></span>
             </div>
 
             <!-- Email Address Input -->
-            <div
-              class="bg-white/90 rounded-md border border-gray-300/80 px-4 py-3.5 flex flex-col gap-0 items-start justify-start flex-1 relative overflow-hidden focus-within:border-burgundy-600 focus-within:ring-2 focus-within:ring-burgundy-600/20 transition-all w-full">
-              <input type="email" id="inquiry-email" required placeholder="Email Address"
-                class="w-full bg-transparent border-none outline-none text-[#000000] text-[14px] font-['Inter',_sans-serif] font-medium placeholder-[#666666] focus:ring-0 p-0" />
+            <div class="flex flex-col flex-1 w-full text-left">
+              <div id="inquiry-email-wrapper"
+                class="bg-white/90 rounded-md border border-gray-300/80 px-4 py-3.5 flex flex-col gap-0 items-start justify-start relative overflow-hidden focus-within:border-[#612124] focus-within:ring-2 focus-within:ring-[#612124]/20 transition-all w-full">
+                <input type="email" id="inquiry-email" required placeholder="Email Address"
+                  class="w-full bg-transparent border-none outline-none text-[#000000] text-[14px] font-['Inter',_sans-serif] font-medium placeholder-[#666666] focus:ring-0 p-0" />
+              </div>
+              <span id="inquiry-email-error" class="text-xs text-red-500 font-medium mt-1 hidden text-left font-['Inter',sans-serif]"></span>
             </div>
           </div>
 
           <!-- Phone Number Input -->
-          <div
-            class="bg-white/90 rounded-md border border-gray-300/80 px-4 py-3.5 flex flex-col gap-0 items-start justify-start self-stretch shrink-0 relative overflow-hidden w-full focus-within:border-burgundy-600 focus-within:ring-2 focus-within:ring-burgundy-600/20 transition-all">
-            <input type="tel" id="inquiry-phone" required placeholder="Phone Number"
-              class="w-full bg-transparent border-none outline-none text-[#000000] text-[14px] font-['Inter',_sans-serif] font-medium placeholder-[#666666] focus:ring-0 p-0" />
+          <div class="flex flex-col w-full text-left">
+            <div id="inquiry-phone-wrapper"
+              class="bg-white/90 rounded-md border border-gray-300/80 px-4 py-3.5 flex flex-col gap-0 items-start justify-start relative overflow-hidden w-full focus-within:border-[#612124] focus-within:ring-2 focus-within:ring-[#612124]/20 transition-all">
+              <input type="tel" id="inquiry-phone" required placeholder="Phone Number (10 digits)"
+                class="w-full bg-transparent border-none outline-none text-[#000000] text-[14px] font-['Inter',_sans-serif] font-medium placeholder-[#666666] focus:ring-0 p-0" />
+            </div>
+            <span id="inquiry-phone-error" class="text-xs text-red-500 font-medium mt-1 hidden text-left font-['Inter',sans-serif]"></span>
           </div>
 
           <!-- Message Textarea -->
-          <div
-            class="bg-white/90 rounded-md border border-gray-300/80 px-4 py-3.5 flex flex-col gap-0 items-start justify-start self-stretch shrink-0 relative overflow-hidden w-full focus-within:border-burgundy-600 focus-within:ring-2 focus-within:ring-burgundy-600/20 transition-all">
-            <textarea id="inquiry-msg" rows="3" placeholder="How can we help you?"
-              class="w-full bg-transparent border-none outline-none text-[#000000] text-[14px] font-['Inter',_sans-serif] font-medium placeholder-[#666666] focus:ring-0 resize-none p-0"></textarea>
+          <div class="flex flex-col w-full text-left">
+            <div id="inquiry-msg-wrapper"
+              class="bg-white/90 rounded-md border border-gray-300/80 px-4 py-3.5 flex flex-col gap-0 items-start justify-start relative overflow-hidden w-full focus-within:border-[#612124] focus-within:ring-2 focus-within:ring-[#612124]/20 transition-all">
+              <textarea id="inquiry-msg" rows="3" placeholder="How can we help you?"
+                class="w-full bg-transparent border-none outline-none text-[#000000] text-[14px] font-['Inter',_sans-serif] font-medium placeholder-[#666666] focus:ring-0 resize-none p-0"></textarea>
+            </div>
           </div>
 
           <button type="submit"
@@ -2155,7 +1923,7 @@
           +91 96888 89420 / 97871 66889
         </a>
         <div class="text-stone-300 font-['Inter',_sans-serif] text-xs leading-relaxed max-w-[260px] pt-0.5">
-          Shop No. 24, Suganthi Nagar, Bus Stand Complex, Sulur Old Bus Stand, Sulur, Coimbatore &ndash; 641402
+          Shop No. 24, Suganthi Nagar Road, Bus Stand Complex, Sulur Old Bus Stand, Sulur, Coimbatore &ndash; 641402
         </div>
 
         <!-- 3 Social Media Icons Under Details of Contact Us Section -->

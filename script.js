@@ -240,11 +240,43 @@ document.addEventListener('DOMContentLoaded', () => {
   if (scrollTrack && prevBtn && nextBtn) {
     const cardWidth = 380; // approximate width of card + gap
 
+    function updateWhyChooseArrows() {
+      const tolerance = 8;
+      const maxScroll = Math.max(0, scrollTrack.scrollWidth - scrollTrack.clientWidth);
+      const isAtStart = scrollTrack.scrollLeft <= tolerance;
+      const isAtEnd = scrollTrack.scrollLeft >= maxScroll - tolerance;
+
+      // Update Prev / Back Button
+      prevBtn.disabled = isAtStart;
+      if (isAtStart) {
+        prevBtn.classList.add('opacity-30', 'cursor-not-allowed', 'pointer-events-none');
+        prevBtn.classList.remove('cursor-pointer');
+        prevBtn.setAttribute('aria-disabled', 'true');
+      } else {
+        prevBtn.classList.remove('opacity-30', 'cursor-not-allowed', 'pointer-events-none');
+        prevBtn.classList.add('cursor-pointer');
+        prevBtn.setAttribute('aria-disabled', 'false');
+      }
+
+      // Update Next / Front Button
+      nextBtn.disabled = isAtEnd;
+      if (isAtEnd) {
+        nextBtn.classList.add('opacity-30', 'cursor-not-allowed', 'pointer-events-none');
+        nextBtn.classList.remove('cursor-pointer');
+        nextBtn.setAttribute('aria-disabled', 'true');
+      } else {
+        nextBtn.classList.remove('opacity-30', 'cursor-not-allowed', 'pointer-events-none');
+        nextBtn.classList.add('cursor-pointer');
+        nextBtn.setAttribute('aria-disabled', 'false');
+      }
+    }
+
     prevBtn.addEventListener('click', () => {
       scrollTrack.scrollBy({
         left: -cardWidth,
         behavior: 'smooth'
       });
+      setTimeout(updateWhyChooseArrows, 320);
     });
 
     nextBtn.addEventListener('click', () => {
@@ -252,7 +284,12 @@ document.addEventListener('DOMContentLoaded', () => {
         left: cardWidth,
         behavior: 'smooth'
       });
+      setTimeout(updateWhyChooseArrows, 320);
     });
+
+    scrollTrack.addEventListener('scroll', updateWhyChooseArrows, { passive: true });
+    window.addEventListener('resize', updateWhyChooseArrows);
+    setTimeout(updateWhyChooseArrows, 150);
   }
 
   // ==========================================
@@ -260,24 +297,170 @@ document.addEventListener('DOMContentLoaded', () => {
   // ==========================================
 
   // ==========================================
-  // 5. INQUIRY FORM MAIL & CONTACT HANDLER
+  // 5. INQUIRY FORM MAIL & CONTACT HANDLER WITH VALIDATION
   // ==========================================
   const inquiryForm = document.getElementById('inquiry-form');
   const successToast = document.getElementById('success-toast');
 
   if (inquiryForm) {
+    const nameInput = document.getElementById('inquiry-name');
+    const nameWrapper = document.getElementById('inquiry-name-wrapper');
+    const nameError = document.getElementById('inquiry-name-error');
+
+    const emailInput = document.getElementById('inquiry-email');
+    const emailWrapper = document.getElementById('inquiry-email-wrapper');
+    const emailError = document.getElementById('inquiry-email-error');
+
+    const phoneInput = document.getElementById('inquiry-phone');
+    const phoneWrapper = document.getElementById('inquiry-phone-wrapper');
+    const phoneError = document.getElementById('inquiry-phone-error');
+
+    function setFieldError(wrapper, errorEl, message) {
+      if (!wrapper || !errorEl) return;
+      if (message) {
+        errorEl.textContent = message;
+        errorEl.classList.remove('hidden');
+        wrapper.classList.add('!border-red-500', '!ring-2', '!ring-red-500/20');
+        wrapper.classList.remove('!border-emerald-500/60');
+      } else {
+        errorEl.textContent = '';
+        errorEl.classList.add('hidden');
+        wrapper.classList.remove('!border-red-500', '!ring-2', '!ring-red-500/20');
+        wrapper.classList.add('!border-emerald-500/60');
+      }
+    }
+
+    function clearFieldError(wrapper, errorEl) {
+      if (!wrapper || !errorEl) return;
+      errorEl.textContent = '';
+      errorEl.classList.add('hidden');
+      wrapper.classList.remove('!border-red-500', '!ring-2', '!ring-red-500/20', '!border-emerald-500/60');
+    }
+
+    function validateNameField(isTyping = false) {
+      if (!nameInput) return true;
+      const raw = nameInput.value;
+      const val = raw.trim();
+
+      // Instantly detect numbers typed into name
+      if (/\d/.test(raw)) {
+        setFieldError(nameWrapper, nameError, 'Name does not contain number');
+        return false;
+      }
+
+      if (isTyping) {
+        if (!nameError.classList.contains('hidden') && nameError.textContent === 'Name does not contain number' && !/\d/.test(raw)) {
+          clearFieldError(nameWrapper, nameError);
+        }
+        return true;
+      }
+
+      if (!val) {
+        setFieldError(nameWrapper, nameError, 'Please enter your name.');
+        return false;
+      }
+      if (val.length < 2) {
+        setFieldError(nameWrapper, nameError, 'Name must be at least 2 characters.');
+        return false;
+      }
+      if (!/^[a-zA-Z\s\.\'-]{2,50}$/.test(val)) {
+        setFieldError(nameWrapper, nameError, 'Name does not contain number');
+        return false;
+      }
+      clearFieldError(nameWrapper, nameError);
+      return true;
+    }
+
+    function validateEmailField(isTyping = false) {
+      if (!emailInput) return true;
+      const val = emailInput.value.trim();
+      const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      if (isTyping) {
+        if (!emailError.classList.contains('hidden') && emailRegex.test(val)) {
+          clearFieldError(emailWrapper, emailError);
+        }
+        return true;
+      }
+      if (!val) {
+        setFieldError(emailWrapper, emailError, 'Please enter your email address.');
+        return false;
+      }
+      if (!emailRegex.test(val)) {
+        setFieldError(emailWrapper, emailError, 'Please enter a valid email address.');
+        return false;
+      }
+      clearFieldError(emailWrapper, emailError);
+      return true;
+    }
+
+    function validatePhoneField(isTyping = false) {
+      if (!phoneInput) return true;
+      const raw = phoneInput.value;
+      const val = raw.trim();
+
+      // Instantly detect characters/letters typed into phone number
+      if (/[a-zA-Z]/.test(raw)) {
+        setFieldError(phoneWrapper, phoneError, 'Phone number does not contain characters');
+        return false;
+      }
+
+      if (isTyping) {
+        if (!phoneError.classList.contains('hidden') && phoneError.textContent === 'Phone number does not contain characters' && !/[a-zA-Z]/.test(raw)) {
+          clearFieldError(phoneWrapper, phoneError);
+        }
+        return true;
+      }
+
+      if (!val) {
+        setFieldError(phoneWrapper, phoneError, 'Please enter your phone number.');
+        return false;
+      }
+      const phoneRegex = /^(\+91|0)?[6-9]\d{9}$/;
+      if (!phoneRegex.test(val.replace(/[\s\-\(\)]/g, ''))) {
+        setFieldError(phoneWrapper, phoneError, 'Please enter a valid 10-digit mobile number.');
+        return false;
+      }
+      clearFieldError(phoneWrapper, phoneError);
+      return true;
+    }
+
+    // Real-time live validation on input and blur
+    if (nameInput) {
+      nameInput.addEventListener('input', () => validateNameField(true));
+      nameInput.addEventListener('blur', () => validateNameField(false));
+    }
+    if (emailInput) {
+      emailInput.addEventListener('input', () => validateEmailField(true));
+      emailInput.addEventListener('blur', () => validateEmailField(false));
+    }
+    if (phoneInput) {
+      phoneInput.addEventListener('input', () => validatePhoneField(true));
+      phoneInput.addEventListener('blur', () => validatePhoneField(false));
+    }
+
     inquiryForm.addEventListener('submit', (e) => {
       e.preventDefault();
 
-      const name = document.getElementById('inquiry-name') ? document.getElementById('inquiry-name').value : '';
-      const email = document.getElementById('inquiry-email') ? document.getElementById('inquiry-email').value : '';
-      const phone = document.getElementById('inquiry-phone') ? document.getElementById('inquiry-phone').value : '';
+      const isNameValid = validateNameField(true);
+      const isEmailValid = validateEmailField(true);
+      const isPhoneValid = validatePhoneField(true);
+
+      if (!isNameValid || !isEmailValid || !isPhoneValid) {
+        if (!isNameValid && nameInput) nameInput.focus();
+        else if (!isEmailValid && emailInput) emailInput.focus();
+        else if (!isPhoneValid && phoneInput) phoneInput.focus();
+        return;
+      }
+
+      const name = nameInput ? nameInput.value.trim() : '';
+      const email = emailInput ? emailInput.value.trim() : '';
+      const phone = phoneInput ? phoneInput.value.trim() : '';
       const messageEl = document.getElementById('inquiry-message') || document.getElementById('inquiry-msg');
-      const customMsg = messageEl ? messageEl.value : '';
+      const customMsg = messageEl ? messageEl.value.trim() : '';
 
       const constantToEmail = 'srissa2006@gmail.com';
       const defaultMessage = "Hii! I'm interested can I know about more details";
-      const finalMessage = customMsg && customMsg.trim() !== '' ? customMsg : defaultMessage;
+      const finalMessage = customMsg !== '' ? customMsg : defaultMessage;
 
       const subject = encodeURIComponent(`Property Inquiry from ${name || 'Client'} - Vizhi Infragen`);
       const body = encodeURIComponent(`${finalMessage}\n\n---\nClient Contact Details:\nName: ${name}\nEmail: ${email}\nPhone: ${phone}`);
@@ -307,6 +490,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         inquiryForm.reset();
+        clearFieldError(nameWrapper, nameError);
+        clearFieldError(emailWrapper, emailError);
+        clearFieldError(phoneWrapper, phoneError);
+
         if (submitBtn) {
           submitBtn.disabled = false;
           submitBtn.innerHTML = originalText;
@@ -503,47 +690,134 @@ document.addEventListener('DOMContentLoaded', () => {
   })();
 
   // ==========================================
-  // SERVICES AUTOMATIC CONTINUOUS MOVING & FLOATING TRACK
-  // High-performance 60FPS smooth auto-scroll loop with pause-on-hover
+  // SERVICES SLIDER WITH CONTINUOUS RUNNABLE ANIMATION & INTERACTIVE ARROW CONTROLS
   // ==========================================
   const servicesTrack = document.getElementById('services-track');
-  const scrollLeftBtns = [
-    document.getElementById('services-scroll-left'),
-    document.getElementById('services-track-left')
-  ];
-  const scrollRightBtns = [
-    document.getElementById('services-scroll-right'),
-    document.getElementById('services-track-right')
-  ];
+  const servicesPrevBtn = document.getElementById('services-track-left');
+  const servicesNextBtn = document.getElementById('services-track-right');
 
-  const marqueeTrack = document.querySelector('.infinite-marquee-track');
+  if (servicesTrack && (servicesPrevBtn || servicesNextBtn)) {
+    const getStep = () => {
+      const firstCard = servicesTrack.querySelector('.service-float-card');
+      return firstCard ? firstCard.offsetWidth + 24 : 390;
+    };
 
-  if (marqueeTrack) {
-    scrollLeftBtns.forEach(btn => {
-      if (btn) {
-        btn.addEventListener('click', () => {
-          marqueeTrack.style.animationPlayState = 'paused';
-          servicesTrack.scrollBy({ left: -390, behavior: 'smooth' });
-          setTimeout(() => {
-            marqueeTrack.style.animationPlayState = 'running';
-          }, 4000);
-        });
+    let lastStart = null;
+    let lastEnd = null;
+
+    function updateServicesArrows() {
+      const tolerance = 8;
+      const maxScroll = Math.max(0, servicesTrack.scrollWidth - servicesTrack.clientWidth);
+      const currentScroll = servicesTrack.scrollLeft;
+
+      const isAtStart = currentScroll <= tolerance;
+      const isAtEnd = currentScroll >= maxScroll - tolerance;
+
+      if (isAtStart === lastStart && isAtEnd === lastEnd) return;
+      lastStart = isAtStart;
+      lastEnd = isAtEnd;
+
+      if (servicesPrevBtn) {
+        servicesPrevBtn.disabled = isAtStart;
+        if (isAtStart) {
+          servicesPrevBtn.classList.add('opacity-30', 'cursor-not-allowed', 'pointer-events-none');
+          servicesPrevBtn.classList.remove('cursor-pointer');
+          servicesPrevBtn.setAttribute('aria-disabled', 'true');
+        } else {
+          servicesPrevBtn.classList.remove('opacity-30', 'cursor-not-allowed', 'pointer-events-none');
+          servicesPrevBtn.classList.add('cursor-pointer');
+          servicesPrevBtn.setAttribute('aria-disabled', 'false');
+        }
       }
-    });
 
-    scrollRightBtns.forEach(btn => {
-      if (btn) {
-        btn.addEventListener('click', () => {
-          marqueeTrack.style.animationPlayState = 'paused';
-          servicesTrack.scrollBy({ left: 390, behavior: 'smooth' });
-          setTimeout(() => {
-            marqueeTrack.style.animationPlayState = 'running';
-          }, 4000);
-        });
+      if (servicesNextBtn) {
+        servicesNextBtn.disabled = isAtEnd;
+        if (isAtEnd) {
+          servicesNextBtn.classList.add('opacity-30', 'cursor-not-allowed', 'pointer-events-none');
+          servicesNextBtn.classList.remove('cursor-pointer');
+          servicesNextBtn.setAttribute('aria-disabled', 'true');
+        } else {
+          servicesNextBtn.classList.remove('opacity-30', 'cursor-not-allowed', 'pointer-events-none');
+          servicesNextBtn.classList.add('cursor-pointer');
+          servicesNextBtn.setAttribute('aria-disabled', 'false');
+        }
       }
-    });
+    }
+
+    // Interactive arrow clicks smoothly move cards
+    if (servicesPrevBtn) {
+      servicesPrevBtn.addEventListener('click', () => {
+        pauseAutoRun(6000);
+        servicesTrack.style.scrollBehavior = 'smooth';
+        servicesTrack.scrollBy({ left: -getStep(), behavior: 'smooth' });
+        setTimeout(updateServicesArrows, 350);
+      });
+    }
+
+    if (servicesNextBtn) {
+      servicesNextBtn.addEventListener('click', () => {
+        pauseAutoRun(6000);
+        servicesTrack.style.scrollBehavior = 'smooth';
+        servicesTrack.scrollBy({ left: getStep(), behavior: 'smooth' });
+        setTimeout(updateServicesArrows, 350);
+      });
+    }
+
+    servicesTrack.addEventListener('scroll', updateServicesArrows, { passive: true });
+    window.addEventListener('resize', updateServicesArrows);
+
+    // Continuous Runnable Auto-Scroll Animation (60FPS smooth continuous glide)
+    let isPaused = false;
+    let pauseTimeout = null;
+    let autoRunRAF = null;
+    const runSpeed = 0.85; // smooth gliding speed in pixels per frame
+
+    function pauseAutoRun(duration = 5000) {
+      isPaused = true;
+      if (pauseTimeout) clearTimeout(pauseTimeout);
+      pauseTimeout = setTimeout(() => {
+        isPaused = false;
+      }, duration);
+    }
+
+    servicesTrack.addEventListener('mouseenter', () => { isPaused = true; });
+    servicesTrack.addEventListener('mouseleave', () => { pauseAutoRun(1200); });
+    servicesTrack.addEventListener('touchstart', () => { isPaused = true; }, { passive: true });
+    servicesTrack.addEventListener('touchend', () => { pauseAutoRun(2500); }, { passive: true });
+
+    function autoRunStep() {
+      if (!isPaused && servicesTrack) {
+        const maxScroll = Math.max(0, servicesTrack.scrollWidth - servicesTrack.clientWidth);
+        if (maxScroll > 10) {
+          if (servicesTrack.scrollLeft >= maxScroll - 4) {
+            // Reached the end! Front arrow disables
+            updateServicesArrows();
+            isPaused = true;
+            // Pause 3 seconds at the end, then smoothly rewind to start
+            setTimeout(() => {
+              servicesTrack.style.scrollBehavior = 'smooth';
+              servicesTrack.scrollTo({ left: 0, behavior: 'smooth' });
+              setTimeout(() => {
+                isPaused = false;
+                updateServicesArrows();
+              }, 900);
+            }, 3000);
+          } else {
+            servicesTrack.style.scrollBehavior = 'auto';
+            servicesTrack.scrollLeft += runSpeed;
+            updateServicesArrows();
+          }
+        }
+      }
+      autoRunRAF = requestAnimationFrame(autoRunStep);
+    }
+
+    // Start running animation
+    autoRunRAF = requestAnimationFrame(autoRunStep);
+
+    // Initial arrow state
+    setTimeout(updateServicesArrows, 150);
   }
-
 
 });
 

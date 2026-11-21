@@ -726,3 +726,19 @@ body {
 #stats-counter-bar {
   background-color: #C8AD7F !important;
 }
+
+/* ==========================================
+   SIDE DRAWER TOP LOGO RESPONSIVE DISPLAY
+   - Mobile view (< 768px): Show logo in drawer
+   - Tab / Tablet view (>= 768px): Hide/remove logo in drawer
+   ========================================== */
+.drawer-top-logo {
+  display: block !important;
+}
+
+@media (min-width: 768px) {
+  .drawer-top-logo {
+    display: none !important;
+  }
+}
+

@@ -616,12 +616,23 @@
       border-top: 1px solid rgba(223, 212, 196, 0.15);
     }
     .trust-stars {
-      color: var(--gold);
-      font-size: 1rem;
+      color: #FFB800;
+      font-size: 1.4rem;
       display: flex;
       justify-content: center;
-      gap: 4px;
-      margin-bottom: 8px;
+      gap: 8px;
+      margin-bottom: 12px;
+      filter: drop-shadow(0 2px 10px rgba(255, 184, 0, 0.65));
+      transition: all 0.3s ease;
+    }
+    .trust-stars i {
+      color: #FFB800;
+      text-shadow: 0 0 12px rgba(255, 184, 0, 0.7);
+      transition: transform 0.25s ease, color 0.25s ease;
+    }
+    .trust-stars:hover i {
+      transform: scale(1.18);
+      color: #FFA000;
     }
     .trust-author-name {
       font-family: 'Outfit', sans-serif;
@@ -899,44 +910,225 @@
       .grand-steps-container { grid-template-columns: repeat(3, 1fr); }
     }
     @media (max-width: 768px) {
-      .trust-features-grid { grid-template-columns: 1fr; }
-      .land-types-grand-grid { grid-template-columns: 1fr; }
-      .grand-steps-container { grid-template-columns: 1fr; }
+      /* Mobile Shell & General Containers */
+      .shell { width: min(100% - 32px, 1240px) !important; }
+      
+      /* Hero Section Mobile Alignment */
+      .hero-details {
+        min-height: 480px !important;
+        padding-top: 110px !important;
+        padding-bottom: 40px !important;
+      }
+      .hero-details-inner {
+        padding: 20px 12px !important;
+        width: 100% !important;
+        text-align: center !important;
+      }
+      .hero-details h1 {
+        font-size: 26px !important;
+        line-height: 34px !important;
+      }
+      .hero-subtext {
+        font-size: 0.92rem !important;
+        line-height: 1.6 !important;
+      }
+      .hero-top-tagline {
+        gap: 8px !important;
+      }
+      .hero-top-line {
+        width: 24px !important;
+      }
+      .hero-gold-bar {
+        width: 56px !important;
+      }
+
+      /* Section 2: Premier Land Desk Bento */
+      .details-section {
+        padding: 48px 0 !important;
+      }
+      .premier-desk-grid {
+        grid-template-columns: 1fr !important;
+        gap: 32px !important;
+      }
+      .premier-bento-layout {
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+      }
+      .premier-bento-card.card-large {
+        grid-column: span 1 !important;
+        height: 190px !important;
+      }
+      .premier-bento-card.card-small {
+        height: 150px !important;
+      }
+      .section-title {
+        font-size: 24px !important;
+        line-height: 32px !important;
+      }
+      .lead-paragraph, .body-paragraph {
+        font-size: 0.92rem !important;
+        line-height: 1.65 !important;
+      }
+
+      /* Section 3: Why Choose Vizhi Infragen Realtors */
+      .why-choose-grid {
+        grid-template-columns: 1fr !important;
+        gap: 32px !important;
+      }
+      .why-3d-box {
+        perspective: none !important;
+      }
+      .why-3d-card {
+        transform: none !important;
+        height: 240px !important;
+      }
+
+      /* Section 4: Types of Land Grand Grid */
+      .trust-features-grid { grid-template-columns: 1fr !important; }
+      .land-types-grand-grid { grid-template-columns: 1fr !important; gap: 20px !important; }
+      .luxury-type-card { width: 100% !important; }
+      .luxury-type-img-box { height: 200px !important; }
+
+      /* Section 5: Trustworthiness Slider (Transparency Guarantee) */
+      .trust-slider-section {
+        padding: 60px 0 !important;
+      }
+      .trust-slider-card {
+        padding: 36px 16px 28px !important;
+        width: 100% !important;
+        border-radius: 18px !important;
+      }
+      .trust-slide-title {
+        font-size: 19px !important;
+        line-height: 26px !important;
+      }
+      .trust-slide-desc {
+        font-size: 0.92rem !important;
+        line-height: 1.6 !important;
+      }
+      .trust-arrow-btn {
+        width: 36px !important;
+        height: 36px !important;
+        font-size: 0.85rem !important;
+      }
+      .trust-arrow-left {
+        left: -6px !important;
+      }
+      .trust-arrow-right {
+        right: -6px !important;
+      }
+
+      /* Section 6: Process Flow (How to Buy Land with Us) */
+      .grand-steps-container { grid-template-columns: 1fr !important; }
+      .process-flow-container {
+        margin-top: 25px !important;
+      }
+      .process-moving-line {
+        display: none !important;
+      }
+      .process-steps-row {
+        grid-template-columns: 1fr !important;
+        gap: 28px !important;
+        width: 100% !important;
+      }
+      .process-step-item {
+        width: 100% !important;
+        align-items: center !important;
+      }
+      .process-circle-wrapper {
+        width: 120px !important;
+        height: 120px !important;
+        margin-bottom: 14px !important;
+      }
+      .process-circle-img {
+        width: 120px !important;
+        height: 120px !important;
+      }
+      .process-step-desc {
+        max-width: 100% !important;
+        padding: 0 10px !important;
+      }
+
+      /* Section 7: Final CTA */
+      .final-cta-section {
+        padding: 60px 0 !important;
+        margin-top: 30px !important;
+      }
+      .final-cta-section h2 {
+        font-size: 26px !important;
+        line-height: 34px !important;
+      }
+      .final-cta-section p {
+        font-size: 0.92rem !important;
+      }
+      .cta-buttons-group {
+        flex-direction: column !important;
+        width: 100% !important;
+        gap: 12px !important;
+        align-items: center !important;
+      }
+      .cta-btn-gold, .cta-btn-glass {
+        width: 100% !important;
+        max-width: 300px !important;
+        justify-content: center !important;
+      }
+
+      /* Navigation & Footer */
       .navlinks { display: none; }
       .menu { display: grid; }
       .social { margin-left: auto; }
       .footer-grid { grid-template-columns: 1fr; gap: 25px; }
       .copyright-bar { flex-direction: column; gap: 14px; text-align: center; }
     }
+    /* Side Drawer Top Logo: Shown on mobile (< 768px), removed on tab view (>= 768px) */
+    .drawer-top-logo {
+      display: block !important;
+    }
+    @media (min-width: 768px) {
+      .drawer-top-logo {
+        display: none !important;
+      }
+    }
   </style>
 </head>
 <body>
   <!-- ==================== SIDE DRAWER ==================== -->
   <div id="side-drawer-overlay" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[100] opacity-0 pointer-events-none transition-opacity duration-300"></div>
-  <div id="side-drawer" class="fixed top-0 right-0 h-full w-[340px] sm:w-[400px] bg-white z-[101] shadow-2xl translate-x-full transition-transform duration-300 ease-out flex flex-col justify-between p-8 overflow-y-auto">
+  <div id="side-drawer" class="fixed top-0 right-0 h-full w-[300px] sm:w-[380px] max-w-[90vw] bg-white z-[101] shadow-2xl translate-x-full transition-transform duration-300 ease-out flex flex-col justify-between p-6 sm:p-8 overflow-y-auto">
     <button id="close-side-drawer" class="absolute top-6 right-6 w-10 h-10 rounded-full bg-stone-100 text-[#4E1421] hover:bg-[#4E1421] hover:text-white flex items-center justify-center transition-all cursor-pointer shadow-sm"><i class="fa-solid fa-xmark text-lg"></i></button>
     <div class="flex flex-col items-center text-center mt-6 space-y-6">
-      <div class="p-3 bg-stone-50 rounded-2xl border border-stone-200/80 shadow-md inline-block mb-2"><img src="vizhi-infragen-realtors-logo.png" alt="Logo" class="w-36 h-20 object-contain mx-auto" /></div>
+      <!-- Company Logo in Center (Shown on mobile, removed on tab view) -->
+      <div class="drawer-top-logo block md:hidden p-3.5 bg-white rounded-2xl border border-stone-200/90 shadow-[0_4px_20px_rgba(0,0,0,0.06)] inline-block mb-1">
+        <img src="vizhi-infragen-realtors-logo.png" alt="Vizhi Infragen Realtors Logo" class="w-36 h-20 object-contain mx-auto" />
+      </div>
       <nav class="flex flex-col space-y-3 w-full border-t border-b border-stone-100 py-6">
         <a href="index.html" class="drawer-link text-lg font-bold text-[#334155] hover:text-[#c5a880] transition-colors font-['Inter',sans-serif]">Home</a>
         <a href="about.html" class="drawer-link text-lg font-bold text-[#334155] hover:text-[#c5a880] transition-colors font-['Inter',sans-serif]">About Us</a>
         <a href="index.html#properties" class="drawer-link text-lg font-bold text-[#334155] hover:text-[#c5a880] transition-colors font-['Inter',sans-serif]">Properties</a>
         <a href="services.html" class="drawer-link text-lg font-bold text-[#c5a880] hover:text-[#4E1421] transition-colors font-['Inter',sans-serif]">Services</a>
-        <a href="index.html#blog" class="drawer-link text-lg font-bold text-[#334155] hover:text-[#c5a880] transition-colors font-['Inter',sans-serif]">Blog</a>
         <a href="contact.html" class="drawer-link text-lg font-bold text-[#334155] hover:text-[#c5a880] transition-colors font-['Inter',sans-serif]">Contact Us</a>
       </nav>
       <div class="space-y-3 text-center text-[#334155] font-['Inter',sans-serif] text-sm">
-        <div class="flex items-center justify-center gap-2 text-[#4E1421] font-bold text-base"><i class="fa-solid fa-location-dot text-[#c5a880]"></i><span>Vizhi Infragen Realtors LLP</span></div>
-        <p class="text-xs text-stone-600 leading-relaxed max-w-[280px] mx-auto">First Floor, Shop No.24, Old Bus Stand Complex, 24, Suganthi Nagar Rd, Sulur, Tamil Nadu 641402</p>
+        <div class="flex items-center justify-center gap-2 text-[#4E1421] font-bold text-base"><i class="fa-solid fa-location-dot text-[#c5a880]"></i><span>Vizhi Infragen Realtors</span></div>
+        <p class="text-xs text-stone-600 leading-relaxed max-w-[280px] mx-auto">
+          Shop No. 24, Suganthi Nagar Road, Bus Stand Complex, Sulur Old Bus Stand, Sulur, Coimbatore – 641402
+        </p>
         <div class="pt-2 flex flex-col items-center gap-2 text-xs">
-          <a href="mailto:srissa2006@gmail.com" class="flex items-center gap-2 text-[#4E1421] hover:text-[#c5a880] font-semibold transition-colors"><i class="fa-solid fa-envelope text-[#c5a880]"></i><span>srissa2006@gmail.com</span></a>
-          <a href="tel:9688889420" class="flex items-center gap-2 text-[#4E1421] hover:text-[#c5a880] font-semibold transition-colors"><i class="fa-solid fa-phone text-[#c5a880]"></i><span>+91 96888 89420</span></a>
+          <a href="mailto:admin@vizhiinfragenrealtors.com?subject=Inquiry%20Regarding%20Coimbatore%20Real%20Estate%20Properties" class="flex items-center gap-2 text-[#4E1421] hover:text-[#c5a880] font-semibold transition-colors">
+            <i class="fa-solid fa-envelope text-[#c5a880]"></i>
+            <span>admin@vizhiinfragenrealtors.com</span></a>
+          <div class="flex items-center gap-2 text-[#4E1421] font-semibold">
+            <i class="fa-solid fa-phone text-[#c5a880]"></i>
+            <a href="tel:9688889420" class="hover:text-[#c5a880] transition-colors">+91 96888 89420</a>
+            <span>/</span>
+            <a href="tel:9787166889" class="hover:text-[#c5a880] transition-colors">97871 66889</a>
+          </div>
         </div>
       </div>
-      <div class="flex items-center justify-center gap-3 pt-4 border-t border-stone-100 w-full">
-        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-stone-100 text-[#1877F2] flex items-center justify-center transition-all"><i class="fa-brands fa-facebook-f text-lg"></i></a>
-        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-stone-100 text-[#E4405F] flex items-center justify-center transition-all"><i class="fa-brands fa-instagram text-lg"></i></a>
-        <a href="https://wa.me/919688889420" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-stone-100 text-[#25D366] flex items-center justify-center transition-all"><i class="fa-brands fa-whatsapp text-lg"></i></a>
+      <div class="flex items-center justify-center gap-4 pt-4 border-t border-stone-100 w-full">
+        <a href="https://wa.me/919688889420" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-stone-100 text-[#25D366] hover:bg-[#25D366]/10 flex items-center justify-center transition-all shadow-sm" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp text-lg"></i></a>
+        <a href="https://www.instagram.com/vizhi_infragen_realtors/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-stone-100 text-[#E4405F] hover:bg-[#E4405F]/10 flex items-center justify-center transition-all shadow-sm" aria-label="Instagram"><i class="fa-brands fa-instagram text-lg"></i></a>
+        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-stone-100 text-[#1877F2] hover:bg-[#1877F2]/10 flex items-center justify-center transition-all shadow-sm" aria-label="Facebook"><i class="fa-brands fa-facebook-f text-lg"></i></a>
       </div>
     </div>
     <div class="text-center pt-6 text-[11px] text-stone-400 font-medium">&copy; 2026 Vizhi Infragen Realtors LLP. All Rights Reserved.</div>
@@ -954,7 +1146,7 @@
       </a>
 
       <!-- Center: Navigation Links in Dark Capsule Container -->
-      <nav class="hidden md:flex items-center gap-2 sm:gap-3.5 bg-[#1F0D11] border border-white/10 rounded-full px-2.5 sm:px-3 py-1 shadow-inner h-[44px] sm:h-[48px]">
+      <nav class="hidden lg:flex items-center gap-2 sm:gap-3.5 bg-[#1F0D11] border border-white/10 rounded-full px-2.5 sm:px-3 py-1 shadow-inner h-[44px] sm:h-[48px]">
         <a href="index.html" class="text-white hover:text-[#c5a880] font-medium text-xs sm:text-[14px] px-3.5 sm:px-4 h-[36px] sm:h-[40px] flex items-center justify-center transition-colors font-['Inter',sans-serif]">Home</a>
         <a href="about.html" class="text-white hover:text-[#c5a880] font-medium text-xs sm:text-[14px] px-3.5 sm:px-4 h-[36px] sm:h-[40px] flex items-center justify-center transition-colors font-['Inter',sans-serif]">About Us</a>
         <div class="relative group flex items-center">
@@ -988,7 +1180,7 @@
         </div>
 
         <!-- Mobile Drawer Hamburger Toggle Button -->
-        <button id="open-side-drawer" class="md:hidden w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-all cursor-pointer" aria-label="Open Mobile Navigation">
+        <button id="open-side-drawer" class="lg:hidden w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-all cursor-pointer" aria-label="Open Mobile Navigation">
           <i class="fa-solid fa-bars text-base"></i>
         </button>
       </div>
@@ -1106,10 +1298,7 @@
                 <li><i class="fa-solid fa-circle-check"></i> DTCP &amp; RERA Approved Layouts</li>
                 <li><i class="fa-solid fa-circle-check"></i> Ready for Immediate Construction</li>
               </ul>
-              <div class="luxury-type-footer">
-                <span>View Residential Inventory</span>
-                <i class="fa-solid fa-arrow-right"></i>
-              </div>
+              
             </div>
           </article>
 
@@ -1127,10 +1316,7 @@
                 <li><i class="fa-solid fa-circle-check"></i> Rich Soil &amp; Water Access</li>
                 <li><i class="fa-solid fa-circle-check"></i> High Land Value Appreciation</li>
               </ul>
-              <div class="luxury-type-footer">
-                <span>Explore Agro Parcels</span>
-                <i class="fa-solid fa-arrow-right"></i>
-              </div>
+              
             </div>
           </article>
 
@@ -1148,10 +1334,7 @@
                 <li><i class="fa-solid fa-circle-check"></i> Highway &amp; Arterial Frontage</li>
                 <li><i class="fa-solid fa-circle-check"></i> Prime Commercial Footfall</li>
               </ul>
-              <div class="luxury-type-footer">
-                <span>Explore Commercial Plots</span>
-                <i class="fa-solid fa-arrow-right"></i>
-              </div>
+              
             </div>
           </article>
 
@@ -1169,10 +1352,7 @@
                 <li><i class="fa-solid fa-circle-check"></i> Growth Corridor Positioning</li>
                 <li><i class="fa-solid fa-circle-check"></i> Projected High Yield Returns</li>
               </ul>
-              <div class="luxury-type-footer">
-                <span>View Growth Corridors</span>
-                <i class="fa-solid fa-arrow-right"></i>
-              </div>
+              
             </div>
           </article>
 
@@ -1190,10 +1370,7 @@
                 <li><i class="fa-solid fa-circle-check"></i> Exclusive Gated Community</li>
                 <li><i class="fa-solid fa-circle-check"></i> 24/7 Security &amp; Blacktop Roads</li>
               </ul>
-              <div class="luxury-type-footer">
-                <span>Discover Luxury Estates</span>
-                <i class="fa-solid fa-arrow-right"></i>
-              </div>
+              
             </div>
           </article>
 
@@ -1211,10 +1388,7 @@
                 <li><i class="fa-solid fa-circle-check"></i> Tailored Area &amp; Budget Matching</li>
                 <li><i class="fa-solid fa-circle-check"></i> End-to-End Property Sourcing</li>
               </ul>
-              <div class="luxury-type-footer">
-                <span>Request Custom Sourcing</span>
-                <i class="fa-solid fa-arrow-right"></i>
-              </div>
+              
             </div>
           </article>
         </div>
@@ -1414,7 +1588,7 @@
           +91 96888 89420 / 97871 66889
         </a>
         <div class="text-stone-300 font-['Inter',_sans-serif] text-xs leading-relaxed max-w-[260px] pt-0.5">
-          Shop No. 24, Suganthi Nagar, Bus Stand Complex, Sulur Old Bus Stand, Sulur, Coimbatore &ndash; 641402
+          Shop No. 24, Suganthi Nagar Road, Bus Stand Complex, Sulur Old Bus Stand, Sulur, Coimbatore &ndash; 641402
         </div>
 
         <!-- 3 Social Media Icons Under Details of Contact Us Section -->

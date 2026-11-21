@@ -82,7 +82,7 @@
     class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[100] opacity-0 pointer-events-none transition-opacity duration-300"></div>
 
   <div id="side-drawer"
-    class="fixed top-0 right-0 h-full w-[340px] sm:w-[400px] bg-white z-[101] shadow-2xl translate-x-full transition-transform duration-300 ease-out flex flex-col justify-between p-8 overflow-y-auto">
+    class="fixed top-0 right-0 h-full w-[300px] sm:w-[380px] max-w-[90vw] bg-white z-[101] shadow-2xl translate-x-full transition-transform duration-300 ease-out flex flex-col justify-between p-6 sm:p-8 overflow-y-auto">
 
     <!-- Top Close Button -->
     <button id="close-side-drawer"
@@ -92,8 +92,8 @@
 
     <div class="flex flex-col items-center text-center mt-6 space-y-6">
 
-      <!-- Company Logo in Center -->
-      <div class="p-3 bg-stone-50 rounded-2xl border border-stone-200/80 shadow-md inline-block mb-2">
+      <!-- Company Logo in Center (Shown on mobile, removed on tab view) -->
+      <div class="drawer-top-logo block md:hidden p-3.5 bg-white rounded-2xl border border-stone-200/90 shadow-[0_4px_20px_rgba(0,0,0,0.06)] inline-block mb-1">
         <img src="vizhi-infragen-realtors-logo.png" alt="Vizhi Infragen Realtors Logo"
           class="w-36 h-20 object-contain mx-auto" />
       </div>
@@ -108,8 +108,6 @@
           class="drawer-link text-lg font-bold text-[#334155] hover:text-[#c5a880] transition-colors font-['Inter',sans-serif]">Properties</a>
         <a href="services.html"
           class="drawer-link text-lg font-bold text-[#334155] hover:text-[#c5a880] transition-colors font-['Inter',sans-serif]">Services</a>
-        <a href="index.html#blog"
-          class="drawer-link text-lg font-bold text-[#334155] hover:text-[#c5a880] transition-colors font-['Inter',sans-serif]">Blog</a>
         <a href="contact.html"
           class="drawer-link text-lg font-bold text-[#c5a880] hover:text-[#4E1421] transition-colors font-['Inter',sans-serif]">Contact Us</a>
       </nav>
@@ -121,51 +119,37 @@
           <span>Vizhi Infragen Realtors</span>
         </div>
         <p class="text-xs text-stone-600 leading-relaxed max-w-[280px] mx-auto">
-          First Floor, Shop No.24, Old Bus Stand Complex, 24, Suganthi Nagar Rd, Sulur, Tamil Nadu 641402
+          Shop No. 24, Suganthi Nagar Road, Bus Stand Complex, Sulur Old Bus Stand, Sulur, Coimbatore – 641402
         </p>
 
         <div class="pt-2 flex flex-col items-center gap-2 text-xs">
-          <a href="mailto:srissa2006@gmail.com?subject=Inquiry%20Regarding%20Coimbatore%20Real%20Estate%20Properties"
+          <a href="mailto:admin@vizhiinfragenrealtors.com?subject=Inquiry%20Regarding%20Coimbatore%20Real%20Estate%20Properties"
             class="flex items-center gap-2 text-[#4E1421] hover:text-[#c5a880] font-semibold transition-colors">
             <i class="fa-solid fa-envelope text-[#c5a880]"></i>
-            <span>srissa2006@gmail.com</span>
+            <span>admin@vizhiinfragenrealtors.com</span>
           </a>
-          <a href="tel:9688889420"
-            class="flex items-center gap-2 text-[#4E1421] hover:text-[#c5a880] font-semibold transition-colors">
+          <div class="flex items-center gap-2 text-[#4E1421] font-semibold">
             <i class="fa-solid fa-phone text-[#c5a880]"></i>
-            <span>+91 96888 89420</span>
-          </a>
+            <a href="tel:9688889420" class="hover:text-[#c5a880] transition-colors">+91 96888 89420</a>
+            <span>/</span>
+            <a href="tel:9787166889" class="hover:text-[#c5a880] transition-colors">97871 66889</a>
+          </div>
         </div>
       </div>
 
-      <!-- Social Media Icons Row -->
-      <div class="flex items-center justify-center gap-3 pt-4 border-t border-stone-100 w-full">
-        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
-          class="w-10 h-10 rounded-full bg-stone-100 text-[#1877F2] hover:bg-[#1877F2]/10 flex items-center justify-center transition-all">
-          <i class="fa-brands fa-facebook-f text-lg"></i>
+      <!-- Social Media Icons Row (WhatsApp, Instagram, Facebook only) -->
+      <div class="flex items-center justify-center gap-4 pt-4 border-t border-stone-100 w-full">
+        <a href="https://wa.me/919688889420" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-stone-100 text-[#25D366] hover:bg-[#25D366]/10 flex items-center justify-center transition-all shadow-sm" aria-label="WhatsApp">
+          <i class="fa-brands fa-whatsapp text-lg"></i>
         </a>
-        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"
-          class="w-10 h-10 rounded-full bg-stone-100 text-[#1DA1F2] hover:bg-[#1DA1F2]/10 flex items-center justify-center transition-all">
-          <i class="fa-brands fa-twitter text-lg"></i>
-        </a>
-        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer"
-          class="w-10 h-10 rounded-full bg-stone-100 text-[#FF0000] hover:bg-[#FF0000]/10 flex items-center justify-center transition-all">
-          <i class="fa-brands fa-youtube text-lg"></i>
-        </a>
-        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
-          class="w-10 h-10 rounded-full bg-stone-100 text-[#E4405F] hover:bg-[#E4405F]/10 flex items-center justify-center transition-all">
+        <a href="https://www.instagram.com/vizhi_infragen_realtors/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-stone-100 text-[#E4405F] hover:bg-[#E4405F]/10 flex items-center justify-center transition-all shadow-sm" aria-label="Instagram">
           <i class="fa-brands fa-instagram text-lg"></i>
         </a>
-        <a href="https://wa.me/919688889420" target="_blank" rel="noopener noreferrer"
-          class="w-10 h-10 rounded-full bg-stone-100 text-[#25D366] hover:bg-[#25D366]/10 flex items-center justify-center transition-all">
-          <i class="fa-brands fa-whatsapp text-lg"></i>
+        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-stone-100 text-[#1877F2] hover:bg-[#1877F2]/10 flex items-center justify-center transition-all shadow-sm" aria-label="Facebook">
+          <i class="fa-brands fa-facebook-f text-lg"></i>
         </a>
       </div>
 
-    </div>
-
-    <div class="text-center pt-6 text-[11px] text-stone-400 font-medium">
-      &copy; 2026 Vizhi Infragen Realtors. All Rights Reserved.
     </div>
 
   </div>
@@ -188,7 +172,7 @@
       </a>
 
       <!-- Center: Navigation Links in Dark Capsule Container -->
-      <nav class="hidden md:flex items-center gap-2 sm:gap-3.5 bg-[#1F0D11] border border-white/10 rounded-full px-2.5 sm:px-3 py-1 shadow-inner h-[44px] sm:h-[48px]">
+      <nav class="hidden lg:flex items-center gap-2 sm:gap-3.5 bg-[#1F0D11] border border-white/10 rounded-full px-2.5 sm:px-3 py-1 shadow-inner h-[44px] sm:h-[48px]">
         <a href="index.html" class="text-white hover:text-[#c5a880] font-medium text-xs sm:text-[14px] px-3.5 sm:px-4 h-[36px] sm:h-[40px] flex items-center justify-center transition-colors font-['Inter',sans-serif]">Home</a>
         <a href="about.html" class="text-white hover:text-[#c5a880] font-medium text-xs sm:text-[14px] px-3.5 sm:px-4 h-[36px] sm:h-[40px] flex items-center justify-center transition-colors font-['Inter',sans-serif]">About Us</a>
         <div class="relative group flex items-center">
@@ -222,7 +206,7 @@
         </div>
 
         <!-- Mobile Drawer Hamburger Toggle Button -->
-        <button id="open-side-drawer" class="md:hidden w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-all cursor-pointer" aria-label="Open Mobile Navigation">
+        <button id="open-side-drawer" class="lg:hidden w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-all cursor-pointer" aria-label="Open Mobile Navigation">
           <i class="fa-solid fa-bars text-base"></i>
         </button>
       </div>
@@ -315,11 +299,10 @@
     </section>
   </div>
 
-
   <!-- ==========================================
        MAIN SECTION: CONTACT FORM & LUXURY DARK CARD
        ========================================== -->
-  <section class="py-16 sm:py-24 px-6 sm:px-10 lg:px-16 bg-[#FDFBF7]">
+  <section id="have-any-questions" class="py-16 sm:py-24 px-6 sm:px-10 lg:px-16 bg-[#FDFBF7] scroll-mt-28">
     <div class="max-w-[1440px] mx-auto">
       
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-stretch">
@@ -335,31 +318,39 @@
             </p>
           </div>
 
-          <form id="contact-page-form" class="space-y-4 pt-2">
+          <form id="contact-page-form" novalidate class="space-y-4 pt-2">
             
             <!-- Row 1: First Name & Last Name -->
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <input type="text" id="contact-firstname" required placeholder="First Name *"
                   class="w-full bg-white border border-stone-200 rounded-lg px-4 py-3.5 text-sm text-[#1E293B] placeholder-stone-400 focus:outline-none focus:border-[#c5a880] focus:ring-1 focus:ring-[#c5a880] transition-all shadow-sm font-['Inter',sans-serif]" />
+                <span id="contact-firstname-error" class="text-xs text-red-500 font-medium mt-1 hidden text-left block font-['Inter',sans-serif]"></span>
               </div>
               <div>
                 <input type="text" id="contact-lastname" required placeholder="Last Name *"
                   class="w-full bg-white border border-stone-200 rounded-lg px-4 py-3.5 text-sm text-[#1E293B] placeholder-stone-400 focus:outline-none focus:border-[#c5a880] focus:ring-1 focus:ring-[#c5a880] transition-all shadow-sm font-['Inter',sans-serif]" />
+                <span id="contact-lastname-error" class="text-xs text-red-500 font-medium mt-1 hidden text-left block font-['Inter',sans-serif]"></span>
               </div>
             </div>
 
             <!-- Row 2: Contact Number & Your Email -->
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div class="relative">
-                <input type="tel" id="contact-phone" required placeholder="Contact Number *"
-                  class="w-full bg-white border border-stone-200 rounded-lg pl-10 pr-4 py-3.5 text-sm text-[#1E293B] placeholder-stone-400 focus:outline-none focus:border-[#c5a880] focus:ring-1 focus:ring-[#c5a880] transition-all shadow-sm font-['Inter',sans-serif]" />
-                <i class="fa-solid fa-phone absolute left-3.5 top-1/2 -translate-y-1/2 text-stone-400 text-xs"></i>
+              <div>
+                <div class="relative">
+                  <input type="tel" id="contact-phone" required placeholder="Contact Number *"
+                    class="w-full bg-white border border-stone-200 rounded-lg pl-10 pr-4 py-3.5 text-sm text-[#1E293B] placeholder-stone-400 focus:outline-none focus:border-[#c5a880] focus:ring-1 focus:ring-[#c5a880] transition-all shadow-sm font-['Inter',sans-serif]" />
+                  <i class="fa-solid fa-phone absolute left-3.5 top-1/2 -translate-y-1/2 text-stone-400 text-xs"></i>
+                </div>
+                <span id="contact-phone-error" class="text-xs text-red-500 font-medium mt-1 hidden text-left block font-['Inter',sans-serif]"></span>
               </div>
-              <div class="relative">
-                <input type="email" id="contact-email" required placeholder="Your Email *"
-                  class="w-full bg-white border border-stone-200 rounded-lg pl-10 pr-4 py-3.5 text-sm text-[#1E293B] placeholder-stone-400 focus:outline-none focus:border-[#c5a880] focus:ring-1 focus:ring-[#c5a880] transition-all shadow-sm font-['Inter',sans-serif]" />
-                <i class="fa-solid fa-envelope absolute left-3.5 top-1/2 -translate-y-1/2 text-stone-400 text-xs"></i>
+              <div>
+                <div class="relative">
+                  <input type="email" id="contact-email" required placeholder="Your Email *"
+                    class="w-full bg-white border border-stone-200 rounded-lg pl-10 pr-4 py-3.5 text-sm text-[#1E293B] placeholder-stone-400 focus:outline-none focus:border-[#c5a880] focus:ring-1 focus:ring-[#c5a880] transition-all shadow-sm font-['Inter',sans-serif]" />
+                  <i class="fa-solid fa-envelope absolute left-3.5 top-1/2 -translate-y-1/2 text-stone-400 text-xs"></i>
+                </div>
+                <span id="contact-email-error" class="text-xs text-red-500 font-medium mt-1 hidden text-left block font-['Inter',sans-serif]"></span>
               </div>
             </div>
 
@@ -367,22 +358,29 @@
             <div>
               <input type="text" id="contact-subject" required placeholder="Subject *"
                 class="w-full bg-white border border-stone-200 rounded-lg px-4 py-3.5 text-sm text-[#1E293B] placeholder-stone-400 focus:outline-none focus:border-[#c5a880] focus:ring-1 focus:ring-[#c5a880] transition-all shadow-sm font-['Inter',sans-serif]" />
+              <span id="contact-subject-error" class="text-xs text-red-500 font-medium mt-1 hidden text-left block font-['Inter',sans-serif]"></span>
             </div>
 
             <!-- Row 4: Your Message -->
-            <div class="relative">
-              <textarea id="contact-message" rows="4" required placeholder="Your Message *"
-                class="w-full bg-white border border-stone-200 rounded-lg pl-10 pr-4 py-3.5 text-sm text-[#1E293B] placeholder-stone-400 focus:outline-none focus:border-[#c5a880] focus:ring-1 focus:ring-[#c5a880] transition-all shadow-sm font-['Inter',sans-serif] resize-none"></textarea>
-              <i class="fa-solid fa-pen absolute left-3.5 top-4 text-stone-400 text-xs"></i>
+            <div>
+              <div class="relative">
+                <textarea id="contact-message" rows="4" required placeholder="Your Message *"
+                  class="w-full bg-white border border-stone-200 rounded-lg pl-10 pr-4 py-3.5 text-sm text-[#1E293B] placeholder-stone-400 focus:outline-none focus:border-[#c5a880] focus:ring-1 focus:ring-[#c5a880] transition-all shadow-sm font-['Inter',sans-serif] resize-none"></textarea>
+                <i class="fa-solid fa-pen absolute left-3.5 top-4 text-stone-400 text-xs"></i>
+              </div>
+              <span id="contact-message-error" class="text-xs text-red-500 font-medium mt-1 hidden text-left block font-['Inter',sans-serif]"></span>
             </div>
 
             <!-- Checkbox Terms -->
-            <div class="flex items-start gap-3 pt-1">
-              <input type="checkbox" id="contact-terms" required
-                class="mt-1 w-4 h-4 rounded border-stone-300 text-[#4E1421] focus:ring-[#c5a880] cursor-pointer" />
-              <label for="contact-terms" class="text-[11px] sm:text-xs text-stone-500 font-['Inter',sans-serif] leading-relaxed cursor-pointer select-none">
-                By clicking submit, I agree to the Terms &amp; Conditions and Privacy Policy and I am giving my consent to receive updates through email/sms.
-              </label>
+            <div class="flex flex-col pt-1">
+              <div class="flex items-start gap-3">
+                <input type="checkbox" id="contact-terms" required
+                  class="mt-1 w-4 h-4 rounded border-stone-300 text-[#4E1421] focus:ring-[#c5a880] cursor-pointer" />
+                <label for="contact-terms" class="text-[11px] sm:text-xs text-stone-500 font-['Inter',sans-serif] leading-relaxed cursor-pointer select-none">
+                  By clicking submit, I agree to the Terms &amp; Conditions and Privacy Policy and I am giving my consent to receive updates through email/sms.
+                </label>
+              </div>
+              <span id="contact-terms-error" class="text-xs text-red-500 font-medium mt-1 hidden text-left block font-['Inter',sans-serif]"></span>
             </div>
 
             <!-- Submit Button -->
@@ -510,14 +508,14 @@
         
         <!-- Left Side: Interactive Satellite Map Frame (7 Cols) (Matches Reference Image UI Exactly) -->
         <div class="lg:col-span-7">
-          <a href="https://maps.google.com/?q=First+Floor,+Shop+No.24,+Old+Bus+Stand+Complex,+24,+Suganthi+Nagar+Rd,+Sulur,+Tamil+Nadu+641402" target="_blank" rel="noopener noreferrer"
+          <a href="https://maps.google.com/?q=Shop+No.+24,+Suganthi+Nagar+Road,+Bus+Stand+Complex,+Sulur+Old+Bus+Stand,+Sulur,+Coimbatore+-+641402" target="_blank" rel="noopener noreferrer"
             class="relative w-full rounded-3xl overflow-hidden shadow-2xl border-2 border-stone-200/90 group block cursor-pointer transition-all duration-300 hover:shadow-[0_20px_50px_rgba(52,29,34,0.25)] hover:border-[#c5a880]"
-            style="aspect-ratio: 996 / 551;"
+            style="aspect-ratio: 1010 / 557;"
             aria-label="Open Vizhi Infragen Realtors LLP in Google Maps">
             
             <!-- High-Res Satellite Map Screenshot (Clean, Single Card with Street Names, Pin, Satellite View & Direction Icon) -->
             <img src="assets/images/contact-satellite-map.jpg" alt="Vizhi Infragen Realtors LLP Google Maps Satellite Location"
-              class="w-full h-full object-cover object-center group-hover:scale-[1.015] transition-transform duration-500" />
+              class="w-full h-full object-cover group-hover:scale-[1.015] transition-transform duration-500" />
 
           </a>
         </div>
@@ -539,7 +537,7 @@
 
             <div class="space-y-2">
               <p class="text-stone-800 text-xs sm:text-sm font-semibold font-['Inter',sans-serif] leading-relaxed">
-                First Floor, Shop No.24, Old Bus Stand Complex, 24, Suganthi Nagar Rd, Sulur, Tamil Nadu 641402
+                Shop No. 24, Suganthi Nagar Road, Bus Stand Complex, Sulur Old Bus Stand, Sulur, Coimbatore – 641402
               </p>
               <p class="text-stone-700 text-xs sm:text-sm font-bold font-['Inter',sans-serif] flex items-center gap-1.5 mt-2">
                 <i class="fa-regular fa-clock text-[#c5a880]"></i>
@@ -548,7 +546,7 @@
             </div>
 
             <div class="pt-4">
-              <a href="https://maps.google.com/?q=First+Floor,+Shop+No.24,+Old+Bus+Stand+Complex,+24,+Suganthi+Nagar+Rd,+Sulur,+Tamil+Nadu+641402" target="_blank" rel="noopener noreferrer"
+              <a href="https://maps.google.com/?q=Shop+No.+24,+Suganthi+Nagar+Road,+Bus+Stand+Complex,+Sulur+Old+Bus+Stand,+Sulur,+Coimbatore+-+641402" target="_blank" rel="noopener noreferrer"
                 class="bg-[#4E1421] hover:bg-[#612124] text-white px-8 py-3.5 rounded-lg text-sm font-bold font-['Outfit',sans-serif] transition-all duration-300 inline-flex items-center gap-2 shadow-lg hover:shadow-xl active:scale-[0.98]">
                 <span>Get Directions</span>
                 <i class="fa-solid fa-arrow-right text-xs"></i>
@@ -590,7 +588,7 @@
           </p>
 
           <div class="pt-2">
-            <a href="tel:9688889420"
+            <a href="#have-any-questions"
               class="bg-[#331C20] hover:bg-[#612124] text-white hover:text-white px-8 py-4 rounded-xl text-sm font-extrabold font-['Outfit',sans-serif] transition-all duration-300 inline-flex items-center gap-2 shadow-xl hover:shadow-2xl active:scale-[0.98]">
               <span>Get in Touch Today</span>
               <i class="fa-solid fa-arrow-right text-xs"></i>
@@ -710,7 +708,7 @@
           +91 96888 89420 / 97871 66889
         </a>
         <div class="text-stone-300 font-['Inter',_sans-serif] text-xs leading-relaxed max-w-[260px] pt-0.5">
-          Shop No. 24, Suganthi Nagar, Bus Stand Complex, Sulur Old Bus Stand, Sulur, Coimbatore &ndash; 641402
+          Shop No. 24, Suganthi Nagar Road, Bus Stand Complex, Sulur Old Bus Stand, Sulur, Coimbatore &ndash; 641402
         </div>
 
         <!-- 3 Social Media Icons Under Details of Contact Us Section -->
@@ -780,44 +778,243 @@
   <!-- Custom JS Script -->
   <script src="script.js"></script>
   <script>
-    // Contact Form Submission Handler
+    // Contact Form Submission Handler with Real-Time Validation
     document.addEventListener('DOMContentLoaded', () => {
       const contactForm = document.getElementById('contact-page-form');
-      if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-          e.preventDefault();
+      if (!contactForm) return;
 
-          const firstName = document.getElementById('contact-firstname')?.value || '';
-          const lastName = document.getElementById('contact-lastname')?.value || '';
-          const phone = document.getElementById('contact-phone')?.value || '';
-          const email = document.getElementById('contact-email')?.value || '';
-          const subject = document.getElementById('contact-subject')?.value || '';
-          const message = document.getElementById('contact-message')?.value || '';
+      const fNameInput = document.getElementById('contact-firstname');
+      const fNameError = document.getElementById('contact-firstname-error');
 
-          const constantToEmail = 'srissa2006@gmail.com';
-          const emailSubject = encodeURIComponent(`Contact Form: ${subject || 'Inquiry'} - ${firstName} ${lastName}`);
-          const emailBody = encodeURIComponent(`Name: ${firstName} ${lastName}\nPhone: ${phone}\nEmail: ${email}\n\nMessage:\n${message}`);
+      const lNameInput = document.getElementById('contact-lastname');
+      const lNameError = document.getElementById('contact-lastname-error');
 
-          const mailtoUrl = `mailto:${constantToEmail}?subject=${emailSubject}&body=${emailBody}`;
+      const phoneInput = document.getElementById('contact-phone');
+      const phoneError = document.getElementById('contact-phone-error');
 
-          window.location.href = mailtoUrl;
+      const emailInput = document.getElementById('contact-email');
+      const emailError = document.getElementById('contact-email-error');
 
-          const successToast = document.getElementById('success-toast');
-          if (successToast) {
-            successToast.classList.remove('translate-y-24', 'opacity-0');
-            successToast.classList.add('translate-y-0', 'opacity-100');
+      const subjectInput = document.getElementById('contact-subject');
+      const subjectError = document.getElementById('contact-subject-error');
 
-            setTimeout(() => {
-              successToast.classList.remove('translate-y-0', 'opacity-100');
-              successToast.classList.add('translate-y-24', 'opacity-0');
-            }, 4000);
-          }
+      const messageInput = document.getElementById('contact-message');
+      const messageError = document.getElementById('contact-message-error');
 
-          contactForm.reset();
-        });
+      const termsInput = document.getElementById('contact-terms');
+      const termsError = document.getElementById('contact-terms-error');
+
+      function setFieldError(input, errorEl, msg) {
+        if (!input || !errorEl) return;
+        if (msg) {
+          errorEl.textContent = msg;
+          errorEl.classList.remove('hidden');
+          input.classList.add('!border-red-500', '!ring-2', '!ring-red-500/20');
+        } else {
+          errorEl.textContent = '';
+          errorEl.classList.add('hidden');
+          input.classList.remove('!border-red-500', '!ring-2', '!ring-red-500/20');
+        }
       }
+
+      function clearFieldError(input, errorEl) {
+        if (!input || !errorEl) return;
+        errorEl.textContent = '';
+        errorEl.classList.add('hidden');
+        input.classList.remove('!border-red-500', '!ring-2', '!ring-red-500/20');
+      }
+
+      function validateName(input, errorEl, isTyping = false, label = 'First name') {
+        if (!input) return true;
+        const raw = input.value;
+        const val = raw.trim();
+
+        // Check if digits entered
+        if (/\d/.test(raw)) {
+          setFieldError(input, errorEl, 'Name does not contain number');
+          return false;
+        }
+
+        if (isTyping) {
+          if (!errorEl.classList.contains('hidden') && errorEl.textContent === 'Name does not contain number' && !/\d/.test(raw)) {
+            clearFieldError(input, errorEl);
+          }
+          return true;
+        }
+
+        if (!val) {
+          setFieldError(input, errorEl, `Please enter your ${label.toLowerCase()}.`);
+          return false;
+        }
+        if (val.length < 2) {
+          setFieldError(input, errorEl, `${label} must be at least 2 characters.`);
+          return false;
+        }
+        if (!/^[a-zA-Z\s\.\'-]{2,50}$/.test(val)) {
+          setFieldError(input, errorEl, 'Name does not contain number');
+          return false;
+        }
+        clearFieldError(input, errorEl);
+        return true;
+      }
+
+      function validatePhone(isTyping = false) {
+        if (!phoneInput) return true;
+        const raw = phoneInput.value;
+        const val = raw.trim();
+
+        // Check if characters/letters entered
+        if (/[a-zA-Z]/.test(raw)) {
+          setFieldError(phoneInput, phoneError, 'Phone number does not contain characters');
+          return false;
+        }
+
+        if (isTyping) {
+          if (!phoneError.classList.contains('hidden') && phoneError.textContent === 'Phone number does not contain characters' && !/[a-zA-Z]/.test(raw)) {
+            clearFieldError(phoneInput, phoneError);
+          }
+          return true;
+        }
+
+        if (!val) {
+          setFieldError(phoneInput, phoneError, 'Please enter your contact number.');
+          return false;
+        }
+        const phoneRegex = /^(\+91|0)?[6-9]\d{9}$/;
+        if (!phoneRegex.test(val.replace(/[\s\-\(\)]/g, ''))) {
+          setFieldError(phoneInput, phoneError, 'Please enter a valid 10-digit mobile number.');
+          return false;
+        }
+        clearFieldError(phoneInput, phoneError);
+        return true;
+      }
+
+      function validateEmail(isTyping = false) {
+        if (!emailInput) return true;
+        const val = emailInput.value.trim();
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if (isTyping) {
+          if (!emailError.classList.contains('hidden') && emailRegex.test(val)) {
+            clearFieldError(emailInput, emailError);
+          }
+          return true;
+        }
+        if (!val) {
+          setFieldError(emailInput, emailError, 'Please enter your email address.');
+          return false;
+        }
+        if (!emailRegex.test(val)) {
+          setFieldError(emailInput, emailError, 'Please enter a valid email address.');
+          return false;
+        }
+        clearFieldError(emailInput, emailError);
+        return true;
+      }
+
+      // Real-time input listeners
+      if (fNameInput) {
+        fNameInput.addEventListener('input', () => validateName(fNameInput, fNameError, true, 'First name'));
+        fNameInput.addEventListener('blur', () => validateName(fNameInput, fNameError, false, 'First name'));
+      }
+      if (lNameInput) {
+        lNameInput.addEventListener('input', () => validateName(lNameInput, lNameError, true, 'Last name'));
+        lNameInput.addEventListener('blur', () => validateName(lNameInput, lNameError, false, 'Last name'));
+      }
+      if (phoneInput) {
+        phoneInput.addEventListener('input', () => validatePhone(true));
+        phoneInput.addEventListener('blur', () => validatePhone(false));
+      }
+      if (emailInput) {
+        emailInput.addEventListener('input', () => validateEmail(true));
+        emailInput.addEventListener('blur', () => validateEmail(false));
+      }
+
+      contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const v1 = validateName(fNameInput, fNameError, false, 'First name');
+        const v2 = validateName(lNameInput, lNameError, false, 'Last name');
+        const v3 = validatePhone(false);
+        const v4 = validateEmail(false);
+
+        if (!v1 || !v2 || !v3 || !v4) {
+          if (!v1 && fNameInput) fNameInput.focus();
+          else if (!v2 && lNameInput) lNameInput.focus();
+          else if (!v3 && phoneInput) phoneInput.focus();
+          else if (!v4 && emailInput) emailInput.focus();
+          return;
+        }
+
+        if (termsInput && !termsInput.checked) {
+          if (termsError) {
+            termsError.textContent = 'Please accept the Terms & Privacy Policy.';
+            termsError.classList.remove('hidden');
+          }
+          termsInput.focus();
+          return;
+        }
+
+        const firstName = fNameInput ? fNameInput.value.trim() : '';
+        const lastName = lNameInput ? lNameInput.value.trim() : '';
+        const phone = phoneInput ? phoneInput.value.trim() : '';
+        const email = emailInput ? emailInput.value.trim() : '';
+        const subject = subjectInput ? subjectInput.value.trim() : '';
+        const message = messageInput ? messageInput.value.trim() : '';
+
+        const constantToEmail = 'srissa2006@gmail.com';
+        const emailSubject = encodeURIComponent(`Contact Form: ${subject || 'Inquiry'} - ${firstName} ${lastName}`);
+        const emailBody = encodeURIComponent(`Name: ${firstName} ${lastName}\nPhone: ${phone}\nEmail: ${email}\nSubject: ${subject}\n\nMessage:\n${message}`);
+
+        const mailtoUrl = `mailto:${constantToEmail}?subject=${emailSubject}&body=${emailBody}`;
+
+        window.location.href = mailtoUrl;
+
+        const successToast = document.getElementById('success-toast');
+        if (successToast) {
+          successToast.classList.remove('translate-y-24', 'opacity-0');
+          successToast.classList.add('translate-y-0', 'opacity-100');
+
+          setTimeout(() => {
+            successToast.classList.remove('translate-y-0', 'opacity-100');
+            successToast.classList.add('translate-y-24', 'opacity-0');
+          }, 4000);
+        }
+
+        contactForm.reset();
+        clearFieldError(fNameInput, fNameError);
+        clearFieldError(lNameInput, lNameError);
+        clearFieldError(phoneInput, phoneError);
+        clearFieldError(emailInput, emailError);
+      });
     });
   </script>
+
+  <script>
+    // Smooth scroll from "Get in Touch Today" to "Have Any Questions?" section
+    document.addEventListener('DOMContentLoaded', function() {
+      const touchBtns = document.querySelectorAll('a[href="#have-any-questions"]');
+      touchBtns.forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          const target = document.getElementById('have-any-questions');
+          if (target) {
+            const headerOffset = 100;
+            const elementPosition = target.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+            setTimeout(function() {
+              const firstInput = document.getElementById('contact-firstname');
+              if (firstInput) firstInput.focus();
+            }, 600);
+          }
+        });
+      });
+    });
+  </script>
+
 </body>
 
 </html>
